@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>Illustration on Web Accessibility Success Criteria 2.4.5 - Multiple
+    Ways</title>
+    <script src="jquery-1.9.1.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+                    $(document).ready(function(){
+                        $("div#completed").hide();
+                        $("div#confirmed2").hide();
+                        $("div#completed2").hide();
+
+                        $("input#placeOrder").click(function(){
+                            $("div#requested").hide();
+                            $("div#completed").show();
+                        });
+                        $("input#finish").click(function(){
+                            $("div#completed").hide();
+                            $("div#requested").show();
+                        });
+
+                        $("input#confirmOrder2").click(function(){
+
+                            $("div#requested2").hide();
+                            $("div#confirmed2").show();
+                            $("div#confirmed2 div table.content td#cell1a").text($("input#d").val());
+                            $("div#confirmed2 div table.content td#cell2a").text($("input#e").val());
+                            $("div#confirmed2 div table.content td#cell3a").text($("input#f").val());
+
+
+                        });
+                        $("input#placeOrder2").click(function(){
+
+                            $("div#confirmed2").hide();
+                            $("div#completed2").show();
+                        });
+                        $("input#revise2").click(function(){
+
+                            $("div#confirmed2").hide();
+                            $("div#requested2").show();
+                        });
+                        $("input#finish2").click(function(){
+                            $("div#completed2").hide();
+                            $("div#requested2").show();
+                        });
+                    });
+    </script>
+</head>
+<body>
+    <h2>Before Rectification</h2><br>
+    <p><br>
+    Press the "Place Order" button in the illustration below.</p>
+    <p><br></p>
+    <form action="">
+        <div id="e334before" style=" padding: 10px; border: 1px solid #ccc;">
+            <div id="requested">
+                <strong>Step 3 of 3: Complete Transaction</strong><br>
+                <br>
+                <div style=" padding-top: 10px;">
+                    <div style=" font-weight: bold; padding-bottom: 5px;">
+                        Your Order
+                    </div>
+                    <table class="content">
+                        <tr>
+                            <td style=" width: 300px;">Vanilla Scented
+                            Candle</td>
+                            <td style=" width: 50px; text-align: right;">
+                            <label for="a">QTY</label>:</td>
+                            <td style=" width: 100px; text-align: right;">
+                            <input id="a" name="a" style=
+                            " width: 90px; text-align: right;" type="text"
+                            value="2"></td>
+                        </tr>
+                        <tr>
+                            <td>Crystal Candle Holder</td>
+                            <td style=" text-align: right;"><label for=
+                            "b">QTY</label>:</td>
+                            <td style=" text-align: right;"><input id="b" name=
+                            "b" style=" width: 90px; text-align: right;" type=
+                            "text" value="2"></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td style=" text-align: right;"><label for=
+                            "c">Total</label>:</td>
+                            <td style=" text-align: right;"><input id="c" name=
+                            "c" style=" width: 90px; text-align: right;" type=
+                            "text" value="$220.00"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" style=
+                            " padding-top: 8px; text-align: right;"><input id=
+                            "placeOrder" style=" width: 140px;" type="button"
+                            value="Place Order"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="completed">
+                <strong>Step 3 of 3: Complete Transaction</strong><br>
+                <br>
+                <div style=" padding-top: 5px; padding-bottom: 5px;">
+                    Your order is Confirmed! Thank you for your purchase.
+                </div>
+                <div style=" padding-top: 5px; padding-bottom: 5px;">
+                    <input id="finish" style=" width: 140px;" type="button"
+                    value="Finish">
+                </div>
+            </div>
+        </div><br>
+        <div style=" display: none;">
+            <input type="submit">
+        </div>
+    </form>
+    <p>The order is completed without a confirmation process to allow
+    cancellation or amendment.</p><br>
+    <hr>
+    <p><strong>After Rectification</strong></p><br>
+    <p>Press the "Place Order" button in the illustration below.</p><br>
+    <form action="">
+        <div id="e334after" style=" padding: 10px; border: 1px solid #ccc;">
+            <div id="requested2">
+                <strong>Step 3 of 4: Confirm Transaction</strong><br>
+                <br>
+                <div style=" padding-top: 10px;">
+                    <div style=" font-weight: bold; padding-bottom: 5px;">
+                        Your Order
+                    </div>
+                    <table class="content">
+                        <tr>
+                            <td style=" width: 300px;">Vanilla Scented
+                            Candle</td>
+                            <td style=" width: 50px; text-align: right;">
+                            <label for="d">QTY</label>:</td>
+                            <td style=" width: 100px; text-align: right;">
+                            <input id="d" name="d" style=
+                            " width: 90px; text-align: right;" type="text"
+                            value="2"></td>
+                        </tr>
+                        <tr>
+                            <td>Crystal Candle Holder</td>
+                            <td style=" text-align: right;"><label for=
+                            "e">QTY</label>:</td>
+                            <td style=" text-align: right;"><input id="e" name=
+                            "e" style=" width: 90px; text-align: right;" type=
+                            "text" value="2"></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td style=" text-align: right;"><label for=
+                            "f">Total</label>:</td>
+                            <td style=" text-align: right;"><input id="f" name=
+                            "f" style=" width: 90px; text-align: right;" type=
+                            "text" value="$220.00"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" style=
+                            " padding-top: 8px; text-align: right;"><input id=
+                            "confirmOrder2" style=" width: 140px;" type=
+                            "button" value="Place Order"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="confirmed2">
+                <strong>Step 4 of 4: Complete Transaction</strong><br>
+                <br>
+                <div style=" padding-top: 10px;">
+                    <div style=" font-weight: bold; padding-bottom: 5px;">
+                        Your Order
+                    </div>
+                    <table class="content">
+                        <tr>
+                            <td style=" width: 300px;">Vanilla Scented
+                            Candle</td>
+                            <td style=" width: 50px; text-align: right;">
+                            QTY:</td>
+                            <td id="cell1a" style=
+                            " width: 100px; text-align: right;">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>Crystal Candle Holder</td>
+                            <td style=" text-align: right;">QTY:</td>
+                            <td id="cell2a" style=" text-align: right;">
+                            &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td style=" text-align: right;">Total:</td>
+                            <td id="cell3a" style=" text-align: right;">
+                            &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" style=
+                            " padding-top: 8px; text-align: right;"><input id=
+                            "revise2" style=" width: 140px;" type="button"
+                            value="Back to Revise"><input id="placeOrder2"
+                            style=" width: 140px;" type="button" value=
+                            "Confirm Order"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="completed2">
+                <strong>Step 4 of 4: Complete Transaction</strong><br>
+                <br>
+                <div style=" padding-top: 5px; padding-bottom: 5px;">
+                    Your order is Confirmed! Thank you for your purchase.
+                </div>
+                <div style=" padding-top: 5px; padding-bottom: 5px;">
+                    <input id="finish2" style=" width: 140px;" type="button"
+                    value="Finish">
+                </div>
+            </div>
+        </div><br>
+        <div style=" display: none;">
+            <input type="submit">
+        </div>
+    </form>
+    <p>There is a chance for users to confirm or amend the order before the
+    actual order placement.</p>
+</body>
+</html>

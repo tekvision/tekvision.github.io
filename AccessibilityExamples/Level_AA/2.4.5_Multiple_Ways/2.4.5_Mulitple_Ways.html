@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>Illustration on Web Accessibility Success Criteria 2.4.5 - Multiple
+    Ways</title>
+    <script src="jquery-1.9.1.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+                            $(document).ready(function(){
+
+                                $("#contactus_before").click(function(){
+                                	alert("contact us");
+                                    $("div#multipleways_before").hide();
+                                    $("div#welcome_before").hide();
+                                    $("div#contact_before").show();
+                                });
+
+                                $("#above_before").click(function(){
+                                	alert("m here 1");
+                                    $("div#multipleways_before").hide();
+                                    $("div#welcome_before").show();
+                                    $("div#contact_before").hide();
+                                });
+                                $("#services_before").click(function(){
+                                	alert("m here 2");
+                                    $("div#multipleways_before").show();
+                                    $("div#welcome_before").hide();
+                                    $("div#contact_before").hide();
+                                });
+
+                            });
+    </script>
+    <script type="text/javascript">
+
+                                            $(document).ready(function(){
+                                                $("#asiteMap").click(function(){
+                                                    alert("sitemap");
+                                                    $("span#result").text("");
+                                                    $("input#search").val("");
+                                                    $("div#sitemap_after").show();
+                                                    $("div#multipleways_after").hide();
+                                                    $("div#welcome_after").hide();
+                                                    $("div#webAcc_after").hide();
+                                                    $("div#contact_after").hide();
+                                                });
+
+                                                $("#welcomeMsg_after, #above_after").click(function(){
+                                                    alert("welcome msg");
+                                                    $("span#result").text("");
+                                                    $("input#search").val("");
+                                                    $("div#sitemap_after").hide();
+                                                    $("div#multipleways_after").hide();
+                                                    $("div#welcome_after").show();
+                                                    $("div#webAcc_after").hide();
+                                                    $("div#contact_after").hide();
+                                                });
+
+                                                $("#multiWays_after, #services_after").click(function(){
+                                                	alert("services");
+                                                    $("span#result").text("");
+                                                    $("input#search").val("");
+                                                    $("div#sitemap_after").hide();
+                                                    $("div#multipleways_after").show();
+                                                    $("div#welcome_after").hide();
+                                                    $("div#webAcc_after").hide();
+                                                    $("div#contact_after").hide();
+                                                });
+                                                $("#cu_after, #contactus_after").click(function(){
+                                                    alert("contact us");
+                                                    $("span#result").text("");
+                                                    $("input#search").val("");
+                                                    $("div#sitemap_after").hide();
+                                                    $("div#multipleways_after").hide();
+                                                    $("div#welcome_after").hide();
+                                                    $("div#webAcc_after").hide();
+                                                    $("div#contact_after").show();
+                                                });
+
+                                            });
+                                            function SearchFn(){
+
+                                                var value = $("input#search").val();
+                                                if(value!=null && value!=""){
+                                                    if(value.toLowerCase() == "contact us"){
+                                                        $("div#sitemap_after").hide();
+                                                        $("div#multipleways_after").hide();
+                                                        $("div#welcome_after").hide();
+                                                        $("div#webAcc_after").hide();
+                                                        $("div#contact_after").show();
+                                                    }else{
+                                                        $("span#result").text("No records found!");
+                                                    }
+                                                }else{
+                                                    $("span#result").text("No records found!");
+                                                }
+                                            }
+
+    </script>
+</head>
+<body>
+    <h2>Before Rectification</h2>The illustration below only provides a main
+    navigation to navigate around the website.
+    <div id="e245before" style=" padding: 10px; border: 1px solid #ccc;">
+        <a class="access" href="#content_e1" id="skiptocontent_e1" name=
+        "skiptocontent_e1">Skip to Example Content 1</a>
+        <table>
+            <tr>
+                <td><span style=" width: 100%; background-color: #81BEF7; text-align: center; padding: 5px 10px;">
+                <a href="javascript:void(0)" id="above_before" style=" color: #FFFFFF; text-decoration: none;">About</a></span><span style=" width: 100%; background-color: #81BEF7; text-align: center; padding: 5px 10px;"><a href="javascript:void(0)"
+                id="services_before" style=" color: #FFFFFF; text-decoration: none;">Services</a></span><span style=" width: 100%; background-color: #81BEF7; text-align: center; padding: 5px 10px;"><a href="javascript:void(0)"
+                id="contactus_before" style=" color: #FFFFFF; text-decoration: none;">Contact Us</a></span></td>
+            </tr>
+        </table><a id="content_e1" name="content_e1"></a>
+        <div id="multipleways_before" style=" display: inline;">
+            <strong>Multiple Ways</strong>
+            <table style=" height: 150px;" title="Multiple Ways">
+                <tr style=" display: none;">
+                    <th>&nbsp;</th>
+                </tr>
+                <tr>
+                    <td>With the rapid growth of the Internet, ensuring that
+                    websites are accessible to persons with disabilities is now
+                    an essential consideration to enable their full integration
+                    into society. Some organisations may consider their
+                    websites to be "accessible" when the websites are easily
+                    found by search engines. However, the core principle of web
+                    accessibility is not about whether people "can find you",
+                    it is about whether all people, irrespective of age, race,
+                    education or disability, can access to information in
+                    websites.</td>
+                </tr>
+            </table>
+            <p>&nbsp;</p>
+        </div>
+        <div id="welcome_before" style=" display: none;">
+            <h2>Welcome Message</h2>
+            <table style=" height: 150px;" title="Welcome Message">
+                <tr>
+                    <td>
+                        <h2>Thank you for visiting the website.</h2>
+                        <p>To enable all people, including persons with
+                        disabilities, to live independently and participate in
+                        all aspects of life, we should take every opportunity
+                        to make information accessible to all.</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="contact_before" style=" display: none;">
+            <h2>Contact Us</h2>
+            <table style=" height: 150px;" title="Contact Us">
+                <tr>
+                    <th colspan="2" style=" text-align: left;">Web
+                    Accessibility Programme Office</th>
+                </tr>
+                <tr>
+                    <td style=" width: 30%;">Email :</td>
+                    <td style=" width: 70%;">wac@ogcio.gov.hk</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <p>The function in the above illustration can only be accessed through the
+    navigation bar. No alternative ways, such as &nbsp;a site map or a search
+    function, is provided.</p>
+    <hr>
+    <h2>After Rectification</h2>
+    <p>Please click the "Site map" or type in "Contact Us" in the "Search"
+    field below.</p>
+    <div id="e245after" style=" padding: 10px; border: 1px solid #ccc;">
+        <a class="access" href="#content_e2" id="skiptocontent_e2" name=
+        "skiptocontent_e2">Skip to Example Content 2</a>
+        <table style=" width: 100%;" title="Menu">
+            <tr style=" display: none;">
+                <th>&nbsp;</th>
+            </tr>
+            <tr>
+                <td><span style=
+                " width: 100%; background-color: #81BEF7; text-align: center; padding: 5px 10px;">
+                <a href="javascript:void(0)" id="above_after" style=" color: #FFFFFF; text-decoration: none;">About</a></span><span style=" width: 100%; background-color: #81BEF7; text-align: center; padding: 5px 10px;"><a href="javascript:void(0)"
+                id="services_after" style=" color: #FFFFFF; text-decoration: none;">Services</a></span><span style=" width: 100%; background-color: #81BEF7; text-align: center; padding: 5px 10px;"><a href="javascript:void(0)"
+                id="contactus_after" style=" color: #FFFFFF; text-decoration: none;">Contact Us</a></span></td>
+                <td class="rightAlign">
+                    <a href="javascript:void(0)" id="asiteMap">Site Map</a>
+                </td>
+            </tr>
+        </table>
+        <form action="" method="post">
+            <table class="content">
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td><label for="search">Search:</label> <input id="search"
+                    name="search" type="text"><input onclick="SearchFn()" type="button" value="go"></td>
+                </tr>
+                <tr>
+                    <td><input style=" display: none;" type="submit"></td>
+                </tr>
+            </table>
+        </form><a id="content_e2" name="content_e2"></a>
+        <div id="multipleways_after" style=" display: inline;">
+            <h2>Multiple Ways</h2>
+            <table style=" height: 150px;" title="Multiple Ways">
+                <tr style=" display: none;">
+                    <th>&nbsp;</th>
+                </tr>
+                <tr>
+                    <td>With the rapid growth of the Internet, ensuring that
+                    websites are accessible to persons with disabilities is now
+                    an essential consideration to enable their full integration
+                    into society. Some organisations may consider their
+                    websites to be "accessible" when the websites are easily
+                    found by search engines. However, the core principle of web
+                    accessibility is not about whether people "can find you",
+                    it is about whether all people, irrespective of age, race,
+                    education or disability, can access to information in
+                    websites.</td>
+                </tr>
+            </table>
+        </div>
+        <div id="sitemap_after" style=" display: none;">
+            <h2>Site Map</h2>
+            <table style=" height: 150px;" title="Sitemap">
+                <tr>
+                    <td>1.</td>
+                    <td colspan="2">About</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td><img alt="-" src="./images/pic245.gif" title="-"></td>
+                    <td>
+                        <a href="javascript:void(0)" id=
+                        "welcomeMsg_after">Welcome Message</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td colspan="2">Services</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td><img alt="-" src="./images/pic245.gif" title="-"></td>
+                    <td>
+                        <a href="javascript:void(0)" id=
+                        "multiWays_after">Multiple Ways</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3.</td>
+                    <td colspan="2">
+                        <a href="javascript:void(0)" id="cu_after">Contact
+                        Us</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="welcome_after" style=" display: none;">
+            <h2>Welcome Message</h2>
+            <table style=" height: 150px;" title="Welcome Message">
+                <tr>
+                    <td>
+                        <h2>Thank you for visiting the website.</h2>
+                        <p>To enable all people, including persons with
+                        disabilities, to live independently and participate in
+                        all aspects of life, we should take every opportunity
+                        to make information accessible to all.</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="contact_after" style=" display: none;">
+            <h2>Contact Us</h2>
+            <table style=" height: 150px;" title="Contact Us">
+                <tr>
+                    <th colspan="2" style=" text-align: left;">Web
+                    Accessibility Programme Office</th>
+                </tr>
+                <tr>
+                    <td style=" width: 30%;">Email :</td>
+                    <td style=" width: 70%;">wac@ogcio.gov.hk</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <p>The function in the above illustration can be accessed through the
+    navigation bar, as well as the site map or the search function.</p>
+</body>
+</html>

@@ -1,0 +1,30 @@
+ul.checkboxes {
+margin: 0;
+padding: 0;    
+}
+
+ul.checkboxes li   {
+margin: 2px 2px 2px 20px;
+padding: 2px; 
+list-style: none;
+width: 6em;    
+}
+   
+ul.checkboxes li.hover {
+margin: 2px 0px 2px 18px;
+padding: 0px 2px;
+border: 2px solid #777;
+}
+
+ul.checkboxes li.focus {
+margin: 2px 0px 2px 18px;
+padding: 0px 2px;
+border: 2px solid black;
+list-style: none;
+}
+
+.offscreen {
+position: absolute;
+left: -200em;
+top: -20em;
+}

@@ -1,0 +1,93 @@
+<html>
+
+<head>
+    <title>
+        No KeyboardTrap Example
+    </title>
+    <style>
+        #valid1 , #valid2 {
+            display: none;
+        }
+        #container1 , #container2
+        {
+            border: 1px solid black;
+            margin: 10px;
+            padding: 40px;
+        }
+        label
+        {
+            margin: 10px;
+            padding: 10px;
+        }
+        input
+        {
+            margin-left: 30px   ;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container1">
+        <h1>No keyboard Trapped Example</h1>
+        <form id="fm1">
+            <label for="name">First Name:</label>
+            <input type="text" id="name" aria-label="Enter Your First Name" aria-required="true"
+                onblur="checkName1(event , this)"><br>
+            <label id="valid1">this field is required</label>
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" aria-label="Enter your Last Name"><br>
+            <input type="button" value="ok">
+        </form>
+        <script>
+            function checkName1(e, element) {
+                if (element.value == "") {
+                    document.getElementById("valid1").style.display = "block";
+                    element.setAttribute("aria-describedby", "valid1");
+                    element.setAttribute("aria-invalid", "true");
+                    // setTimeout(function() {
+                    //     element.focus();
+                    // } , 100);
+                }
+                else {
+                    document.getElementById("valid1").style.display = "none";
+                    element.setAttribute("aria-desribedby", "");
+                    element.setAttribute("aria-invalid", "false");
+
+                }
+            }
+        </script>
+    </div>
+    <div id="container2">
+        <h1>keyboard Trapped Example</h1>
+        <form id="fm2">
+            <label for="name">First Name:</label>
+            <input type="text" id="name" aria-label="Enter Your First Name" aria-required="true"
+                onblur="checkName2(event , this)"><br>
+            <label id="valid2">this field is required</label>
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" aria-label="Enter your Last Name"><br>
+            <input type="button" value="ok">
+        </form>
+        <script>
+            function checkName2(e, element) {
+                if (element.value == "") {
+                    document.getElementById("valid2").style.display = "block";
+                    element.setAttribute("aria-describedby", "valid2");
+                    element.setAttribute("aria-invalid", "true");
+                    setTimeout(function () {
+                        element.focus();
+                    }, 100);
+                }
+                else {
+                    document.getElementById("valid2").style.display = "none";
+                    element.setAttribute("aria-desribedby", "");
+                    element.setAttribute("aria-invalid", "false");
+
+                }
+            }
+        </script>
+    </div>
+
+</body>
+
+</html>

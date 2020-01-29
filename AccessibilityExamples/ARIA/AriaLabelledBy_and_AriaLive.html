@@ -1,0 +1,24 @@
+<html>
+  <body>
+    <form>
+	  <label id="label_firstname" >First name</label><input type="text" maxlength="10" id="firstname" aria-labelledby="label_firstname error_firstname" /><div id="error_firstname">First name is required and cannot be blank</div><br/>
+    <label id="label_lastname" >Last name</label><input type="text" id="lastname" aria-labelledby="label_lastname error_lastname" /><div id="error_lastname">Last name is required and cannot be blank</div><br/>
+	<label id="label_message" >Message</label><input type="text" id="message" aria-labelledby="label_message counter_message" /><div id="counter_message" >100 characters left</div><br/>
+	<input type="submit" />
+	</form>
+	<script type="text/javascript">
+	 var i = 100;
+	 document.getElementById("counter_message").focus();
+	 function sayCounter() {
+	   if(i == 0) {
+	     return;
+	   }
+i = i - 5;
+document.getElementById("counter_message").innerHTML = i + " characters left.";
+setTimeout(sayCounter, 3000);
+
+	 }
+	 sayCounter();
+	</script>
+  </body>
+</html>

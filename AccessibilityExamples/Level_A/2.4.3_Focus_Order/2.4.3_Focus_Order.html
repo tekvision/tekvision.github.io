@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>WCAG 2.0 Success Criterion 2.4.3 Focus Order</title>
+    <script src="jquery-1.9.1.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+                    $(document).ready(function(){
+                        $('#a').focus();
+                    });
+    </script>
+</head>
+<body>
+    <h2>Before Rectification</h2>
+    Please use a screen reader to read or press the "Tab" key to go through
+    the input fields below.
+    <div id="e243before" style=" padding: 10px; border: 1px solid #ccc;">
+        <h2>Customer Database</h2>
+        <form action="">
+            <table class="content" style=" width: 100%;">
+                <tr>
+                    <td style=
+                    " font-weight: bold; padding-top: 30px; padding-bottom: 10px; padding-right: 5px; width: 150px;">
+                    <label for="a">First Name</label>:</td>
+                    <td style=
+                    " font-weight: bold; padding-top: 30px; padding-bottom: 10px; padding-right: 5px; width: 244px;">
+                    <input id="a" name="a" size="15" tabindex="1" type=
+                    "text"></td>
+                    <td style=
+                    " font-weight: bold; padding-top: 30px; padding-bottom: 10px; padding-right: 5px; width: 150px;">
+                    <label for="b">Last Name</label>:</td>
+                    <td style=
+                    " font-weight: bold; padding-top: 30px; padding-bottom: 10px; padding-right: 5px; width: 244px;">
+                    <input id="b" name="b" size="15" tabindex="4" type=
+                    "text"></td>
+                </tr>
+                <tr>
+                    <td style=
+                    " font-weight: bold; padding-bottom: 10px; padding-right: 5px; width: 118px;">
+                    <label for="c">Address</label>:</td>
+                    <td style=" padding-bottom: 10px; width: 244px;"><input id=
+                    "c" name="c" size="15" tabindex="2" type="text"></td>
+                    <td style=
+                    " font-weight: bold; padding-bottom: 10px; padding-right: 5px; width: 146px;">
+                    <label for="d">Email</label>:</td>
+                    <td style=" padding-bottom: 10px; width: 244px;"><input id=
+                    "d" name="d" size="15" tabindex="5" type="text"></td>
+                </tr>
+                <tr>
+                    <td style=
+                    " font-weight: bold; padding-bottom: 10px; padding-right: 5px; width: 118px;">
+                    <label for="e">Phone</label>:</td>
+                    <td style=" padding-bottom: 10px; width: 244px;"><input id=
+                    "e" name="e" size="15" tabindex="3" type="text"></td>
+                    <td style=" padding-bottom: 10px; width: 146px;">
+                    &nbsp;</td>
+                </tr>
+                <tr>
+                    <td style=
+                    " font-weight: bold; padding-bottom: 10px; padding-right: 5px; width: 118px;">
+                    &nbsp;</td>
+                    <td style=" padding-bottom: 10px; width: 244px;">
+                    <input style=" width: 120px;" tabindex="6" type="button"
+                    value="Submit"></td>
+                    <td style=" padding-bottom: 10px; width: 146px;">
+                    &nbsp;</td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <p>This will go through the input fields in a vertical sequence and hence
+    not in a logical order.</p>
+    <hr>
+
+    <h2>After Rectification</h2>
+
+    Please use a screen reader to read or press the "Tab" key to go through
+    the input fields below.
+    <div id="e243after" style=" padding: 10px; border: 1px solid #ccc;">
+        <h2>Customer Database</h2>
+        <form action="">
+            <table class="content" style=" width: 100%;">
+                <tr>
+                    <td style=
+                    " font-weight: bold; padding-top: 30px; padding-bottom: 10px; padding-right: 5px; width: 150px;">
+                    <label for="f">First Name</label>:</td>
+                    <td style=
+                    " font-weight: bold; padding-top: 30px; padding-bottom: 10px; padding-right: 5px; width: 230px;">
+                    <input id="f" name="f" size="15" tabindex="7" type=
+                    "text"></td>
+                    <td style=
+                    " font-weight: bold; padding-top: 30px; padding-bottom: 10px; padding-right: 5px; width: 150px;">
+                    <label for="g">Last Name</label>:</td>
+                    <td style=
+                    " font-weight: bold; padding-top: 30px; padding-bottom: 10px; padding-right: 5px; width: 230px;">
+                    <input id="g" name="g" size="15" tabindex="8" type=
+                    "text"></td>
+                </tr>
+                <tr>
+                    <td style=
+                    " font-weight: bold; padding-bottom: 10px; padding-right: 5px; width: 128px;">
+                    <label for="h">Address</label>:</td>
+                    <td style=" padding-bottom: 10px; width: 230px;"><input id=
+                    "h" name="h" size="15" tabindex="9" type="text"></td>
+                    <td style=
+                    " padding-bottom: 10px; font-weight: bold; padding-right: 5px; width: 130px;">
+                    <label for="i">Email</label>:</td>
+                    <td style=" padding-bottom: 10px; width: 230px;"><input id=
+                    "i" name="i" size="15" tabindex="10" type="text"></td>
+                </tr>
+                <tr>
+                    <td style=
+                    " font-weight: bold; padding-bottom: 10px; padding-right: 5px;">
+                    <label for="j">Phone</label>:</td>
+                    <td style=" padding-bottom: 10px; width: 259px;"><input id=
+                    "j" name="j" size="15" tabindex="11" type="text"></td>
+                    <td style=" padding-bottom: 10px; width: 130px;">
+                    &nbsp;</td>
+                </tr>
+                <tr>
+                    <td style=
+                    " font-weight: bold; padding-bottom: 10px; padding-right: 5px;">
+                    &nbsp;</td>
+                    <td style=" padding-bottom: 10px; width: 259px;">
+                    <input style=" width: 120px;" tabindex="12" type="button"
+                    value="Submit"></td>
+                    <td style=" padding-bottom: 10px; 30px; width: 130px;">
+                    &nbsp;</td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <p>This will go through the input fields in a logical order.</p>
+</body>
+</html>

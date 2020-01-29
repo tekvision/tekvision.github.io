@@ -1,0 +1,41 @@
+ul.checkboxes {
+margin: 0;
+padding: 0;    
+}
+
+ul.checkboxes li   {
+margin: 2px 2px 2px 20px;
+padding: 2px; 
+list-style: none;
+width: 6em;    
+}
+
+ul.checkboxes li {
+margin-left: 2.5em;
+padding: 0;
+padding-left: 2em;
+list-style: none;
+width: 7em;
+}
+
+ul.checkboxes li.hover {
+border: 2px solid #777;
+}
+
+ul.checkboxes li.focus {
+border: 2px solid black;
+}
+
+ul.checkboxes li[aria-checked="true"] {
+background: url("../checkbox-checked-black.png") no-repeat .5em center;
+}
+
+ul.checkboxes li[aria-checked="false"] {
+background: url("../checkbox-unchecked-black.png") no-repeat .5em center;
+}
+
+.offscreen {
+position: absolute;
+left: -200em;
+top: -20em;
+}

@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>
+            Keyboard Focus Example
+        </title>
+        <style>
+        #container1
+        {
+            padding: 40px;
+            border: 1px solid black;
+        }
+        #container2
+        {
+            padding: 40px;
+            margin-top: 10px;
+            border: 1px solid black;
+        }
+        ul
+        {
+            list-style-type: none;
+            width: 90px;
+        }
+        li
+        {
+            padding: 5px;
+        }
+        .div1 , .div2 , .div3
+        {
+            display: block;
+            height: 30px;
+            width: 80px;
+            text-align: center;
+            background-color: black;
+            color: aliceblue;
+            font-size: 20px;
+        }
+        button
+        {
+            display: block;
+            height: 40px;
+            width: 110px;
+            text-align: left;
+            background-color: black;
+            color: aliceblue;
+            font-size: 20px;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="container1">
+            <h1>List without tabindex </h1>
+                <ul>
+                        <li>
+                            <div role="button" class="div1">Submit</div>
+                        </li>
+                        <li>
+                            <div role="button" class="div2">Edit</div>
+                        </li>
+                        <li>
+                                <div role="button" class="div3">Cancel</div>
+                        </li>
+                    </ul>
+                    <button>Click here</button>
+
+        </div>
+      <div id="container2">
+          <h1>List with tabindex</h1>
+            <ul>
+                    <li tabindex="0">
+                        <div role="button" class="div1">Submit</div>
+                    </li>
+                    <li tabindex="0">
+                        <div role="button" class="div2">Edit</div>
+                    </li>
+                    <li tabindex="0">
+                            <div role="button" class="div3">Cancel</div>
+                    </li>
+                </ul>
+                <button>Click here</button>
+      </div>
+    </body>
+</html>

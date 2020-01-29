@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Links</title>
+</head>
+<body>
+
+<a href="http://www.google.com">Google Website Link 1</a><br />
+<a title="A link to visit google's website" href="http://www.google.com">Google Website Link 2</a><br />
+<a aria-describedby="link-desc" href="http://www.google.com">Google Website Link 3</a><br />
+
+<a aria-labelledby="link-desc" href="http://www.google.com">Google Website Link 4<span id="link-desc" style="height: 0px; width: 0px;position: absolute;left: -1000px;">A link to visit google's website</span></a><br />
+<a aria-labelledby="link-lbl1 link-lbl2" href="http://www.google.com"><span id="link-lbl1">Visit Google</span></a><br />
+<span hidden id="link-lbl2">Hit enter to activate</span>
+<table>
+<tr>
+<th><a href="#" aria-labelledby="hdr1 link-lbl2"><span id="hdr1">Name</span></th></th>
+<th><a href="#" aria-labelledby="hdr2" aria-describedby="link-lbl2"><span id="hdr2">Address</span></a></th>
+</tr>
+<tr>
+<td>Siddhant</td>
+<td>Kothrud</td>
+</tr>
+<tr>
+<td>Amar</td>
+<td>Vimannagar</td>
+</tr>
+</table>
+</body>
+</html>

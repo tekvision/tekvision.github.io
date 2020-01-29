@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+example of symple navbar
+</title>
+<link type ="text/css" href="navbar.css" rel="stylesheet" />
+<script type ="text/javascript" src ="navbar.js"></script>
+</head>
+<body>
+<h1>
+here is the example of accesseble symple navbar.
+</h1>
+<nav role ="navigation">
+<ul >
+<li>
+<a href ="navbar.html" accesskey ="h">home</a>
+</li>
+<li>
+<a aria-expanded ="false" id ="list" href ="#" accesskey ="s" onclick ="javascript:return expand1();">services</a>
+<ul>
+<li>
+<a href ="overview.html">overview</a>
+</li>
+<li>
+<a href="accessibility.html">accessibility services</a>
+</li>
+<li>
+<a href ="software.html">software services</a>
+</li>
+</ul>
+</li>
+<li>
+<a aria-expanded ="false" id ="list1" href ="#" accesskey ="p" onclick ="javascript:return expand2();">projects</a>
+<ul id ="list2">
+<li>
+<a href ="project.html">overview</a>
+</li>
+<li>
+<a href="java.html">java projects</a>
+</li>
+<li>
+<a href="net.html">.net projects</a>
+</li>
+</ul>
+</li>
+<li>
+<a href ="contact.html" accesskey ="c">contact us </a>
+</li>
+</ul>
+</nav>
+</body>
+</html>

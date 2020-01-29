@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Table accessibility</title>
+</head>
+<body>
+<h2>Inaccessible table</h2>
+<table border="0" cellpadding="5" cellspacing="1" width="60%">
+  <tbody><tr bgcolor="#cccccc"> 
+    <td width="20%"><b>Accounts</b></td>
+    <td width="20%"><b>Deposits</b></td>
+    <td width="20%"><b>Money Transfer</b></td>
+  </tr>
+  <tr bgcolor="#cc0000"> 
+    <td colspan="3" height="2"></td>
+  </tr>
+
+<tr bgcolor="#f6f6f6">
+<td width="20%"><a href="/1/2/personal/nri-services/usa/rupee-accounts">Rupee account</a></td>
+    <td width="20%"><a href="/1/2/personal/nri-services/usa/deposits">NRI deposit</a></td>
+    <td width="20%"><a href="/1/2/personal/nri-services/usa/remittances-and-transfers">Transfer money to India</a></td>
+</tr>
+<tr bgcolor="#f6f6f6">
+  <td width="20%"><a href="/1/2/personal/nri-services/usa/usa-nre-account">NRE account</a></td>
+  <td width="20%"><a href="/1/2/personal/nri-services/usa/usa-nre-term-deposit">NRE term deposit</a></td>
+  <td width="20%"><a href="/1/2/personal/nri-services/usa/usa-fastclick">NRI online</a></td>
+</tr>
+<tr bgcolor="#f6f6f6">
+  <td width="20%"><a href="/1/2/personal/nri-services/usa/usa-nro-accounts">NRO account</a></td>
+  <td width="20%"><a href="/1/2/personal/nri-services/usa/usa-nro-term-deposit">NRO term deposit</a></td>
+  <td width="20%"><a href="/1/2/personal/nri-services/usa/usa-fastcheque">Send money to India</a></td>
+</tr>
+<tr bgcolor="#f6f6f6">
+  <td width="20%">&nbsp;</td>
+  <td width="20%"><a href="/1/2/personal/nri-services/usa/usa-fcnr-deposit">FCNR deposit account</a></td>
+  <td width="20%"><a href="/1/2/personal/nri-services/usa/usa-wire-transfers">Wire transfer India</a></td>
+</tr>
+<tr bgcolor="#f6f6f6">
+  <td width="20%">&nbsp;</td>
+  <td width="20%"><a href="/1/2/personal/nri-services/usa/usa-resident-foreign-currency-deposits">RFC deposit account</a></td>
+  <td width="20%">&nbsp;</td>
+</tr>
+</tbody></table>
+<h2>Accessible table</h2>
+<table border="0" cellpadding="5" cellspacing="1" width="60%">
+  <thead><tr bgcolor="#cccccc"> 
+    
+<th id="accounts" width="20%"><b>Accounts</b></th>
+    <th id="deposits" width="20%"><b>Deposits</b></th>
+    <th id="moneytransfer" width="20%"><b>Money Transfer</b></th>
+  </tr></thead>
+<tbody>
+  
+
+<tr bgcolor="#f6f6f6">
+<td id="ac1" width="20%"><a href="/1/2/personal/nri-services/usa/rupee-accounts">Rupee account</a></td>
+    <td headers="ac1 deposits" width="20%"><a href="/1/2/personal/nri-services/usa/deposits">NRI deposit</a></td>
+    <td headers="ac1 moneytransfer" width="20%"><a href="/1/2/personal/nri-services/usa/remittances-and-transfers">Transfer money to India</a></td>
+</tr>
+
+<tr bgcolor="#f6f6f6">
+  <td id="ac3" width="20%" rowspan="3"><a href="/1/2/personal/nri-services/usa/usa-nro-accounts">NRO account</a></td>
+  <td headers="ac3 deposits" width="20%"><a href="/1/2/personal/nri-services/usa/usa-nro-term-deposit">NRO term deposit</a></td>
+  <td headers="ac3 moneytransfer" width="20%"><a href="/1/2/personal/nri-services/usa/usa-fastcheque">Send money to India</a></td>
+</tr>
+<tr bgcolor="#f6f6f6">
+
+  <td width="20%"><span aria-labelledby="ac3 deposits" ><a href="/1/2/personal/nri-services/usa/usa-fcnr-deposit">FCNR deposit account</a></span</td>
+  <td width="20%"><span aria-labelledby="ac3 moneytransfer" ><a href="/1/2/personal/nri-services/usa/usa-wire-transfers">Wire transfer India</a></span</td>
+</tr>
+<tr bgcolor="#f6f6f6">
+
+  <td aria-labelledby="ac3 deposits" width="20%"><a href="/1/2/personal/nri-services/usa/usa-resident-foreign-currency-deposits">RFC deposit account</a></td>
+  <td aria-labelledby="ac3 moneytransfer" width="20%">&nbsp;</td>
+</tr>
+<tr bgcolor="#f6f6f6">
+  <td id="ac2" width="20%"><a href="/1/2/personal/nri-services/usa/usa-nre-account">NRE account</a></td>
+  <td headers="ac2 deposits" width="20%"><a href="/1/2/personal/nri-services/usa/usa-nre-term-deposit">NRE term deposit</a></td>
+  <td headers="ac2 moneytransfer" width="20%"><a href="/1/2/personal/nri-services/usa/usa-fastclick">NRI online</a></td>
+</tr>
+</tbody></table>
+</body>
+</html>

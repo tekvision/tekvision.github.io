@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>WCAG 2.0 Success Criterion 2.1.2 - No Keyboard Trap</title>
+    <script src="jquery-1.9.1.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+			$(function() {
+				$("div#e212modalDialogBefore").click(function(){
+					document.getElementById("e212modalDialogBefore").style.display = "none";
+				});
+			});
+			function showDialog(divID){
+				document.getElementById(divID).style.display = "inline";
+				if(divID=="e212modalDialogAfter"){
+					$('input#closeBtn').focus();
+				}
+
+			}
+    </script>
+    <script type="text/javascript">
+			$(function() {
+
+				$("#closeBtn").click(function(){
+					document.getElementById("e212modalDialogAfter").style.display = "none";
+				});
+			});
+    </script>
+</head>
+<body>
+    <h2>Before Rectification</h2>Please click the "?" help button in the
+    illustration below.
+    <div id="e212modalDialogBefore" style=
+    " position: absolute; top: 150px; right: 310px; width: 400px; height: 150px; background-color: #FFFFFF; display: none;">
+    <table style=
+    " border: 1px solid #ccc; height: 120px; background-color: #FFFFFF;"
+        title="Help">
+            <tr style=" display: none;">
+                <th>&nbsp;</th>
+            </tr>
+            <tr>
+                <td style=
+                " background-color: #81BEF7; padding: 5px; height: 30px;">
+                <strong>Help</strong></td>
+            </tr>
+            <tr>
+                <td style=
+                " background-color: #FFFFFF; padding: 5px; height: 90px;">This
+                Handbook is designed for senior executives and managers to
+                better understand the importance of web accessibility and show
+                how it can be successfully implemented.</td>
+            </tr>
+        </table>
+    </div>
+    <div id="e212before" style=" padding: 10px; border: 1px solid #ccc;">
+        <h2>No Keyboard Trap</h2><a href=
+        "javascript:showDialog('e212modalDialogBefore');"><img alt="Help"
+        class="imghelp" id="helpBtn" name="helpBtn" src="help.gif"></a>
+        <p>This Handbook is designed for senior executives and managers to
+        better understand the importance of web accessibility and show how it
+        can be successfully implemented. Some organisations may consider their
+        websites to be "accessible" when the websites are easily found by
+        search engines. However, the core principle of web accessibility is not
+        about whether people "can find you", it is about whether all people,
+        irrespective of age, race, education or disability, can access to
+        information in websites.<br>
+        With the rapid growth of the Internet, ensuring that websites are
+        accessible to persons with disabilities is now an essential
+        consideration to enable their full integration into society.</p>
+    </div>
+    <p>A help popup window will be shown. A user who can only use a keyboard
+    will be trapped in the popup window.</p>
+    <hr>
+    <h2>After Rectification</h2>Please click the "?" help button in the
+    illustration below.
+    <div id="e212modalDialogAfter" style=
+    " position: absolute; top: 500px; right: 310px; width: 400px; height: 150px; background-color: #FFFFFF; display: none;">
+    <table style=
+    " border: 1px solid #ccc; height: 120px; background-color: #FFFFFF;"
+        title="Help">
+            <tr style=" display: none;">
+                <th>&nbsp;</th>
+            </tr>
+            <tr>
+                <td style=
+                " background-color: #81BEF7; padding: 5px; height: 30px;">
+                <strong>Help</strong></td>
+            </tr>
+            <tr>
+                <td style=
+                " background-color: #FFFFFF; padding: 5px; height: 90px;">This
+                Handbook is designed for senior executives and managers to
+                better understand the importance of web accessibility and show
+                how it can be successfully implemented.</td>
+            </tr>
+            <tr>
+                <td align="center" class="backgColor3 centerAlign"><input id=
+                "closeBtn" name="close" tabindex="0" type="button" value=
+                "Close"></td>
+            </tr>
+        </table>
+    </div>
+    <div id="e212after" style=" padding: 10px; border: 1px solid #ccc;">
+        <h2>No Keyboard Trap</h2><a href=
+        "javascript:showDialog('e212modalDialogAfter');"><img alt="Help" class=
+        "imghelp_a" id="helpBtn_a" name="helpBtn_a" src="help.gif"></a>
+        <p>This Handbook is designed for senior executives and managers to
+        better understand the importance of web accessibility and show how it
+        can be successfully implemented. Some organisations may consider their
+        websites to be "accessible" when the websites are easily found by
+        search engines. However, the core principle of web accessibility is not
+        about whether people "can find you", it is about whether all people,
+        irrespective of age, race, education or disability, can access to
+        information in websites.<br>
+        With the rapid growth of the Internet, ensuring that websites are
+        accessible to persons with disabilities is now an essential
+        consideration to enable their full integration into society.</p>
+    </div>
+    <p>A help popup window will be shown and a user can click the "Close"
+    button to close the popup window.</p>
+</body>
+</html>

@@ -1,0 +1,10 @@
+	ul {
+		list-style: none;
+	}
+	li {
+		float: left;
+	}
+	li[aria-selected="true"] {
+		background-color: blue;
+		color: white;
+	}

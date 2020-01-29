@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Accessible Treegrid</title>
+<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+var keys = {
+left: 37,
+right: 39,
+down: 40,
+up: 38,
+enter: 13,
+space: 32
+};
+
+$(document).ready(function() {
+  $("tr").each(function(index, element) {
+    var currentRow = $(element);
+    var rowLevel = currentRow.attr("aria-level");
+    var currentRowCells = currentRow.children("td");
+    currentRowCells.each(function(columnIndex, cell) {
+      var currentCell = $(cell);
+      var cellId = "level-" + rowLevel + "_label-" + index + "-" + columnIndex;
+      currentCell.attr("id", cellId);
+      console.log("Cell Id for " + currentCell.html() + " is " + cellId);
+    });
+  });
+
+  var board = $("table");
+  board.attr("aria-readonly", "true");
+  function handleKeyDown(e) {
+    switch(e.which) {
+      case keys.left:
+        navigateLeft();
+      break;
+      case keys.right:
+        navigateRight();
+      break;
+      case keys.up:
+        navigateUp();
+      break;
+      case keys.down:
+        navigateDown();
+      break;
+      default:
+    }
+  }
+  function bindHandlers() {
+    board.focus(handleFocus);
+    board.keydown(handleKeyDown);
+  }
+  function navigateLeft() {
+    var currentSquare = getCurrentSquare();
+    var currentRow = currentSquare.parent();
+    if(currentSquare.index() > 0) {
+      var previousSquare = $(currentRow.children().get(currentSquare.index() - 1));
+      setActive(previousSquare);
+    }
+  }
+
+  function navigateRight() {
+    var currentSquare = getCurrentSquare();
+    var currentRow = currentSquare.parent();
+    if(currentSquare.index() < 4) {
+      var nextSquare = $(currentRow.children().get(currentSquare.index() + 1));
+      setActive(nextSquare);
+    }
+  }
+
+  function navigateUp() {
+    var currentSquare = getCurrentSquare();
+    var currentRow = currentSquare.parent();
+    if(currentRow.index() > 0) {
+      var previousRow = $(currentRow.parent().find("tr").get(currentRow.index() - 1));
+      var previousSquare = $(previousRow.children().get(currentSquare.index()));
+      setActive(previousSquare);
+    }
+  }
+
+  function navigateDown() {
+    var currentSquare = getCurrentSquare();
+    var currentRow = currentSquare.parent();
+    if(currentRow.index() < 15) {
+      var nextRow = $(currentRow.parent().find("tr").get(currentRow.index() + 1));
+      var nextSquare = $(nextRow.children().get(currentSquare.index()));
+      setActive(nextSquare);
+    }
+  }
+
+  function getCurrentSquare() {
+    return (board.attr("aria-activedescendant") === undefined) ? null: $("#" + board.attr("aria-activedescendant"));
+  }
+  function setActive(square) {
+    var currentSquare = getCurrentSquare();
+    if(currentSquare != null) currentSquare.removeClass("active");
+    square.addClass("active");
+    board.attr("aria-activedescendant", square.attr("id"));
+
+  }
+  function handleFocus(e) {
+
+    if(getCurrentSquare() === null) {
+      var firstRow = $(board.find("tr").get(1));
+      var firstCell = $(firstRow.find("td").get(0));
+      setActive(firstCell);
+    }
+
+  }
+  bindHandlers();
+});
+</script>
+  </head>
+<body>
+<table role="treegrid" tabindex="0">
+  <thead>
+    <tr role="row">
+      <th role="columnheader">Name</th>
+      <th role="columnheader">Description</th>
+      <th role="columnheader">Area</th>
+      <th role="columnheader">Population</th>
+      <th role="columnheader">Time Zone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr role="row" aria-level="1" aria-expanded="true">
+      <td role="rowheader">
+        <a > United States of America</a>
+      </td>
+      <td role="gridcell">United States of America</td>
+      <td role="gridcell">9826675</td>
+      <td role="gridcell">318212000</td>
+      <td role="gridcell">UTC -5 to -10</td>
+    </tr>
+    <tr role="row" aria-level="2" aria-expanded="true">
+      <td role="rowheader">
+        <a >California</a>
+      </td>
+      <td role="gridcell">The Tech State</td>
+      <td role="gridcell">423970</td>
+      <td role="gridcell">38340000</td>
+      <td role="gridcell">Pacific Time</td>
+    </tr>
+    <tr role="row" aria-level="3">
+      <td role="rowheader"><a >San Francisco</a></td>
+      <td  role="gridcell">The happening city</td>
+      <td  role="gridcell">231</td>
+      <td  role="gridcell">837442</td>
+      <td  role="gridcell">PST</td>
+    </tr>
+    <tr role="row" aria-level="3">
+      <td role="rowheader"><a >Los Angeles</a></td>
+      <td role="gridcell">Disco city</td>
+      <td role="gridcell">503</td>
+      <td  role="gridcell">3904657</td>
+      <td role="gridcell">PST</td>
+    </tr>
+    <tr role="row" aria-level="2" aria-expanded="true">
+      <td role="rowheader"><a >Illinois</a></td>
+      <td role="gridcell">Not so cool</td>
+      <td role="gridcell">57914</td>
+      <td role="gridcell">12882135</td>
+      <td role="gridcell">Central Time Zone</td>
+    </tr>
+    <tr role="row" aria-level="3">
+      <td role="rowheader"><a >Chicago</a></td>
+      <td role="gridcell">Financial City</td>
+      <td role="gridcell">234</td>
+      <td role="gridcell">2695598</td>
+      <td role="gridcell">CST</td>
+    </tr>
+    <tr role="row" aria-level="2">
+      <td role="rowheader"><a >Texas</a></td>
+      <td role="gridcell">Rances, Oil &amp; Gas</td>
+      <td role="gridcell">268581</td>
+      <td role="gridcell">26448193</td>
+      <td role="gridcell">Mountain</td>
+    </tr>
+    <tr role="row" aria-level="2" aria-expanded="true">
+      <td role="rowheader"><a >New York</a></td>
+      <td role="gridcell">The largest diverse city</td>
+      <td role="gridcell">141300</td>
+      <td role="gridcell">19651127</td>
+      <td role="gridcell">Eastern Time Zone</td>
+    </tr>
+    <tr role="row" aria-level="3" aria-expanded="true">
+      <td role="rowheader"><a >Manhattan</a></td>
+      <td role="gridcell">Time Square is the place</td>
+      <td role="gridcell">269.403</td>
+      <td role="gridcell">0</td>
+      <td role="gridcell">EST</td>
+    </tr>
+    <tr role="row" aria-level="4">
+      <td role="rowheader"><a >Manhattan City</a></td>
+      <td role="gridcell">Manhattan island</td>
+      <td role="gridcell">33.77</td>
+      <td role="gridcell">0</td>
+      <td role="gridcell">EST</td>
+    </tr>
+    <tr role="row" aria-level="4">
+      <td role="rowheader"><a >Time Square</a></td>
+      <td role="gridcell">Time Square for new year</td>
+      <td role="gridcell">269.4</td>
+      <td role="gridcell">0</td>
+      <td role="gridcell">EST</td>
+    </tr>
+    <tr role="row" aria-level="3">
+      <td role="rowheader"><a >Niagra water fall</a></td>
+      <td role="gridcell">Close to Canada</td>
+      <td role="gridcell">65.7</td>
+      <td role="gridcell">0</td>
+      <td role="gridcell">EST</td>
+    </tr>
+    <tr role="row" aria-level="3">
+      <td role="rowheader"><a >Long Island</a></td>
+      <td role="gridcell">Harbour to Atlantic</td>
+      <td role="gridcell">362.9</td>
+      <td role="gridcell">0</td>
+      <td role="gridcell">EST</td>
+    </tr>
+    <tr role="row" aria-level="2">
+      <td role="rowheader"><a >All_Other</a></td>
+      <td role="gridcell">All_Other demographics</td>
+      <td role="gridcell">0</td>
+      <td role="gridcell">0</td>
+      <td role="gridcell">0</td>
+    </tr>
+    <tr role="row" aria-level="1">
+      <td role="rowheader"><a >India</a></td>
+      <td role="gridcell">Hydrabad tech city</td>
+      <td role="gridcell">9826675</td>
+      <td role="gridcell">318212000</td>
+      <td role="gridcell">IST</td>
+    </tr>
+    <tr role="row" aria-level="1">
+      <td role="rowheader"><a >Bangladesh</a></td>
+      <td role="gridcell">Country of love</td>
+      <td role="gridcell">9826675</td>
+      <td role="gridcell">318212000</td>
+      <td role="gridcell">BST</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

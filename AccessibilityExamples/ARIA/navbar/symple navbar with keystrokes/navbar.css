@@ -1,0 +1,15 @@
+ul {
+list-style-type:none;
+}
+a[aria-expanded="false"] + ul {
+display:none;
+}
+a[aria-expanded="true"] + ul {
+display:block;
+}
+a[aria-expanded="false"] #list2 {
+display:none;
+}
+a[aria-expanded="true"] #list2 {
+display:block;
+}

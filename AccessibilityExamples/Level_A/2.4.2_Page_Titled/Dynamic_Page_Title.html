@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Main page</title>
+<style>
+.element-invisible {
+  position: absolute;
+  height: 0px;
+  width: 0px;
+  left: -1000px;
+}
+</style>
+</head>
+<body>
+<div tabindex="-1" id="pseudo-title">Main Page</div>
+<p>
+Dynamically updated page title should get announced by screen reader. To demonstrate this, we have a couple of buttons below representing 2 differently dynamically loading pages. 
+</p>
+<button id="page1">Go to page 1</button>
+<button id="page2">Go to page 2</button>
+<script>
+function loader() {
+  var tempLoader = document.createElement("span");
+  tempLoader.setAttribute("id", "temp");
+  tempLoader.setAttribute("class", "element-invisible");
+  tempLoader.setAttribute("tabindex", "-1");
+  tempLoader.innerHTML = "Loading... Please wait!";
+  document.body.appendChild(tempLoader);
+  tempLoader.focus();
+  return tempLoader;
+}
+function changePage(pageName) {
+  var pgTitle = document.getElementById("pseudo-title");
+  if(pgTitle.innerText != pageName) {
+    var ldr = loader();
+    setTimeout(function() {
+      document.title = pageName;
+      pgTitle.innerText = pageName
+      pgTitle.focus();
+      ldr.parentNode.removeChild(ldr);
+    }, 500);
+  }
+}
+var btn1 = document.getElementById("page1");
+var btn2 = document.getElementById("page2");
+btn1.addEventListener("click", function(e) {
+  changePage("page one");
+});
+btn2.addEventListener("click", function(e) {
+  changePage("page two");
+});
+
+</script>
+</body>
+</html>

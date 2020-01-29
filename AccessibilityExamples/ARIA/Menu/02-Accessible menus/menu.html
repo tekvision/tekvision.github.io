@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Menu example</title>
+    <link rel="stylesheet" type="text/css" href="menu.css" />
+    <script src="jquery-1.9.1.js"></script>
+    <script src="menu.js"></script>
+  </head>
+  <body>
+    <h1>A menu example</h1>
+    <ul role="menubar" tabindex="0" aria-activedescendant="main-menu-1" id="main-menu">
+      <li role="none">
+        <a id="main-menu-1" aria-haspopup="menu" role="menuitem">File</a>
+      </li>
+      <li role="none">
+        <a id="main-menu-2" aria-haspopup="menu" role="menuitem">Edit</a>
+      </li>
+      <li role="none">
+        <a id="main-menu-3" aria-haspopup="menu" role="menuitem">View</a>
+      </li>
+    </ul>
+    <button>hello world</button>
+    <span id="debug" aria-live="polite"></span>
+  </body>
+</html>

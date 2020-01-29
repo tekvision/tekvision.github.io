@@ -1,0 +1,5 @@
+How to use HSL in CSS to have automatically adjusting color contrasts.
+https://css-tricks.com/switch-font-color-for-different-backgrounds-with-css/
+
+Understanding HSL:
+https://en.wikipedia.org/wiki/HSL_and_HSV

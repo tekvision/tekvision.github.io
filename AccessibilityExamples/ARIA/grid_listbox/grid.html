@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Example of grid using listbox.
+		</title>
+		<style>
+		.element-invisible {
+			height: 0px;
+			width: 0px;
+			position: absolute;
+			left: -1000px;
+		}
+		tr[aria-selected=true] {
+			background-color: blue;
+			color: white;
+		}
+		</style>
+	</head>
+	<body>
+		<h1 id = "heading1" tabindex ="-1"> example of grid using list box</h1>
+		<table role ="listbox" tabindex ="0" id ="listbox" aria-label ="grid example" aria-activedescendant ="option1">
+			<thead aria-hidden ="true">
+				<tr aria-hidden ="true">
+					<th  id ="listbox1-th1" aria-hidden ="true"> particulars<span class="element-invisible">:</span> </th>
+					<th id ="listbox1-th2" aria-hidden ="true"><span class="element-invisible">,</span>  total expences<span class="element-invisible">:</span>  </th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr role ="option" id ="option1" aria-labelledby ="listbox1-th1 listbox1-td1 listbox1-th2 listbox1-td2" class ="listbox1-listItem">
+					<td  id ="listbox1-td1"> admit details </td>
+					<td  id ="listbox1-td2"> 5000 </td>
+				</tr>
+
+				<tr role ="presentation" id ="tr1" class ="tr" hidden>
+					<td role ="presentation">
+						<table role ="listbox"  tabindex = "0" id ="option1_listbox" class ="listbox" aria-label ="welcome to listbox 2" aria-activedescendant ="option1_listbox_1">
+							<thead role ="presentation">
+								<tr role ="presentation" aria-hidden ="true" >
+									<th role ="presentation" id ="listbox2-th1"> particulars<span class="element-invisible">:</span> </th>
+									<th role ="presentation" id ="listbox2-th2"><span class="element-invisible">,</span>  docters name<span class="element-invisible">:</span> </th>
+									<th role ="presentation" id ="listbox2-th3"><span class="element-invisible">,</span>  amount<span class="element-invisible">:</span> </th>
+								</tr>
+							</thead>
+							<tbody role ="presentation">
+								<tr role ="option" id ="option1_listbox_1" aria-labelledby ="listbox2-th1 listbox2-td1 listbox2-th2 listbox2-td2 listbox2-th3 listbox2-td3" class ="listbox2-listItem">
+									<td  id ="listbox2-td1"> E N T </td>
+									<td  id ="listbox2-td2"> Abhijit Sharma</td>
+									<td  id ="listbox2-td3"> 2500</td>
+								</tr>
+								<tr role ="option" id ="option1_listbox_2" aria-labelledby ="listbox2-th1 listbox2-td4 listbox2-th2 listbox2-td5 listbox2-th3 listbox2-td6" class ="listbox2-listItem">
+									<td  id ="listbox2-td4"> eye specialist </td>
+									<td  id ="listbox2-td5"> Ankush advani</td>
+									<td  id ="listbox2-td6">2500</td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+
+				<tr role ="option" id ="option2" aria-labelledby ="listbox1-th1 listbox1-td3 listbox1-th2 listbox1-td4" class ="listbox1-listItem">
+					<td id ="listbox1-td3">other  details </td>
+					<td id ="listbox1-td4"> 7000 </td>
+				</tr>
+
+
+				<tr role ="presentation" id ="tr2" class ="tr" hidden>
+					<td role ="presentation">
+						<table role ="listbox"  tabindex = "0" id ="option2_listbox" class ="listbox" aria-label ="welcome to listbox 2" aria-activedescendant ="option2_listbox_1">
+							<thead role ="presentation">
+								<tr role ="presentation" aria-hidden ="true" id ="listbox3-1">
+									<th role ="presentation" id ="listbox3-th1"> particulars<span class="element-invisible">:</span> </th>
+									<th role ="presentation" id ="listbox3-th2"><span class="element-invisible">,</span>  docters name<span class="element-invisible">:</span> </th>
+									<th role ="presentation" id ="listbox3-th3"><span class="element-invisible">,</span>  amount<span class="element-invisible">:</span> </th>
+								</tr>
+							</thead>
+							<tbody role ="presentation">
+								<tr role ="option" id ="option2_listbox_1" aria-labelledby ="listbox3-th1 listbox3-td1 listbox3-th2 listbox3-td2 listbox3-th3 listbox3-td3" class ="listbox2-listItem">
+									<td  id ="listbox3-td1"> heart specialist </td>
+									<td  id ="listbox3-td2"> Kiran Thakur</td>
+									<td  id ="listbox3-td3"> 3500</td>
+								</tr>
+								<tr role ="option" id ="option2_listbox_2" aria-labelledby ="listbox3-th1 listbox3-td4 listbox3-th2 listbox3-td5 listbox3-th3 listbox3-td6" class ="listbox2-listItem">
+									<td  id ="listbox3-td4"> ABCD specialist </td>
+									<td  id ="listbox3-td5"> Raju Punekar</td>
+									<td  id ="listbox3-td6">3500</td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+</tr>
+
+			</tbody>
+		</table>
+
+		<script type ="text/javascript" src ="grid.js"></script>
+
+	</body>
+</html>

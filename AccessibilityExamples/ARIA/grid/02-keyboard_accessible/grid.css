@@ -1,0 +1,54 @@
+.hidden {
+  visibility: hidden;
+  position: absolute;
+}
+
+h3#grid1_label {
+   width: 366px;
+   margin-left: 35px;
+   text-align: center;
+}
+div.draggables {
+   font-size: 100% !important;
+   margin: 10px 35px !important;
+   padding: 0 !important;
+}
+table {
+  empty-cells: show;
+}
+
+.target {
+  margin: 0;
+  padding: 10px;
+  width: 97px;
+  height: 119px;
+  position: relative;
+}
+.target-available {
+  background-color: #FFFFCC;
+}
+.target-hover {
+  padding: 8px;
+  background-color: #FFCCCC;
+  border: 2px solid black;
+}
+
+td.win {
+  background-color: #88FF88;
+}
+
+.helper {
+  filter: alpha(opacity=50);
+  -moz-opacity: 0.5;
+  -khtml-opacity: 0.5;
+  opacity: 0.5;
+  border: 2px solid blue;
+  z-index: 300;
+}
+
+.grabbed {
+  border: 2px solid red !important;
+}
+.activecell {
+  border: 3px solid #880000;
+}

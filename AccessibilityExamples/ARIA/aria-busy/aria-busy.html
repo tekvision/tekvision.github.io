@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ARIA Busy Example</title>
+<style type="text/css">
+.element-invisible {
+  position:absolute;
+  height: 0px;
+  width: 0px;
+  left: -1000px;
+}
+</style>
+</head>
+<body>
+<div id="confirm-dialog">
+<p>This will take you to details page. Are you sure?</p>
+<button id="btn" onclick="javascript:getBusy();">Confirm</button>
+</div>
+<div id="fill-here">
+
+</div>
+<div id="status" aria-live="polite" class="element-invisible">
+
+</div>
+<script>
+function getBusy() {
+  var status = document.getElementById("status");
+  var busyDiv = document.getElementById("fill-here");
+  status.innerHTML = "";
+  var span = document.createElement("span");
+  span.setAttribute("tabindex", "-1");
+  span.setAttribute("id", "loader");
+  span.innerHTML = "Loading icon and animation here...";
+  busyDiv.appendChild(span);
+  busyDiv.setAttribute("aria-disabled", "true");
+  busyDiv.setAttribute("aria-busy", "true");
+  status.innerHTML = "Loading...Please wait";
+  setTimeout(function() {
+    status.innerHTML = "Redirecting..."
+    setTimeout(function() {
+      window.location = "details.html";
+    }, 1000);
+  }, 3000);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>
+				Example of tabs
+			</title>
+			<link rel ="stylesheet" href ="tabs.css">
+		</head>
+		<body>
+			<h1> Example of Tabs using aria-activedescendant</h1>
+			<ul id="tablist1" role ="tablist" tabindex ="0" aria-activedescendant ="tab1">
+				<li role="tab" id="tab1" aria-selected ="true">General</li>
+				<li role="tab" id ="tab2" aria-selected ="false">Tools</li>
+				<li role="tab" id ="tab3" aria-selected ="false">Configuration</li>
+			</ul>
+			<span aria-live="polite" id="debug"></span>
+			<script type ="text/javascript" src ="tabs.js"></script>
+		</body>
+	</html>

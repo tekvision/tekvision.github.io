@@ -1,0 +1,6 @@
+Need to check whether addClass("blabla") matches any already existing in current project. Look for "styling" in js file to know names of classes used by widget.
+Target is full check: should have ability to skip this check if infinite items can be dropped. Modify lines like following:
+	if (this.$items.length == this.maxItems) {
+		// target is full
+		this.full = true;
+copy draggable is supported. move draggable isn't yet supported.

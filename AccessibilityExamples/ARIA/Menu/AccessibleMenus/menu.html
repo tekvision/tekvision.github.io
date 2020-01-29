@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Example of menu</title>
+<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<link rel ="stylesheet" href="menu.css" />
+		</head>
+		<body>
+			<h1> Here is the example of menu</h1>
+
+			<nav>
+				<ul role="menubar" aria-label="menu example" id="main_menu" aria-activedescendant="main_menu_1" tabindex="0">
+					<li role="none">
+						<a role="menuitem" aria-expanded="false" aria-haspopup="true" href="#" tabindex="-1" id="main_menu_1">Search engins</a>
+							<ul role="menu" aria-label="Search engins" id="sub_menu_1" tabindex="-1" aria-activedescendant="sub_menu_1_1"  hidden>
+								<li role="menuitem" id="sub_menu_1_1">
+									<a href="https://google.com" tabindex="-1">Google</a>
+								</li>
+								<li role="menuitem" id="sub_menu_1_2">
+									<a href="https://bing.com"  tabindex="-1">Bing</a>
+								</li>
+								<li role="menuitem" id="sub_menu_1_3">
+									<a href="https://yahoo.com"  tabindex="-1">Yahoo</a>
+								</li>
+							</ul>
+						</li>
+						<li role="none">
+							<a role="menuitem" href="#" aria-haspopup="true" aria-expanded="false" tabindex="-1" id="main_menu_2">Telecom operators</a>
+								<ul role="menu" aria-label="Telecom operators" id="sub_menu_2" tabindex="-1" aria-activedescendant="sub_menu_2_1" hidden>
+									<li role="menuitem" id="sub_menu_2_1">
+<a href="https://airtel.in/" tabindex="-1" >Airtel</a>
+</li>
+<li role="menuitem" id="sub_menu_2_2">
+<a href="https://jio.com/" tabindex="-1" >Reliance jio</a>
+</li>
+<li role="menuitem" id="sub_menu_2_3">
+<a href="https://vodafone.in" tabindex="-1" >Vodafone</a>
+</li>
+<li role="menuitem" id="sub_menu_2_4">
+<a href="https://ideacellular.com" tabindex="-1" >Idea Cellular</a>
+</li>
+</ul>
+</li>
+					<li role="none">
+						<a role="menuitem" aria-haspopup="true" aria-expanded="false" href="#" tabindex="-1" id="main_menu_3">file</a>
+<ul role="menu" id="sub_menu_3" tabindex="-1" aria-activedescendant="sub_menu_3_1" hidden>
+<li role="menuitem" id="sub_menu_3_1">
+<a href="#" tabindex="-1" >Open</a>
+</li>
+<li role="menuitem" id="sub_menu_3_2">
+<a href="#" tabindex="-1" >Exit</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+<button> hello world</button>
+<span id="debug" aria-live="polite"></span>
+
+</body>
+</html>

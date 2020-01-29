@@ -1,0 +1,104 @@
+<!Doctype HTML>
+<html>
+	<head>
+		<title>Advanced Grid with Toolbar Example</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="../Interactive Grid/AdvGrid.js"></script>
+		<style>
+			#table_here, #gridTable{
+				width:auto;
+				margin:auto;
+			}
+			.accessible_elem {
+				clip: rect(1px 1px 1px 1px);
+				clip: rect(1px, 1px, 1px, 1px);
+				height: 1px;
+				overflow: hidden;
+				position: absolute;
+				white-space: nowrap;
+				width: 1px;
+			}
+			.cell_btns
+			{
+				height:25px;
+				width:100px;
+				border:none;
+				background:orange;
+				border-radius:5px;
+			}
+			td 
+			{
+				padding:10px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>Advanced Grid with Toolbar</h1>
+		</header>
+		<main>
+		<label id="Name">Your Name</label>
+		<input type="text" aria-label="Your Name" placeholder="Your Name">
+		<div id="abc" class="table_here" style="-moz-border-radius: 120px; ">
+			<table class="table" id="gridTable" border="1" role="grid" aria-labelledby="descr">
+				<caption>Advanced Grid with Toolbar Inside</caption>
+				<tr role="row" id="header" style="background:tan;">
+					<th role="columnheader" tabindex="0"  id="head1"  aria-describedby="f2_key">Toolbar</th>
+					<th role="columnheader" tabindex="-1" id="head2">Name</th>
+					<th role="columnheader" tabindex="-1" id="head3">Email</th>
+					<th role="columnheader" tabindex="-1" id="head4">Mobile</th>
+					<th role="columnheader" tabindex="-1" id="head5">Address</th>
+				</tr>
+				<tr role="row">
+					<td role="gridcell" tabindex="-1" aria-describedby="f2_key">
+						<div role="toolbar" tabindex="-1">
+							<input type="button" class="cell_btns" value="Get Name" tabindex="-1">
+							<input type="button" class="cell_btns" value="show" tabindex="-1">
+							<input type="button" class="cell_btns" value="Hide" tabindex="-1">
+						</div>
+					</td>
+					<td role="gridcell" tabindex="-1" id="" aria-label="name">John Curley</td>
+					<td role="gridcell" tabindex="-1" id="" aria-label="Email Id">johnc@gmail.com</td>
+					<td role="gridcell" tabindex="-1" id="" aria-label="Mobile Number">1234567890</td>
+					<td role="gridcell" tabindex="-1" id="" aria-label="Address">USA</td>
+					<p id="f2_key" style="display:none;" aria-hidden="true">Press F9 to focus on button and Press ESC to get back on Cell.</p>
+				</tr>
+				<tr role="row">
+					<td role="gridcell" tabindex="-1" id="" aria-describedby="f2_key">
+						<div role="toolbar" tabindex="-1">
+							<input type="button" class="cell_btns" value="Get Name" tabindex="-1">
+							<input type="button" class="cell_btns" value="show" tabindex="-1">
+							<input type="button" class="cell_btns" value="Hide" tabindex="-1">
+						</div>
+					</td>
+					<td role="gridcell" tabindex="-1" id="" aria-label="name">Juliana Karver</td>
+					<td role="gridcell" tabindex="-1" id="" aria-label="Email Id">jk121@gmail.com</td>
+					<td role="gridcell" tabindex="-1" id="" aria-label="Mobile Number">9999999999</td>
+					<td role="gridcell" tabindex="-1" id="" aria-label="Address">Canada</td>
+				</tr>
+				<tr role="row">
+					<td role="gridcell" tabindex="-1" id="" a aria-describedby="f2_key">
+						<div role="toolbar" tabindex="-1">
+							<input type="button" class="cell_btns" value="Get Name" tabindex="-1">
+							<input type="button" class="cell_btns" value="show" tabindex="-1">
+							<input type="button" class="cell_btns" value="Hide" tabindex="-1">
+						</div>
+					</td>
+					<td role="gridcell" tabindex="-1" id="" aria-label="name">Muzaffar Khan</td>
+					<td role="gridcell" tabindex="-1" id="" aria-label="Email Id">muzikhan@gmail.com</td>
+					<td role="gridcell" tabindex="-1" id="" aria-label="Mobile Number">7896543210</td>
+					<td role="gridcell" tabindex="-1" id="" aria-label="Address">Pakistan</td>
+				</tr>
+			</table>
+		</div>
+		
+		<div role="group" aria-label="Sample toolbar" tabindex="0" id="sample_toolbar">
+			<input type="button" value="Submit" class="cell_btns">
+			<input type="button" value="Cancel" class="cell_btns">
+		</div>
+		<div aria-live="assertive" aria-atomic="true" aria-relevent="text" role="region" class="accessible_elem">
+			<span id="active"></span>
+		</div>
+		</main>
+	</body>
+</html>

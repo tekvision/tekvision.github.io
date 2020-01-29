@@ -1,0 +1,91 @@
+[2:43:14 PM] ashpak patwegar: Hello sir, please check for following.
+
+<form class="search search-small" action="https://wingstop.ololite.com/Restaurant/SearchByAddress" method="GET">
+  <label class="screen-reader-text" id="lbladdress1" for="address1">Enter Zip Code or City Name</label>
+ <input id="address1" type="search" name="address" placeholder="Enter Zip Code or City Name" />
+ <div class="search-submit">
+  <input type="submit" name="search" value="Search">
+  <i class="icon-caret-right"></i>
+ </div>
+</form>
+
+For above code Sortsite is giving a11y issue i.e.
+Guideline- 2.4.6 AA
+Description- Form field labels should be unique on a page, or enclosed in a FIELDSET with a LEGEND that makes the label unique.
+
+Then I added Fieldset and Legend to this code as follow,
+
+<form class="search search-small" action="https://wingstop.ololite.com/Restaurant/SearchByAddress" method="GET">
+ <fieldset>
+   <legend><label class="screen-reader-text" id="lbladdress1" for="address1">Enter Zip Code or City Name</label></legend>
+  <input id="address1" type="search" name="address" placeholder="Enter Zip Code or City Name" />
+  <div class="search-submit">
+   <input type="submit" name="search" value="Search">
+   <i class="icon-caret-right"></i>
+  </div>
+ </fieldset>
+</form>
+
+Still same issue occurs.
+Then, instead of "for" attribute I used "aria-labeledby".
+Now issue resolved.
+
+But due to this solution new issue is occuring i.e.
+Guideline- 4.1.2
+Description- LABEL elements should be attached to the controls they label.
+Help- Add a FOR attribute set to the ID of the associated control, or wrap the LABEL round the associated control, or use a different element if this isn't a control label.
+
+In wave test, wave is giving warning for this.
+But sortsite is generating it as issue.
+
+Do you have any idea about this?
+[5:14:18 PM] Siddhant Chothe: Just a moment. Looking.
+[5:15:18 PM] ashpak patwegar: (y)
+[5:18:37 PM] Siddhant Chothe: Is there any other form on page?
+[5:18:49 PM] ashpak patwegar: yes
+[5:19:07 PM] Siddhant Chothe: Does that form also have id="address1" input element?
+[5:19:27 PM] Siddhant Chothe: Or a label with for="address1"
+[5:19:55 PM] Siddhant Chothe: fieldset and legend not needed.
+[5:20:24 PM] ashpak patwegar: no
+[5:20:41 PM] ashpak patwegar: both forms have different ids
+[5:22:51 PM] Siddhant Chothe: Is it the case that label text is repeating in the forms?
+[5:23:06 PM] ashpak patwegar: yes
+[5:24:30 PM] Siddhant Chothe: That is the issue. How to identify the difference between "Enter Zip Code or City Name" in first search form vs the "Enter Zip Code or City Name" in second form on the page?
+[5:26:45 PM | Edited 5:30:09 PM] Siddhant Chothe: This can be tackled with another label element which is not shown to sighted user such as <label id="lblsearchsuffix" class="invisible-to-sighted"> to search </label>
+[5:27:45 PM | Edited 5:30:41 PM] Siddhant Chothe: then to input field do aria-labelledby="lbladdress1 lblsearchsuffix"
+[5:28:43 PM | Edited 5:31:05 PM] Siddhant Chothe: This will then differentiate as "Enter Zip Code or City Name to search"
+[5:28:50 PM] Siddhant Chothe: and "Enter Zip Code or City Name"
+[5:29:20 PM] Siddhant Chothe: Hold on English has gone for toss. let me edit above.
+[5:29:33 PM] ashpak patwegar: ok
+[5:31:20 PM] Siddhant Chothe: Done
+[5:31:28 PM] ashpak patwegar: ok thanx
+[5:31:39 PM] ashpak patwegar: will do these changes
+[5:31:53 PM] ashpak patwegar: and let you know what happens
+[5:32:36 PM] Siddhant Chothe: btw, not-visible-to-sighted is css class for element rendered as 0x0 px
+[5:32:47 PM] ashpak patwegar: yes
+[5:33:01 PM] ashpak patwegar: I have written that class already
+[5:43:22 PM] Siddhant Chothe: Also try a simpler option:
+[5:43:42 PM] Siddhant Chothe: put just a role="search" on first <form..> element
+[5:44:01 PM] Siddhant Chothe: And role="form" on the second form element
+[5:44:15 PM] ashpak patwegar: ok
+[5:44:25 PM] ashpak patwegar: will try this also
+[5:44:46 PM] Siddhant Chothe: I'm trying an example at my end as well.
+[5:44:54 PM] Siddhant Chothe: will share results.
+[5:44:58 PM] ashpak patwegar: ok
+[5:51:47 PM] Siddhant Chothe: JAWS + IE giving above result for given file label.html
+[5:52:10 PM] Siddhant Chothe: role approach not working
+[5:55:23 PM] Siddhant Chothe: Anyways, role attributes add value from 1.3.1 perspective.
+[5:55:34 PM] Siddhant Chothe: Trying another example
+[6:01:00 PM] Siddhant Chothe: The first approach works fine.
+[6:06:11 PM] Siddhant Chothe: I think approach in label2.html is most suitable.
+[6:09:09 PM] Siddhant Chothe: Using NVDA over firefox, When I tab from input field to button, buttons are announced as below:
+"Search landmark search button" and "form landmark register button"
+[6:09:46 PM] Siddhant Chothe: here role approach worked only for buttons in firefox and nvda
+[6:10:08 PM] Siddhant Chothe: NVDA doesn't announce same way for input text field though.
+[6:10:28 PM] Siddhant Chothe: JAWS ignores landmarks while tabbing completely for both text fields and buttons.
+[6:10:36 PM] Siddhant Chothe: On IE.
+[6:10:42 PM] Siddhant Chothe: Hope this helps
+[6:16:21 PM] ashpak patwegar: ok thanx sir
+[6:16:27 PM | Edited 6:16:40 PM] ashpak patwegar: will try this
+[6:22:58 PM] Siddhant Chothe: Have sent you the webinar email on techvision account
+[6:48:57 PM] ashpak patwegar: ok

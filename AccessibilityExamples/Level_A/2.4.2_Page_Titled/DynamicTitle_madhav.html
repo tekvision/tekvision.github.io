@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<title>Dynamic Title Execution</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<style>
+			.accessible_elem {
+				clip: rect(1px 1px 1px 1px);
+				clip: rect(1px, 1px, 1px, 1px);
+				height: 1px;
+				overflow: hidden;
+				position: absolute;
+				white-space: nowrap;
+				width: 1px;
+			}
+
+		</style>
+		<script>
+			$(document).ready(function()
+			{
+				$("button").click(function()
+				{
+					$(document).prop('title', "Title Changed Successfully..!!");
+					speakTitle();
+				});
+			});
+			function speakTitle()
+			{
+				var title=$(document).prop('title');
+				//alert("title");
+				$("#title").text(""+title).show().fadeOut(2000);
+			}
+		</script>
+	</head>
+	<body>
+		<button type="button" aria-label="click to change the title">Click to Change Title</button>
+		<div aria-live="assertive" aria-atomic="true" aria-relevent="text" role="region" aria-label="Page Title" class="accessible_elem">
+			<span id="title"></span>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Learnings Forms</title>
+</head>
+<body>
+  <h1>Learn forms accessibility</h1>
+  <h2>Labelling</h2>
+  <form name="personal">
+  <table  border="1">
+    <tr>
+      <td><label for="f_name">First Name:</label> </td>
+      <td><input type="text" name="firstname" id="f_name" /></td>
+    </tr>
+    <tr>
+    <td><label for="last_name">Last Name:</label></td>
+      <td><input type="text" name="lastname" id="last_name" /></td>
+    </tr>
+  </table>
+    <div>
+      <span id="g">Gender:</span> <br />
+      <input type="radio" name="gender" aria-labelledby="g lbl_m" id="m" /><label id="lbl_m" for="m">Male </label><br />
+      <input type="radio" name="gender" aria-labelledby="g lbl_f" id="f" /><label id="lbl_f" >Female</label><br />
+    </div>
+    <div>
+    <fieldset>
+      <legend id="q">Do you like this?</legend> <br />
+      <input type="radio" name="like" id="y" /><label id="lbl_m" for="y">Yes</label><br />
+      <input type="radio" name="like" id="n" /><label id="lbl_f" for="n">No</label><br />
+    </fieldset>
+    </div>
+    <div>
+      <input type="text" title="email" />
+    </div>
+  </form>
+  <h2>A search form</h2>
+  <div>
+    <form>
+      <input type="text" title="search" value="Search for products online" onkeydown="textInputStarted(event);" id="search" />
+    </form>
+  </div>
+  <script>
+    var startedTyping = false;
+    function textInputStarted(e) {
+    alert("called");
+    If(!startedTyping) {
+      startedTyping = true;
+    }
+/*    var search Field = e.target;
+    var inputChar = e.keyCode;
+      searchField.value = "";
+      searchField.value = inputChar;
+*/
+    }
+  </script>
+  <div>
+    <form>
+      <input type="text" placeholder="search" />
+    </form>
+  </div>
+</body>
+</html>

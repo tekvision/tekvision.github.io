@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Keyboard trap example</title>
+<script type="text/javascript" src="jquery-1.9.1.js"></script>
+<script type="text/javascript" src="jquery.validate.min.js"></script>
+</head>
+<body>
+<form id="frm1">
+<label for="firstname">First Name:</label>
+<input type="text" id="firstname" aria-label="Enter first name" aria-required="true" onblur="javascript:checkName(event, this);"/>
+<label style="display:none;" id="valid">This field is needed buddy.</label>
+<input type="button" value="ok"  />
+
+</form>
+<script type="text/javascript">
+function checkName(e, elem) {
+if(elem.value == "") {
+document.getElementById("valid").style.display = "block";
+elem.setAttribute("aria-describedby", "valid");
+elem.setAttribute("aria-invalid", "true");
+setTimeout(function() {
+elem.focus();
+}, 100);
+
+} else {
+document.getElementById("valid").style.display = "none";
+elem.setAttribute("aria-describedby", "");
+elem.setAttribute("aria-invalid", "false");
+}
+}
+</script> 
+</body>
+</html>

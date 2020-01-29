@@ -1,0 +1,13 @@
+		li {
+			list-style: none;
+		}
+		ul[role='menubar'] > li {
+			float: left;
+		}
+		ul[role='menu'] {
+			padding: 0;
+		}
+		li[aria-selected='true'] {
+			color: white;
+			background-color: blue;
+		}

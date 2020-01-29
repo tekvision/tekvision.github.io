@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guideline 3.3 - Label or Instructions</title>
+    <script src="jquery-1.9.1.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+            $(document).ready(function(){
+                $('#a').focus();
+
+            });
+    </script>
+</head>
+<body>
+    <h2>Customer Database</h2>
+    <form action="" method="post">
+        <table>
+            <tr>
+                <td style=
+                " font-weight: bold; padding-right: 5px; padding-top: 30px; padding-bottom: 10px; width: 176px;">
+                <label for="a">First Name</label>:</td>
+                <td style=
+                " font-weight: bold; padding-right: 5px; padding-top: 30px; padding-bottom: 10px; width: 154px;">
+                <input id="a" name="a" size="14" aria-required="true" tabindex="1" type="text"></td>
+                <td style=
+                " font-weight: bold; padding-right: 5px; padding-top: 30px; padding-bottom: 10px; width: 123px;">
+                <label for="b">Last Name</label>:</td>
+                <td style=
+                " font-weight: bold; padding-right: 5px; padding-top: 30px; padding-bottom: 10px; width: 175px;">
+                <input id="b" name="b" size="14" tabindex="2" type="text"></td>
+            </tr>
+            <tr>
+                <td style=
+                " font-weight: bold; padding-right: 5px; padding-bottom: 10px; width: 176px;">
+                <label for="c">Address</label>:</td>
+                <td style=
+                " font-weight: bold; padding-right: 5px; padding-bottom: 10px; width: 154px;">
+                <input id="c" name="c" size="14" tabindex="3" type="text"></td>
+                <td style=
+                " font-weight: bold; padding-right: 5px; padding-bottom: 10px; width: 123px;">
+                <label for="d">Email</label>:</td>
+                <td style=
+                " font-weight: bold; padding-right: 5px; padding-bottom: 10px; width: 175px;">
+                <input id="d" name="d" size="14" tabindex="4" type="text"></td>
+            </tr>
+            <tr>
+                <td style=
+                " font-weight: bold; padding-right: 5px; padding-bottom: 10px; width: 176px;">
+                <label for="e">Phone</label>:</td>
+                <td colspan="3" style=
+                " font-weight: bold; padding-right: 5px; padding-bottom: 10px; width: 403px;">
+                <input id="e" name="e" size="14" tabindex="5" type="text"></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td style=
+                " font-weight: bold; padding-right: 5px; padding-bottom: 10px; width: 176px;">
+                &nbsp;</td>
+                <td style=
+                " font-weight: bold; padding-right: 5px; padding-bottom: 10px; width: 171px;">
+                <input style=" width: 120px;" tabindex="6" type="button" value=
+                "Submit"></td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+    </form><br>
+    <p>The input fields above do not have detailed instructions on the types of
+    information expected.</p><br>
+    <hr>
+    <p><strong>After Rectification</strong></p><br>
+    <strong>Customer Database</strong>
+    <form action="" method="post">
+        <table class="content">
+            <tr>
+                <td style=
+                " font-weight: bold; padding-right: 5px; padding-top: 30px; padding-bottom: 10px; width: 176px;">
+                <label for="f">First Name</label>:</td>
+                <td style=
+                " font-weight: bold; padding-right: 5px; padding-top: 30px; padding-bottom: 10px; width: 139px;">
+                <input class="noInput" id="f" name="f" onblur=
+                "if ($.trim($('#f').val()) == ''){ $('#f').val('Enter First Name'); } $('#f').addClass('noInput');"
+                onfocus=
+                "if ($('#f').hasClass('noInput')){ $('#f').select(); } $('#f').removeClass('noInput');"
+                size="14" tabindex="7" type="text" value=
+                "Enter First Name"></td>
+                <td style=
+                " font-weight: bold; padding-right: 5px; padding-top: 30px; padding-bottom: 10px; width: 132px;">
+                <label for="g">Last Name</label>:</td>
+                <td style=
+                " font-weight: bold; padding-right: 5px; padding-top: 30px; padding-bottom: 10px; width: 175px;">
+                <input class="noInput" id="g" name="g" onblur=
+                "if ($.trim($('#g').val()) == ''){ $('#g').val('Enter Last Name'); } $('#g').addClass('noInput');"
+                onfocus=
+                "if ($('#g').hasClass('noInput')){ $('#g').select(); } $('#g').removeClass('noInput');"
+                size="14" tabindex="8" type="text" value=
+                "Enter Last Name"></td>
+            </tr>
+            <tr>
+                <td style=
+                " font-weight: bold; padding-right: 5px; padding-bottom: 10px; width: 176px;">
+                <label for="h">Address</label>:</td>
+                <td style=
+                " font-weight: bold; padding-right: 5px; padding-bottom: 10px; width: 139px;">
+                <input class="noInput" id="h" name="h" onblur=
+                "if ($.trim($('#h').val()) == ''){ $('#h').val('Enter Address'); } $('#h').addClass('noInput');"
+                onfocus=
+                "if ($('#h').hasClass('noInput')){ $('#h').select(); } $('#h').removeClass('noInput');"
+                size="14" tabindex="9" type="text" value="Enter Address"></td>
+                <td style=
+                " font-weight: bold; padding-right: 5px; padding-bottom: 10px; width: 132px;">
+                <label for="i">Email</label>:</td>
+                <td style=
+                " font-weight: bold; padding-right: 5px; padding-bottom: 10px; width: 175px;">
+                <input class="noInput" id="i" name="i" onblur=
+                "if ($.trim($('#i').val()) == ''){ $('#i').val('Enter Email'); } $('#i').addClass('noInput');"
+                onfocus=
+                "if ($('#i').hasClass('noInput')){ $('#i').select(); } $('#i').removeClass('noInput');"
+                size="14" tabindex="10" type="text" value="Enter Email"></td>
+            </tr>
+            <tr>
+                <td style=
+                " font-weight: bold; padding-right: 5px; padding-bottom: 10px; width: 176px;">
+                <label for="j">Phone</label>:</td>
+                <td colspan="3" style=
+                " font-weight: bold; padding-right: 5px; padding-bottom: 10px; width: 458px;">
+                <input class="noInput" id="j" name="j" onblur=
+                "if ($.trim($('#j').val()) == ''){ $('#j').val('Enter Phone no.');} $('#j').addClass('noInput');"
+                onfocus=
+                "if ($('#j').hasClass('noInput')){ $('#j').select(); } $('#j').removeClass('noInput');"
+                size="14" tabindex="11" type="text" value=
+                "Enter area code followed by Phone number"></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td style=
+                " font-weight: bold; padding-right: 5px; padding-bottom: 10px; width: 176px;">
+                &nbsp;</td>
+                <td style=
+                " font-weight: bold; padding-right: 5px; padding-bottom: 10px; width: 139px;">
+                <input style=" width: 120px;" tabindex="12" type="button"
+                value="Submit"></td>
+                <td style=" width: 132px;">&nbsp;</td>
+            </tr>
+        </table>
+    </form>
+    <p>The input fields above contain instructions on the types of information
+    expected.</p>
+</body>
+</html>

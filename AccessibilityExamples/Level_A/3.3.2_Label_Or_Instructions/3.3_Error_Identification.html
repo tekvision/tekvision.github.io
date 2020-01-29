@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example for Error Identification</title>
+    <script src="jquery-1.9.1.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+            $(document).ready(function(){
+                $('#phone1').focus();
+            });
+
+            function validation1(){
+                if (!(!isNaN(parseFloat($('#phone1').val())) && isFinite($('#phone1').val()))){
+                    $('#error1').html('<span id="errormsg1" style="color:red">The form contains errors<\/span>')
+                    $('#error1').attr('style','display:');
+
+                    return false;
+                }
+                else{
+
+                    $('#error1').attr('style','display:none');
+                }
+            }
+
+    </script>
+    <script type="text/javascript">
+
+            function validation2(){
+                if (!(!isNaN(parseFloat($('#phone2').val())) && isFinite($('#phone2').val()))){
+                    $('#error2').html('<span id="errormsg2" style="color:red">Please use only numbers in the phone field<\/span>')
+                    $('#error2').attr('style','display:');
+                    $('#phone2').focus();
+                    $('#phone2').attr('aria-describedby', 'errormsg2');
+                    $('#phone2').attr('aria-invalid', 'true');
+                    return false;
+                }
+                else{
+                    $('#phone2').removeAttr('aria-describedby');
+                    $('#phone2').removeAttr('aria-invalid');
+                    $('#error2').attr('style','display:none');
+                }
+            }
+
+    </script>
+</head>
+<body>
+    <p>Please type in some characters in the "Phone" input field below.</p>
+    <div id="error1" style=" display: none;"></div><br>
+    <form action="" id="form1" method="post" name="form1" onsubmit=
+    "return validation1()">
+        <table>
+            <tr>
+                <td><label for="name1">Name</label>:</td>
+                <td><input id="name1" name="name" readonly type="text" value=
+                "Johon Smith"></td>
+            </tr>
+            <tr>
+                <td><label for="phone1">Phone</label>:</td>
+                <td><input id="phone1" name="phone" type="text"></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td><input id="submit1" style=" width: 120px;" type="submit"
+                value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+    <p>An error message without much helpful information is shown.</p>
+    <hr>
+    <p><strong>After Rectification</strong></p>
+    <p>Please type in some characters in the "Phone" input field below.</p>
+    <div id="error2" style=" display: none;"></div><br>
+    <form action="" id="form2" method="post" name="form2" onsubmit=
+    "return validation2()">
+        <table>
+            <tr>
+                <td><label for="name2">Name</label>:</td>
+                <td><input id="name2" name="name2" readonly type="text" value=
+                "Johon Smith"></td>
+            </tr>
+            <tr>
+                <td><label for="phone2">Phone</label>:</td>
+                <td><input id="phone2" name="phone2" type="text"></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td><input id="submit2" style=" width: 120px;" type="submit"
+                value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+    <p>A more meaningful error message is included to help users better
+    understand how the error can be fixed.</p>
+</body>
+</html>

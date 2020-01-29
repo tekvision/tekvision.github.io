@@ -1,0 +1,21 @@
+1. Accessibility Tree at OS level.
+2. Equivalent mappings of Accessibility Tree in browser.
+3. Using Accessibility inspector tools to understand similarities in both the mappings i.e. at OS Level and Browser Level.
+4. Avoid bad practices in Scripting using ARIA
+5. ARIA - What is ARIA and its origin
+6. Basic example with checkbox. 
+-Making controls keyboard accessible with tabindex
+- Importance of using proper roles, states and properties
+7. Importance of Keyboard Focus
+- Using TabIndex for simple widgets
+- Using aria-activedescendant for Composit widgets (with children) 
+- Handling Drag-and-drop 
+8. Proper use of CSS 
+- Managing visual focus using CSS classes & Javascript
+- Use of ARIA based CSS 
+9. ARIA Role Categories
+- landmark roles
+- Application and document role
+- ARIA widget Roles
+- Live Regions
+10. Importance of Touch Events

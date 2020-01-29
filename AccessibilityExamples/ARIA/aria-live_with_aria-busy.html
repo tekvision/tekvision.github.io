@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>Main</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h1>Links</h1>
+
+<ol role="tablist">
+    <li role="tab"><a href="page-1.html" class="yui3-pjax" title="Page One">Page One</a></li>
+    <li role="tab"><a href="page-2.html" class="yui3-pjax" title="Page Two">Page Two</a></li>
+    <li role="tab"><a href="page-3.html" class="yui3-pjax" title="Page Three">Page Three</a></li>
+</ol>
+
+<div id="content" aria-busy="false" aria-live="polite" aria-atomic="true" aria-relevant="all"></div>
+
+<script>
+	$('.yui3-pjax').click(function(e) {
+            $("#content").html('<span>Loading...</span>');
+      		text = $(this).attr("title");
+            url = $(this).attr("href");
+            setTimeout(function(){
+                $("#content").html('<span>done...</span>');
+                setTimeout(function(){
+//                    $("#content").removeAttr("aria-busy");
+//                    $("#content").removeAttr("aria-live");
+//                    $("#content").removeAttr("aria-atomic");
+//                    $("#content").removeAttr("aria-relevant");
+                    $("#content").html("<H2>This Is Page-"+text+"</H2>");
+ 		            document.title = text;
+      		        window.history.replaceState('object', 'New Title', url);
+                },1000);
+            },5000);
+      		e.preventDefault();
+	})
+</script>
+
+</body>
+</html>	

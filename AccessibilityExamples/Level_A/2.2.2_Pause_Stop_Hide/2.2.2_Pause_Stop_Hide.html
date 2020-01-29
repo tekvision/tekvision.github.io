@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>WCAG 2.0 Success Criterion 2.2.2 - Pause Stop Hide</title>
+    <script src="jquery-1.9.1.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+
+                function updateShouts() {
+
+                            var soccermsg = new Array(10);
+                            soccermsg[0] = "Player A tackles the ball and tries to shoot";
+                            soccermsg[1] = "Player B shoots the ball over the top";
+                            soccermsg[2] = "Player C saves the ball";
+                            soccermsg[3] = "Player A saves the ball";
+                            soccermsg[4] = "Player E shoots the ball and Play D saves the ball";
+                            soccermsg[5] = "Player F dribbles away from Player C";
+                            soccermsg[6] = "Player G saves the ball";
+                            soccermsg[7] = "Player A tries to shoot the ball";
+                            soccermsg[8] = "Player B tries to shoot the ball";
+                            soccermsg[9] = "Player C saves the ball";
+
+                            var rand_no = Math.random();
+                            rand_no = rand_no * 9;
+                            rand_no = Math.ceil(rand_no);
+
+                            var app_txt = '<tr class="tdetail" style="border-bottom:2px solid #000;"><td class="time" style="width: 5%;">5<\/td><td class="unit" style="width: 10%;">minutes<\/td><td class="rst" style="text-align:left; padding-left:40px">';
+                            app_txt += soccermsg[rand_no];
+                            app_txt += '<\/td><\/tr>';
+
+                            $('#myTable').prepend(app_txt);
+
+                            $("td.time").each(function() {
+                                var myInteger = ($(this).closest('table').find('tr').length - $(this).closest('tr').index()) * 3;
+                                $(this).html(myInteger);
+                            });
+                        }
+                        setInterval("updateShouts()", 3000);
+    </script>
+    <script type="text/javascript">
+
+
+                 function updateShouts_a() {
+
+							var x = $("#refreshstatus_a").text();
+							if (x == "true") {
+
+								var soccermsg_a = new Array(10);
+								soccermsg_a[0] = "Player A tackles the ball and tries to shoot";
+								soccermsg_a[1] = "Player B shoots the ball over the top";
+								soccermsg_a[2] = "Player C saves the ball";
+								soccermsg_a[3] = "Player A saves the ball";
+								soccermsg_a[4] = "Player E shoots the ball and Play D saves the ball";
+								soccermsg_a[5] = "Player F dribbles away from Player C";
+								soccermsg_a[6] = "Player G saves the ball";
+								soccermsg_a[7] = "Player A tries to shoot the ball";
+								soccermsg_a[8] = "Player B tries to shoot the ball";
+								soccermsg_a[9] = "Player C saves the ball";
+
+								var rand_no_a = Math.random();
+								rand_no_a = rand_no_a * 9;
+								rand_no_a = Math.ceil(rand_no_a);
+
+								var app_txt_a = '<tr class="tdetail_a" style="border-bottom:2px solid #000; "><td class="time_a" style="width:5%">5<\/td><td class="unit_a"style="width: 10%;">minutes<\/td><td class="rst_a" style="text-align:left; padding-left:40px">' + soccermsg_a[rand_no_a] + '<\/td><\/tr>';
+
+
+								$('#myTable_a').prepend(app_txt_a);
+
+
+								$("td.time_a").each(function() {
+									var myInteger = ($(this).closest('table').find('tr').length - $(this).closest('tr').index()) * 3;
+									$(this).html(myInteger);
+								});
+
+							} else {
+								//      alert("false");
+							}
+
+						}
+
+						setInterval("updateShouts_a()", 3000);
+
+						$(document).ready(function() {
+							$("#refreshON_a").click(function() {
+								$("#refreshstatus_a").html('true');
+								$("#refreshON_a").hide();
+								$("#refreshOFF_a").show();
+							});
+
+							$("#refreshOFF_a").click(function() {
+								$("#refreshstatus_a").html('false');
+								$("#refreshOFF_a").hide();
+								$("#refreshON_a").show();
+							});
+
+							$("#refreshON_a").hide();
+
+
+
+                   });
+    </script>
+</head>
+<body>
+    <h2>Before Rectification</h2>The content in the illustration below is being
+    updated every few seconds automatically.
+    <div id="e222before" style=" padding: 10px; border: 1px solid #ccc;">
+        <h2>Live Soccer Commentary</h2>
+        <h2>CLUB A VS CLUB B</h2>
+        <div style=" overflow: auto; height: 200px; width: 98.5%;">
+            <table class="tBody" id="myTable" style=" width: 100%;" title=
+            "Before Example">
+                <tr class="tdetail" style=" border-bottom: 2px solid #000;">
+                    <td class="time" style=" width: 5%;">3</td>
+                    <td class="unit" style=" width: 10%;">minutes</td>
+                    <td class="rst" style=
+                    " text-align: left; padding-left: 40px;">Player A passes
+                    the ball and tries to pass it</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <p>Users using screen readers will be frustrated by the automatically
+    updated content.</p>
+    <hr>
+    <h2>After Rectification</h2>
+    <p>By default, the content in the example below is being updated
+    automatically. Please click the "OFF" or "ON" links to disable or enable
+    the automatic update.</p>
+    <div id="e222after" style=" padding: 10px; border: 1px solid #ccc;">
+        <div id="refreshstatus_a" style=" display: none;">true</div>
+        <h2>Live Soccer Commentary</h2>
+        <p style=" text-align: right;">Auto Update: <a href="#" id=
+        "refreshON_a">ON</a> <a href="#" id="refreshOFF_a">OFF</a></p>
+        <h2>CLUB A VS CLUB B</h2>
+        <div style=" overflow: auto; height: 200px; width: 98.5%;">
+            <table class="tBody" id="myTable_a" style=" width: 100%;" title=
+            "After Example">
+                <tr class="tdetail_a" style=" border-bottom: 2px solid #000;">
+                    <td class="time_a" style=" width: 5%;">3</td>
+                    <td class="unit_a" style=" width: 10%;">minutes</td>
+                    <td class="rst_a" style=
+                    " text-align: left; padding-left: 40px;">Player A passes
+                    the ball and tries to pass it</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <p>The automatic update can be disabled to facilitate the use of screen
+    readers.</p>
+</body>
+</html>

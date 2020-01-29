@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ARIA-Grid Inaccessible Example</title>
+<script src="../jquery-1.9.1.js" type="text/javascript"></script>
+
+</head>
+<body>
+<h3 id="grid1_label">Tic Tac Toe Game</h3>
+
+<input id="startButton" value="START" type="button" />
+
+<ul class="draggables">
+<span class="x100">
+<table border="1" tabindex="0" role="grid" id="grid1" aria-labelledby="grid1_label" aria-activedescendant="cell1x1">
+<tr role="row">
+   <td id="cell1x1" role="gridcell" class="target" aria-labelledby="cell1_label" aria-dropeffect="none" aria-selected="false">
+      <p class="hidden" id="cell1_label">Top Left Cell is empty</p>
+   </td>
+   <td id="cell2x1" role="gridcell" class="target" aria-labelledby="cell2_label" aria-dropeffect="none" aria-selected="false">
+      <p class="hidden" id="cell2_label">Top Center Cell is empty</p>
+   </td>
+   <td id="cell3x1" role="gridcell" class="target" aria-labelledby="cell3_label" aria-dropeffect="none" aria-selected="false">
+      <p class="hidden" id="cell3_label">Top Right Cell is empty</p>
+   </td>
+</tr>
+<tr role="row">
+   <td id="cell1x2" role="gridcell" class="target" aria-labelledby="cell4_label" aria-dropeffect="none" aria-selected="false">
+      <p class="hidden" id="cell4_label">Middle Left Cell is empty</p>
+   </td>
+   <td id="cell2x2" role="gridcell" class="target" aria-labelledby="cell5_label" aria-dropeffect="none" aria-selected="false">
+      <p class="hidden" id="cell5_label">Center Cell is empty</p>
+   </td>
+   <td id="cell3x2" role="gridcell" class="target" aria-labelledby="cell6_label" aria-dropeffect="none" aria-selected="false">
+      <p class="hidden" id="cell6_label">Middle Right Cell is empty</p>
+   </td>
+</tr>
+<tr role="row">
+   <td id="cell1x3" role="gridcell" class="target" aria-labelledby="cell7_label" aria-dropeffect="copy" aria-selected="false">
+      <p class="hidden" id="cell7_label">Bottom Left Cell is empty</p>
+   </td>
+   <td id="cell2x3" role="gridcell" class="target" aria-labelledby="cell8_label" aria-dropeffect="copy" aria-selected="false">
+      <p class="hidden" id="cell8_label">Bottom Center Cell is empty</p>
+   </td>
+   <td id="cell3x3" role="gridcell" class="target" aria-labelledby="cell9_label" aria-dropeffect="copy" aria-selected="false">
+      <p class="hidden" id="cell9_label">Bottom Right Cell is empty</p>
+   </td>
+</tr>
+</table>
+</span>
+<table border="0">
+   <tr>
+      <td id="p1" width="100" height=100>
+         <div id="ex" class="ex piece" aria-grabbed="false" role="button" tabindex="0">
+            <img src="http://www.oaa-accessibility.org/media/examples/images/game-piece-ex.png" alt="Grabable X for Tic Tac Toe">
+         </div>
+      </td>
+      <td width="160" height=100 valign="top">
+            <div id="out" role="alert"></div>
+      </td>
+      <td id="p2" width="100" height=100>
+         <div id="oh" class="oh piece" aria-grabbed="false" role="button" tabindex="0">
+            <img src="http://www.oaa-accessibility.org/media/examples/images/game-piece-oh.png" alt="Grabable O for Tic Tac Toe">
+         </div>
+      </td>
+   </tr>
+</table>
+</ul>
+</body>
+</html>

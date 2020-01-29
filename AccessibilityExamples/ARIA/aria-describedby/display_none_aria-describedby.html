@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Effect of display:none; on aria-describedby</title>
+  </head>
+  <body>
+    <button aria-describedby="para1">Push me down</button>
+    <p id="para1">And that is called a click.</p>
+    <button style="display:none;" aria-describedby="para2">I am not here</button>
+    <p id="para2">But does my description , despite my absence, linger around?</p>
+    <button style="display:none;" aria-describedby="para3">I am also not here</button>
+    <p style="display:none;" id="para3">But, in my case as well, does my description , despite my absence, linger around?</p>
+  </body>
+</html>

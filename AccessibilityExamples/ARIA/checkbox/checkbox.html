@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>
+   example of check box.
+  </title>
+  <link rel="stylesheet" href="checkbox.css">
+ </head>
+<body>
+ <h1>
+  example of simple checkbox
+ </h1>
+ <fieldset>
+<legend>
+   select your visited places from the available list.
+</legend>
+<div tabindex ="0" role ="checkbox" aria-checked ="mixed" id ="cb" onclick ="checkAll()">
+all places
+</div>
+  <ul class ="checkboxes">
+   <li>
+<label>
+    <input  type ="checkbox"  checked = ""  id ="cb1" class ="checkbox" onclick ="check(this.id)">
+     Mahabaleshvar
+    </label>
+   </li>
+   <li>
+<label>
+    <input  type ="checkbox"  id ="cb2" class ="checkbox" onclick ="check(this.id)">
+    Bhima Shankar
+    </label>
+   </li>
+   <li>
+<label>
+    <input  type ="checkbox"  checked =""  id ="cb3" class ="checkbox" onclick ="check(this.id)">
+     Shirdi
+    </label>
+   </li>
+  </ul>
+ </fieldset>
+ <script type ="text/javascript" src ="checkbox.js"> </script> 
+</body>
+</html>

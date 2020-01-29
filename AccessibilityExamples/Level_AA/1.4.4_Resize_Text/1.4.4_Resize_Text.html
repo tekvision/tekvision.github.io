@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>Illustration on Web Accessibility Success Criteria 1.4.4 - Resize
+    text</title>
+    <script src="jquery-1.9.1.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+                        function changeWebAccLiExFontSize(fs)
+                        {
+                            var s = document.getElementsByTagName("div");
+                            for( i = 0 ; s.length ; i++ )
+                            {
+
+                                if(s[i] == undefined)
+                                    return;
+
+                                if(s[i].id == 'e144after'){
+                                    if(fs=="0")
+                                    {
+                                        fs="100%";
+                                    }
+                                    if(fs=="1")
+                                    {
+                                        fs="112.5%";
+                                    }
+                                    if(fs=="2")
+                                    {
+                                        fs="125%";
+                                    }
+                                    s[i].style.fontSize = fs;
+                                }
+                            }
+
+                        }
+
+    </script>
+</head>
+<body>
+    <h2>Before Rectification</h2>There are no functions to resize the text in
+    the illustration below.
+    <div id="e144before" style=" padding: 10px; border: 1px solid #ccc;">
+        <h2>Resize text: Understanding Success Criteria 1.4.4</h2>
+        <table class="tcontent" style=" table-layout: auto; width: 100%;"
+        title="before">
+            <tr style=" display: none;">
+                <th>&nbsp;</th>
+            </tr>
+            <tr>
+                <td style=" padding-top: 5px; padding-right: 15px;"><img alt=
+                "Graphics size will not change when text resizing" src=
+                "pic111.jpg"></td>
+                <td style=" padding-top: 5px; vertical-align: text-top;">Some
+                organisations may consider their websites to be "accessible"
+                when the websites are easily found by search engines. However,
+                the core principle of web accessibility is not about whether
+                people "can find you", it is about whether all people,
+                irrespective of age, race, education or disability, can access
+                to information in websites.</td>
+            </tr>
+        </table>
+    </div>
+    <hr>
+    <h2>After Rectification</h2>Please click the resize text function on the
+    top right hand corner in the illustration below.
+    <div id="e144after" style=" padding: 10px; border: 1px solid #ccc;">
+        <table style=" table-layout: auto; width: 100%;" title="after">
+            <tr style=" display: none;">
+                <th>&nbsp;</th>
+            </tr>
+            <tr>
+                <td><strong>Resize text: Understanding Success Criteria
+                1.4.4</strong></td>
+                <td style=" text-align: right;">
+                    <a href="javascript:changeWebAccLiExFontSize(0)" id=
+                    "smallFont"><img alt="small font" id="s" name="s" src=
+                    "pic144small.jpg" style=" border: 0px;"></a> <a href=
+                    "javascript:changeWebAccLiExFontSize(1)" id=
+                    "mediumFont"><img alt="medium font" id="m" name="m" src=
+                    "pic144medium.jpg" style=" border: 0px;"></a> <a href=
+                    "javascript:changeWebAccLiExFontSize(2)" id=
+                    "largeFont"><img alt="large font" id="l" name="l" src=
+                    "pic144large.jpg" style=" border: 0px;"></a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+            </tr>
+        </table>
+        <table class="tcontent" style=" table-layout: auto; width: 100%;">
+            <tr>
+                <td style=" padding-top: 5px; padding-right: 15px;"><img alt=
+                "Graphics size will not change when text resizing" src=
+                "pic111.jpg"></td>
+                <td style=" padding-top: 5px; vertical-align: text-top;">Some
+                organisations may consider their websites to be "accessible"
+                when the websites are easily found by search engines. However,
+                the core principle of web accessibility is not about whether
+                people "can find you", it is about whether all people,
+                irrespective of age, race, education or disability, can access
+                to information in websites.</td>
+            </tr>
+        </table>
+    </div>The text size can be easily adjusted with the resize text function.
+</body>
+</html>
