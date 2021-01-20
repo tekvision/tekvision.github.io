@@ -1,0 +1,99 @@
+.container
+        {
+            border: 2px solid black;
+	        overflow: hidden;
+	        margin: 0%;
+	        width: 100%;
+	        margin-top: 10px;
+        }
+        .failing-section
+        {
+            left: 0%;
+            float: left;
+            width: 50%;
+            margin-left: 0%;
+            background: #dc3545;
+            padding-bottom: 33px;
+            padding-top: 10px;
+        }
+
+        .passing-section
+        {
+            margin-left: 50%;
+            width: 50%;
+            border: 1px solid black;
+	        margin-top: -22px;
+	        padding-bottom: 35px;
+	        padding-top: 30px;
+	        width: 50%;
+	        top: 0%;
+	        background: #28a745;
+        }
+        
+        .rb,input {
+            width: 20px;
+            height: 20px;
+            outline: none;
+            border: 1.5px solid blue;
+            background-color: white;
+            border-radius: 100px;
+            left: 10px;
+            margin: 5px;
+            padding: 2px;
+        }
+
+        .rb:focus
+        {
+            border: 1.5px solid blue;
+            box-shadow: 1px 1px 10px #7FFFD4;
+        }
+
+        .radioGroup
+        {
+            margin-left: 100px;
+            border: 2px solid black;
+            width: 60%;
+            padding: 40px;
+            border-radius: 2%;
+        }
+
+        .checked1 {
+            float: left;
+            content: '';
+            width: 15px;
+            height: 15px;
+            background: blue;
+            left: 20px;
+            margin-left: 2.5px;
+            margin-top: 2.5px;
+            border-radius: 100%;
+        }
+
+        .r {
+            overflow: hidden;
+            margin-left: 20px;
+            width: 10%;
+            padding-left: 20px;
+            padding-right: 100px;
+            margin-top: 10px;
+        }
+
+        #acce-rb1,
+        #acce-rb3,
+        #acce-rb2,#f-rb1,#f-rb2,#f-rb3 {
+            float: left;
+            margin-left: 0%;
+            left: 0%;
+        }
+
+        .radioText {
+            margin-left: 30px;
+            margin-top: 7px;
+            width: 150px;
+            cursor: default;
+        }
+        
+        h1
+        {
+            text-align: center;
+        }

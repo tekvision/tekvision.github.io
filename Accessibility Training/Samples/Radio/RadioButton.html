@@ -1,0 +1,187 @@
+<html>
+
+<head>
+    <title>
+        Radio Button Example
+    </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="radioButton.js"></script>
+    <link rel="stylesheet" href="radioButton.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="failing-section">
+            <h1>Failing radio button example</h1>
+            <div class="radioGroup">
+                <h3>What Is Your Favorite Food?</h3>
+                <div id="rb1" class="r">
+                    <div id="f-rb1" aria-labelledby="burger" class="rb" tabindex="0">
+                        <div id="r11">
+                        </div>
+                    </div>
+                    <div id="burger" class="radioText">
+                        Burger
+                    </div>
+                </div>
+
+                <div id="rb2" class="r">
+                    <div id="f-rb2" aria-labelledby="pizza" class="rb" tabindex="0">
+                        <div id="r22">
+                        </div>
+                    </div>
+                    <div id="pizza" class="radioText">
+                        Pizza
+                    </div>
+                </div>
+
+                <div id="rb3" class="r">
+                    <div id="f-rb3" aria-labelledby="chicken" class="rb" tabindex="0">
+                        <div id="r33">
+                        </div>
+                    </div>
+                    <div id="chicken" class="radioText">
+                        Butter Chicken
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="passing-section">
+            <h1>Passing Radio button example</h1>
+            <div role="radiogroup" aria-labelledby="group_label" class="radioGroup">
+                <h3 id="group_label">What Is Your Favorite Food?</h3>
+                <div id="r1" class="r">
+                    <div id="acce-rb1" aria-labelledby="bur" class="rb" role="radio" aria-checked="false" tabindex="0">
+                        <div id="rb11">
+                        </div>
+                    </div>
+                    <div id="bur" class="radioText">
+                        Burger
+                    </div>
+                </div>
+
+                <div id="r2" class="r">
+                    <div id="acce-rb2" aria-labelledby="piz" class="rb" role="radio" aria-checked="false" tabindex="-1">
+                        <div id="rb22">
+                        </div>
+                    </div>
+                    <div id="piz" class="radioText">
+                        Pizza
+                    </div>
+                </div>
+
+                <div id="r3" class="r">
+                    <div id="acce-rb3" aria-labelledby="chi" class="rb" role="radio" aria-checked="false" tabindex="-1">
+                        <div id="rb33">
+                        </div>
+                    </div>
+                    <div id="chi" class="radioText">
+                        Butter Chicken
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="failing-section">
+            <h1>Failing Default Checked Radio button example</h1>
+            <div role="radiogroup" aria-labelledby="group_label" class="radioGroup">
+                <h3 id="group_label">What Is Your Favorite Food?</h3>
+                <div id="d-r1" class="r">
+                    <div id="d-rb1" aria-labelledby="d-bur" class="rb" role="radio" tabindex="0">
+                        <div id="d-rb11">
+                        </div>
+                    </div>
+                    <div id="d-bur" class="radioText">
+                        Burger
+                    </div>
+                </div>
+
+                <div id="d-r2" class="r">
+                    <div id="d-rb2" aria-labelledby="d-piz" class="rb" role="radio" tabindex="0">
+                        <div id="d-rb22">
+                        </div>
+                    </div>
+                    <div id="d-piz" class="radioText">
+                        Pizza
+                    </div>
+                </div>
+
+                <div id="d-r3" class="r">
+                    <div id="d-rb3" aria-labelledby="d-chi" class="rb" role="radio" tabindex="0">
+                        <div id="d-rb33">
+                        </div>
+                    </div>
+                    <div id="d-chi" class="radioText">
+                        Butter Chicken
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="passing-section">
+            <h1>Passing Default Checked Radio button example</h1>
+            <div role="radiogroup" aria-labelledby="default-group-label" class="radioGroup">
+                <h3 id="default-group-label">What Is Your Favorite Food?</h3>
+                <div id="default-r1" class="r">
+                    <div id="default-rb1" aria-labelledby="default-bur" class="rb" role="radio" aria-checked="true" tabindex="0">
+                        <div id="default-rb11" class="checked1">
+                        </div>
+                    </div>
+                    <div id="default-bur" class="radioText">
+                        Burger
+                    </div>
+                </div>
+
+                <div id="default-r2" class="r">
+                    <div id="default-rb2" aria-labelledby="default-piz" class="rb" role="radio" aria-checked="false" tabindex="-1">
+                        <div id="default-rb22">
+                        </div>
+                    </div>
+                    <div id="default-piz" class="radioText">
+                        Pizza
+                    </div>
+                </div>
+
+                <div id="default-r3" class="r">
+                    <div id="default-rb3" aria-labelledby="default-chi" class="rb" role="radio" aria-checked="false" tabindex="-1">
+                        <div id="default-rb33">
+                        </div>
+                    </div>
+                    <div id="default-chi" class="radioText">
+                        Butter Chicken
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="failing-section">
+            <h1>Failing Default Checked Radio button example with input type="radio"</h1>
+            <div role="radiogroup" aria-labelledby="group_label" class="radioGroup">
+                <h3 id="group_label">What Is Your Favorite Food?</h3>
+                <div id="d-r1" class="b">
+                    <input type="radio" name="menu" value="Burger" id="i-rb1">Burger <br>
+                    <input type="radio" name="menu" value="pizza" id="i-rb2">Pizza <br>
+                    <input type="radio" name="menu" value="Butter Chicken" id="i-rb3">Butter Chicken <br>
+                </div>
+            </div>
+        </div>
+
+        <div class="passing-section">
+            <h1>Passing Default Checked Radio button example with input type="radio"</h1>
+            <div role="radiogroup" aria-labelledby="default-group-label" class="radioGroup">
+                <h3 id="default-group-label">What Is Your Favorite Food?</h3>
+                <div id="default-r1" class="b">
+                    <input type="radio" name="menu" value="Burger" id="i-rb4" checked> Burger <br>
+                    <input type="radio" name="menu" value="Pizza" id="i-rb5"> Pizza <br>
+                    <input type="radio" name="menu" value="Butter Chicken" id="i-rb6"> Butter Chicken <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

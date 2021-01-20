@@ -1,0 +1,2886 @@
+<html>
+
+<head>
+    <title>
+        Accordion Failure Examples 
+    </title>
+    <style>
+        .container 
+        {
+            border: 2px solid black;
+            margin: 10px;
+            width: 99%;
+            top: 0%;
+            overflow: hidden;
+        }
+        fieldset {
+            width: 30%;
+            padding: 30px;
+            margin: 0%;
+            top: 0%;
+            border-style: none;
+        }
+
+        fieldset div {
+            padding: 10px;
+        }
+
+        .sect {
+            border: solid 1px black;
+            display: none;
+            width: 60%;
+            margin-top: -20px;
+            border-radius: 5px;
+            background-color: #e1e1d0;
+            margin-left: 120px;
+        }
+
+        /* .accordion-failure {
+            width: 60%;
+            border-radius: 10px;
+            padding: 0%;
+            border: 1px solid black;
+            margin-left: 30px;         
+        } */
+        .failure-section
+        { 
+            float: left;
+            border: 1px solid black;
+            /* background: #ff0028; */
+             /* padding: 20px;  */
+            /* height: 400px; */
+            padding-bottom: 20px;
+            width: 50%;
+        }
+        .passing-section
+        {
+            /* float: left;  */
+            border: 1px solid black;
+            /* background: #89f003; */
+            /* padding: 20px; */
+            padding-bottom: 20px;
+            margin-left: 50%;
+            width: 50%;
+        }
+
+        button,#btn1,#btn2,#btn3 {
+            width: 60%;
+            height: 8%;
+            border-radius: 5px;
+            border: 1px solid white;
+            background-color: #f4511e;
+            color: #ffff;
+            font-size: 20px;
+            text-align: center;
+            display: block;
+            margin-left: 120px;
+        }
+
+        .accordion-buttton {
+            margin-top: -20px;
+        }
+        h1
+        {
+            text-align: center;
+            /* color: white; */
+        }
+
+        /* button[aria-expanded = "true"]
+        {
+            transition: 10ms;
+            color: black;
+        } */
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                var id = $(this).attr("id")
+                switch (id) {
+                    case "accordion1":
+                        inaccessibleAccordion1("accordion1");
+                        break;
+                    case "accessible-accordion1":
+                        accessibleAccordion1("accessibleAccordion1")
+                        break;
+                    case "accordion2":
+                        inaccessibleAccordion2("accordion2");
+                        break;
+                    case "accessible-accordion2":
+                        accessibleAccordion2("accessibleAccordion2")
+                        break;
+                    case "accordion3":
+                        inaccessibleAccordion3("accordion3");
+                        break;
+                    case "accessible-accordion3":
+                        accessibleAccordion3("accessibleAccordion3");
+                        break;
+                    case "accordion-keyboard-failure1":
+                        inaccessibleAccordion1("accordionKeyboardFailure1")
+                        break;
+                    case "accordion-keyboard-failure2":
+                        inaccessibleAccordion2("accordionKeyboardFailure2")
+                        break;
+                    case "accordion-keyboard-failure3":
+                        inaccessibleAccordion3("accordionKeyboardFailure3")
+                        break;
+                    case "keyboard-accessible-accordion1":
+                        accessibleAccordion1("keyboardAccessibleAccordion1");
+                        break;
+                    case "keyboard-accessible-accordion2":
+                        accessibleAccordion2("KeyboardAccessibleAccordion2");
+                        break;
+                    case "keyboard-accessible-accordion3":
+                        accessibleAccordion3("keyboardAccessibleAccordion3");
+                        break;
+                    case "mouse-accessible-accordion1":
+                        accessibleAccordion1("mouseAccessibleAccordion1");
+                        break;
+                    case "mouse-accessible-accordion2":
+                        accessibleAccordion2("mouseAccessibleAccordion2");
+                        break;
+                    case "mouse-accessible-accordion3":
+                        accessibleAccordion3("mouseAccessibleAccordion3");
+                        break;
+                    case "accordion-missing-aria-attributes1":
+                        inaccessibleAccordion1("accordionWithMissingAriaAttributes1");
+                        break;
+                    case "accordion-missing-aria-attributes2":
+                        inaccessibleAccordion2("accordionWithMissingAriaAttributes2");
+                        break;
+                    case "accordion-missing-aria-attributes3":
+                        inaccessibleAccordion3("accordionWithMissingAriaAttributes3");
+                        break;
+                    case "accordion-with-aria-attributes1":
+                        accessibleAccordion1("accordionWithAriaAttributes1");
+                        break;
+                    case "accordion-with-aria-attributes2":
+                        accessibleAccordion2("accordionWithAriaAttributes2");
+                        break;
+                    case "accordion-with-aria-attributes3":
+                        accessibleAccordion3("accordionWithAriaAttributes3");
+                        break;
+                    case "accordion-adding-attribute-on-state-change1":
+                        inaccessibleAccordion1("accordionAddingAttributeOnStateChange1");
+                        break;
+                    case "accordion-adding-attribute-on-state-change2":
+                        inaccessibleAccordion2("accordionAddingAttributeOnStateChange2");
+                        break;
+                    case "accordion-adding-attribute-on-state-change3":
+                        inaccessibleAccordion3("accordionAddingAttributeOnStateChange3");
+                        break;
+                    case "accordion-with-default-aria-attributes1":
+                        accessibleAccordion1("accordionWithDefaultAriaAttributes1");
+                        break;
+                    case "accordion-with-default-aria-attributes2":
+                        accessibleAccordion2("accordionWithDefaultAriaAttributes2");
+                        break;
+                    case "accordion-with-default-aria-attributes3":
+                        accessibleAccordion3("accordionWithDefaultAriaAttributes3");
+                        break;
+                    case "accordion-failure-with-show-only1":
+                        inaccessibleAccordion1("accordionFailureWithShowOnly1")
+                        break;
+                    case "accordion-failure-with-show-only2":
+                        inaccessibleAccordion2("accordionFailureWithShowOnly2");
+                        break;
+                    case "accordion-failure-with-show-only3":
+                        inaccessibleAccordion3("accordionFailureWithShowOnly3");
+                        break;
+                    case "accordion-with-show-only-behavior1":
+                        accessibleAccordion1("accordionWithShowOnlyBehavior1");
+                        break;
+                    case "accordion-with-show-only-behavior2":
+                        accessibleAccordion2("accordionWithShowOnlyBehavior2");
+                        break;
+                    case "accordion-with-show-only-behavior3":
+                        accessibleAccordion3("accordionWithShowOnlyBehavior3");
+                        break;
+                    case "accordion-with-unsupported-aria-attributes1":
+                        inaccessibleAccordion1("accordionWithUnsupportedAriaAttributes1");
+                        break;
+                    case "accordion-with-unsupported-aria-attributes2":
+                        inaccessibleAccordion2("accordionWithUnsupportedAriaAttributes2");
+                        break;
+                    case "accordion-with-unsupported-aria-attributes3":
+                        inaccessibleAccordion3("accordionWithUnsupportedAriaAttributes3");
+                        break;
+                    case "accordion-with-supported-aria-attributes1":
+                        accessibleAccordion1("accordionWithSupportedAriaAttributes1");
+                        break;
+                    case "accordion-with-supported-aria-attributes2":
+                        accessibleAccordion2("accordionWithSupportedAriaAttributes2");
+                        break;
+                    case "accordion-with-supported-aria-attributes3":
+                        accessibleAccordion3("accordionWithSupportedAriaAttributes3");
+                        break;
+                    case "accordion-with-missing-role1":
+                        inaccessibleAccordion1("accordionWithMissingRole1");
+                        break;
+                    case "accordion-with-missing-role2":
+                        inaccessibleAccordion2("accordionWithMissingRole2");
+                        break;
+                    case "accordion-with-missing-role3":
+                        inaccessibleAccordion3("accordionWithMissingRole3");
+                        break;
+                    case "accordion-with-role1":
+                        accessibleAccordion1("accordionWithRole1");
+                        break;
+                    case "accordion-with-role2":
+                        accessibleAccordion2("accordionWithRole2");
+                        break;
+                    case "accordion-with-role3":   
+                        accessibleAccordion3("accordionWithRole3");
+                        break;
+                    case "accordion-with-appropriate-html-element1":
+                        accessibleAccordion1("accordionWithAppropriateHtmlElement1");
+                        break;
+                    case "accordion-with-appropriate-html-element2":
+                        accessibleAccordion2("accordionWithAppropriateHtmlElement2");
+                        break;
+                    case "accordion-with-appropriate-html-element3":
+                        accessibleAccordion3("accordionWithAppropriateHtmlElement3");
+                        break;
+                }
+            })
+
+            $("#btn1, #btn2, #btn3").click(function(){
+                var a = $(this).attr("id");
+                if(a == "btn1")
+                {
+                    inaccessibleAccordion1("accordionWithoutMaintainingAppropriateHtmlElement1");
+                }
+                else if(a == "btn2")
+                {
+                    inaccessibleAccordion2("accordionWithoutMaintainingAppropriateHtmlElement2");
+                }
+                else
+                {
+                    inaccessibleAccordion3("accordionWithoutMaintainingAppropriateHtmlElement3");
+                }
+            })
+
+            $("#accordion-keyboard-failure1, #accordion-keyboard-failure2, #accordion-keyboard-failure3").keydown(function (e) {
+                e.preventDefault();
+            })
+
+            $("#accordion-mouse-event-failure1, #accordion-mouse-event-failure2, #accordion-mouse-event-failure3").click(function (e) {
+                e.preventDefault();
+            })
+
+            $("#accordion-mouse-event-failure1").keydown(function (e) {
+                if (e.keyCode == 13) {
+                    inaccessibleAccordion1("accordionMouseEventFailure1");
+                }
+
+            })
+
+            $("#accordion-mouse-event-failure2").keydown(function (e) {
+                if (e.keyCode == 13) {
+                    inaccessibleAccordion2("accordionMouseEventFailure2");
+                }
+            })
+
+            $("#accordion-mouse-event-failure3").keydown(function (e) {
+                if (e.keyCode == 13) {
+                    inaccessibleAccordion3("accordionMouseEventFailure3");
+                }
+            })
+
+            $("button").keydown(function (e) {
+                var active = $(this);
+                var up = "up";
+                var down = "down";
+                switch (e.keyCode) {
+                    case 40:
+                        arrowKeys(active, down);
+                        e.stopPropagation();
+                        break;
+
+                    case 38:
+                        arrowKeys(active, up);
+                        e.stopPropagation();
+                        break;
+                    // case 36:
+                    // homeEndKey("home"); 
+                    //     break;
+                    // case 35:
+                    // homeEndKey("end");
+                    //     break;
+                }
+            })
+
+
+
+        })
+
+        function arrowKeys(active, key) {
+            if (key == "down") {
+                var id = $(active).attr("id");
+                if (id == "accordion3") {
+                    $(active).parent().prev().prev().prev().prev().children().focus();
+                    return false;
+                }
+                $(active).parent().next().next().children().focus();
+                return false;
+            }
+            else {
+                var id = $(active).attr("id");
+                if (id == "accordion1") {
+                    $(active).parent().next().next().next().next().children().focus();
+                    return false;
+                }
+                $(active).parent().prev().prev().children().focus();
+                return false;
+            }
+        }
+        // function homeEndKey(key)
+        // {
+        //     if(key == "home")
+        //     {
+        //         $("#accordion1").focus();
+        //     }
+        //     else
+        //     {
+        //         $("#accordion3").focus();
+        //     }
+        // }
+        function inaccessibleAccordion1(acc) {
+            switch (acc) {
+                case "accordionKeyboardFailure1":
+                
+                    var expand = $("#accordion-keyboard-failure1").attr("aria-expanded");
+                    if (expand == "false") {
+                        $("#accordion-keyboard-failure1").attr("aria-expanded", true);
+                        $("#region-keyboard-failure1").css("display", "block");
+                        $("#accordion-keyboard-failure1").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region-keyboard-failure1").css("display", "none");
+                        $("#accordion-keyboard-failure1").attr("aria-expanded", false);
+                        return false;
+                    }
+                    break;
+
+                case "accordion1":
+                
+                    var expand = $("#accordion1").attr("aria-expanded");
+                    if (expand == "false") {
+                        $("#accordion1").attr("aria-expanded", true);
+                        $("#accordion1").attr("aria-disabled", true)
+                        $("#region1").css("display", "block");
+                        $("#accordion1").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region1").css("display", "none");
+                        $("#accordion1").attr("aria-expanded", false);
+                        $("#accordion1").removeAttr("aria-disabled");
+                        return false;
+                    }
+                    break;
+
+                case "accordionMouseEventFailure1":
+                
+                    var expand = $("#accordion-mouse-event-failure1").attr("aria-expanded");
+                    if (expand == "false") {
+                        $("#accordion-mouse-event-failure1").attr("aria-expanded", true);
+                        $("#region-mouse-event-failure1").css("display", "block");
+                        $("#accordion-mouse-event-failure1").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region-mouse-event-failure1").css("display", "none");
+                        $("#accordion-mouse-event-failure1").attr("aria-expanded", false);
+                        return false;
+                    }
+                    break;
+
+                case "accordionWithMissingAriaAttributes1":
+                
+                    var regionClass = $("#region-accordion-with-missing-aria-attributes1").attr("class");
+                    if (regionClass == "sect") {
+                        $("#region-accordion-with-missing-aria-attributes1").addClass("region1");
+                        $("#region-accordion-with-missing-aria-attributes1").css("display", "block");
+                        $("#accordion-missing-aria-attributes1").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region-accordion-with-missing-aria-attributes1").css("display", "none");
+                        $("#region-accordion-with-missing-aria-attributes1").removeClass("region1");
+                        return false;
+                    }
+                    break;
+
+                case "accordionAddingAttributeOnStateChange1":
+            
+                    var regionClass = $("#region-accordion-adding-attribute-on-state-change1").attr("class");
+                    if (regionClass == "sect") {
+                        $("#accordion-adding-attribute-on-state-change1").attr("aria-expanded", true);
+                        $("#region-accordion-adding-attribute-on-state-change1").css("display", "block");
+                        $("#region-accordion-adding-attribute-on-state-change1").addClass("region1");
+                        $("#accordion-adding-attribute-on-state-change1").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region-accordion-adding-attribute-on-state-change1").css("display", "none");
+                        $("#accordion-adding-attribute-on-state-change1").removeAttr("aria-expanded");
+                        $("#region-accordion-adding-attribute-on-state-change1").removeClass("region1");
+                        return false;
+                    }
+                    break;
+
+                case "accordionFailureWithShowOnly1":
+                    var expands = $("#accordion-failure-with-show-only1").attr("aria-expanded");
+                    if (expands == "false") {
+                        $("#accordion-failure-with-show-only1").attr("aria-expanded", true);
+                        $("#accordion-failure-with-show-only2").attr("aria-expanded", false);
+                        $("#accordion-failure-with-show-only3").attr("aria-expanded", false);
+                        $("#region-accordion-failure-with-show-only1").css("display", "block");
+                        $("#region-accordion-failure-with-show-only2").css("display", "none");
+                        $("#region-accordion-failure-with-show-only3").css("display", "none");
+                        return false;
+                    }
+                    break;
+
+                case "accordionWithUnsupportedAriaAttributes1":
+                    var expand = $("#accordion-with-unsupported-aria-attributes1").attr("aria-expanded");
+                    if (expand == "false") {
+                        $("#accordion-with-unsupported-aria-attributes1").attr("aria-expanded", true);
+                        $("#accordion-with-unsupported-aria-attributes1").attr("aria-pressed" , true);
+                        $("#region-of-accordion-with-unsupported-aria-attributes1").css("display", "block");
+                        $("#accordion-with-unsupported-aria-attributes1").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region-of-accordion-with-unsupported-aria-attributes1").css("display", "none");
+                        $("#accordion-with-unsupported-aria-attributes1").attr("aria-expanded", false);
+                        $("#accordion-with-unsupported-aria-attributes1").attr("aria-pressed" , false);
+
+                        return false;
+                    }
+                    break;
+                    
+                case "accordionWithMissingRole1":
+                    var expand = $("#accordion-with-missing-role1").attr("aria-expanded");
+                    if (expand == "false") {
+                        $("#accordion-with-missing-role1").attr("aria-expanded", true);
+                        $("#region-of-accordion-with-missing-role1").css("display", "block");
+                        $("#accordion-with-missing-role1").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region-of-accordion-with-missing-role1").css("display", "none");
+                        $("#accordion-with-missing-role1").attr("aria-expanded", false);
+                        return false;
+                    }
+                    break;
+                
+                case "accordionWithoutMaintainingAppropriateHtmlElement1":
+                var expand = $("#btn1").attr("aria-expanded");
+                    if (expand == "false") {
+                        $("#btn1").attr("aria-expanded", true);
+                        $("#region-ps").css("display", "block");
+                        $("#btn1").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region-ps").css("display", "none");
+                        $("#btn1").attr("aria-expanded", false);
+                        return false;
+                    }
+                    break;
+            }
+        }
+        function inaccessibleAccordion2(acc) {
+            switch (acc) {
+                case "accordion2":
+            
+                    var expand = $("#accordion2").attr("aria-expanded");
+                    if (expand == "false") {
+                        $("#accordion2").attr("aria-expanded", true);
+                        $("#accordion2").attr("aria-disabled", true)
+                        $("#region2").css("display", "block");
+                        $("#accordion2").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region2").css("display", "none");
+                        $("#accordion2").attr("aria-expanded", false);
+                        $("#accordion2").removeAttr("aria-disabled");
+                        return false;
+                    }
+                    break;
+
+                case "accordionKeyboardFailure2":
+            
+                    var expand = $("#accordion-keyboard-failure2").attr("aria-expanded");
+                    if (expand == "false") {
+                        $("#accordion-keyboard-failure2").attr("aria-expanded", true);
+                        // $("#accordionKeyboardFailure2").attr("aria-disabled" , true)
+                        $("#region-keyboard-failure2").css("display", "block");
+                        $("#accordion-keyboard-failure2").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region-keyboard-failure2").css("display", "none");
+                        $("#accordion-keyboard-failure2").attr("aria-expanded", false);
+                        return false;
+                    }
+                    break;
+
+                case "accordionMouseEventFailure2":
+            
+                    var expand = $("#accordion-mouse-event-failure2").attr("aria-expanded");
+                    if (expand == "false") {
+                        $("#accordion-mouse-event-failure2").attr("aria-expanded", true);
+                        $("#region-mouse-event-failure2").css("display", "block");
+                        $("#accordion-mouse-event-failure2").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region-mouse-event-failure2").css("display", "none");
+                        $("#accordion-mouse-event-failure2").attr("aria-expanded", false);
+                        return false;
+                    }
+                    break;
+
+                case "accordionWithMissingAriaAttributes2":
+                
+                    var regionClass = $("#region-accordion-with-missing-aria-attributes2").attr("class");
+                    if (regionClass == "sect") {
+                        $("#region-accordion-with-missing-aria-attributes2").addClass("region2");
+                        $("#region-accordion-with-missing-aria-attributes2").css("display", "block");
+                        $("#accordion-missing-aria-attributes2").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region-accordion-with-missing-aria-attributes2").css("display", "none");
+                        $("#region-accordion-with-missing-aria-attributes2").removeClass("region2");
+                        return false;
+                    }
+                    break;
+
+                case "accordionAddingAttributeOnStateChange2":
+            
+                    var regionClass = $("#region-accordion-adding-attribute-on-state-change2").attr("class");
+                    if (regionClass == "sect") {
+                        $("#accordion-adding-attribute-on-state-change2").attr("aria-expanded", true);
+                        $("#region-accordion-adding-attribute-on-state-change2").css("display", "block");
+                        $("#region-accordion-adding-attribute-on-state-change2").addClass("region2");
+                        $("#accordion-adding-attribute-on-state-change2").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region-accordion-adding-attribute-on-state-change2").css("display", "none");
+                        $("#accordion-adding-attribute-on-state-change2").removeAttr("aria-expanded");
+                        $("#region-accordion-adding-attribute-on-state-change2").removeClass("region2");
+                        return false;
+                    }
+                    break;
+
+                case "accordionFailureWithShowOnly2":
+                    var expands = $("#accordion-failure-with-show-only2").attr("aria-expanded");
+                    if (expands == "false") {
+                        $("#accordion-failure-with-show-only2").attr("aria-expanded", true);
+                        $("#accordion-failure-with-show-only1").attr("aria-expanded", false);
+                        $("#accordion-failure-with-show-only3").attr("aria-expanded", false);
+                        $("#region-accordion-failure-with-show-only2").css("display", "block");
+                        $("#region-accordion-failure-with-show-only1").css("display", "none");
+                        $("#region-accordion-failure-with-show-only3").css("display", "none");
+                        return false;
+                    }
+                    break;
+
+                case "accordionWithUnsupportedAriaAttributes2":
+                    var expand = $("#accordion-with-unsupported-aria-attributes2").attr("aria-expanded");
+                    if (expand == "false") {
+                        $("#accordion-with-unsupported-aria-attributes2").attr("aria-expanded", true);
+                        $("#accordion-with-unsupported-aria-attributes2").attr("aria-pressed" , true);
+                        $("#region-of-accordion-with-unsupported-aria-attributes2").css("display", "block");
+                        $("#accordion-with-unsupported-aria-attributes2").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region-of-accordion-with-unsupported-aria-attributes2").css("display", "none");
+                        $("#accordion-with-unsupported-aria-attributes2").attr("aria-expanded", false);
+                        $("#accordion-with-unsupported-aria-attributes2").attr("aria-pressed" , false);
+
+                        return false;
+                    }
+                    break;
+
+                case "accordionWithMissingRole2":
+                    var expand = $("#accordion-with-missing-role2").attr("aria-expanded");
+                    if (expand == "false") {
+                        $("#accordion-with-missing-role2").attr("aria-expanded", true);
+                        $("#region-of-accordion-with-missing-role2").css("display", "block");
+                        $("#accordion-with-missing-role2").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region-of-accordion-with-missing-role2").css("display", "none");
+                        $("#accordion-with-missing-role2").attr("aria-expanded", false);
+                        return false;
+                    }
+                    break;
+                
+                case "accordionWithoutMaintainingAppropriateHtmlElement2":
+                    var expand = $("#btn2").attr("aria-expanded");
+                    if (expand == "false") {
+                        $("#btn2").attr("aria-expanded", true);
+                        $("#region-pa").css("display", "block");
+                        $("#btn2").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region-pa").css("display", "none");
+                        $("#btn2").attr("aria-expanded", false);
+                        return false;
+                    }
+                    break;
+
+            }
+        }
+        function inaccessibleAccordion3(acc) {
+            switch (acc) {
+                case "accordion3":
+                
+                    var expand = $("#accordion3").attr("aria-expanded");
+                    if (expand == "false") {
+                        $("#accordion3").attr("aria-expanded", true);
+                        $("#accordion3").attr("aria-disabled", true)
+                        $("#region3").css("display", "block");
+                        $("#accordion3").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region3").css("display", "none");
+                        $("#accordion3").attr("aria-expanded", false);
+                        $("#accordion3").removeAttr("aria-disabled");
+                        return false;
+                    }
+                    break;
+
+                case "accordionKeyboardFailure3":
+            
+                    var expand = $("#accordion-keyboard-failure3").attr("aria-expanded");
+                    if (expand == "false") {
+                        $("#accordion-keyboard-failure3").attr("aria-expanded", true);
+                        $("#region-keyboard-failure3").css("display", "block");
+                        $("#accordion-keyboard-failure3").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region-keyboard-failure3").css("display", "none");
+                        $("#accordion-keyboard-failure3").attr("aria-expanded", false);
+                        return false;
+                    }
+                    break;
+
+                case "accordionMouseEventFailure3":
+            
+                    var expand = $("#accordion-mouse-event-failure3").attr("aria-expanded");
+                    if (expand == "false") {
+                        $("#accordion-mouse-event-failure3").attr("aria-expanded", true);
+                        $("#region-mouse-event-failure3").css("display", "block");
+                        $("#accordion-mouse-event-failure3").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region-mouse-event-failure3").css("display", "none");
+                        $("#accordion-mouse-event-failure3").attr("aria-expanded", false);
+                        return false;
+                    }
+                    break;
+
+                case "accordionWithMissingAriaAttributes3":
+                
+                    var regionClass = $("#region-accordion-with-missing-aria-attributes3").attr("class");
+                    if (regionClass == "sect") {
+                        $("#region-accordion-with-missing-aria-attributes3").addClass("region3");
+                        $("#region-accordion-with-missing-aria-attributes3").css("display", "block");
+                        $("#accordion-missing-aria-attributes3").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region-accordion-with-missing-aria-attributes3").css("display", "none");
+                        $("#region-accordion-with-missing-aria-attributes3").removeClass("region3");
+                        return false;
+                    }
+                    break;
+
+                case "accordionAddingAttributeOnStateChange3":
+            
+                    var regionClass = $("#region-accordion-adding-attribute-on-state-change3").attr("class");
+                    if (regionClass == "sect") {
+                        $("#accordion-adding-attribute-on-state-change3").attr("aria-expanded", true);
+                        // $("#accordion1").attr("aria-disabled" , true)
+                        $("#region-accordion-adding-attribute-on-state-change3").css("display", "block");
+                        $("#region-accordion-adding-attribute-on-state-change3").addClass("region3");
+                        $("#accordion-adding-attribute-on-state-change3").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region-accordion-adding-attribute-on-state-change3").css("display", "none");
+                        $("#accordion-adding-attribute-on-state-change3").removeAttr("aria-expanded");
+                        $("#region-accordion-adding-attribute-on-state-change3").removeClass("region3");
+                        // $("#accordion1").removeAttr("aria-disabled");
+                        return false;
+                    }
+                    break;
+
+                case "accordionFailureWithShowOnly3":
+                    var expands = $("#accordion-failure-with-show-only3").attr("aria-expanded");
+                    if (expands == "false") {
+                        $("#accordion-failure-with-show-only3").attr("aria-expanded", true);
+                        $("#accordion-failure-with-show-only1").attr("aria-expanded", false);
+                        $("#accordion-failure-with-show-only2").attr("aria-expanded", false)
+                        $("#region-accordion-failure-with-show-only3").css("display", "block");
+                        $("#region-accordion-failure-with-show-only1").css("display", "none");
+                        $("#region-accordion-failure-with-show-only2").css("display", "none");
+                        return false;
+                    }
+                    break;
+                
+                case "accordionWithUnsupportedAriaAttributes3":
+                    var expand = $("#accordion-with-unsupported-aria-attributes3").attr("aria-expanded");
+                    if (expand == "false") {
+                        $("#accordion-with-unsupported-aria-attributes3").attr("aria-expanded", true);
+                        $("#accordion-with-unsupported-aria-attributes3").attr("aria-pressed" , true);
+                        $("#region-of-accordion-with-unsupported-aria-attributes3").css("display", "block");
+                        $("#accordion-with-unsupported-aria-attributes3").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region-of-accordion-with-unsupported-aria-attributes3").css("display", "none");
+                        $("#accordion-with-unsupported-aria-attributes3").attr("aria-expanded", false);
+                        $("#accordion-with-unsupported-aria-attributes3").attr("aria-pressed" , false);
+                        
+                        return false;
+                    }
+                    break;
+
+                case "accordionWithMissingRole3":
+                    var expand = $("#accordion-with-missing-role3").attr("aria-expanded");
+                    if (expand == "false") {
+                        $("#accordion-with-missing-role3").attr("aria-expanded", true);
+                        $("#region-of-accordion-with-missing-role3").css("display", "block");
+                        $("#accordion-with-missing-role3").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region-of-accordion-with-missing-role3").css("display", "none");
+                        $("#accordion-with-missing-role3").attr("aria-expanded", false);
+                        return false;
+                    }
+                    break;
+                
+                case "accordionWithoutMaintainingAppropriateHtmlElement3":
+                    var expand = $("#btn3").attr("aria-expanded");
+                    if (expand == "false") {
+                        $("#btn3").attr("aria-expanded", true);
+                        $("#region-oa").css("display", "block");
+                        $("#btn3").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region-oa").css("display", "none");
+                        $("#btn3").attr("aria-expanded", false);
+                        return false;
+                    }
+                    break;
+
+            }
+        }
+
+        function accessibleAccordion1(accessible)
+        {
+            switch (accessible) {
+                case "accessibleAccordion1":
+                        var expands = $("#accessible-accordion1").attr("aria-expanded");
+                        if(expands == "false")
+                        {
+                            $("#accessible-accordion1").attr("aria-expanded" , true);
+                            $("#region-of-accessible-accordion1").css("display" , "block");
+                            $("#accessible-accordion1").focus();
+                            return false;
+                        }
+                        else
+                        {
+                            $("#accessible-accordion1").attr("aria-expanded" , false);
+                            $("#region-of-accessible-accordion1").css("display" , "none");
+                            return false;
+                        }
+                    break;
+            
+                case "keyboardAccessibleAccordion1":
+                    var expands = $("#keyboard-accessible-accordion1").attr("aria-expanded");
+                    if (expands == "false") {
+                        $("#keyboard-accessible-accordion1").attr("aria-expanded", true);
+                        $("#region-of-keyboard-accessible-accordion1").css("display", "block");
+                        $("#keyboard-accessible-accordion1").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region-of-keyboard-accessible-accordion1").css("display", "none");
+                        $("#keyboard-accessible-accordion1").attr("aria-expanded", false);
+                        return false;
+                    }
+                    break;
+                    
+                case "mouseAccessibleAccordion1":
+                var expands = $("#mouse-accessible-accordion1").attr("aria-expanded");
+                    if (expands == "false") {
+                        $("#mouse-accessible-accordion1").attr("aria-expanded", true);
+                        $("#region-of-mouse-accessible-accordion1").css("display", "block");
+                        $("#mouse-accessible-accordion1").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region-of-mouse-accessible-accordion1").css("display", "none");
+                        $("#mouse-accessible-accordion1").attr("aria-expanded", false);
+                        return false;
+                    }
+                    break;
+
+                case "accordionWithAriaAttributes1":
+                    var expands = $("#accordion-with-aria-attributes1").attr("aria-expanded");
+                    if (expands == "false") {
+                        $("#accordion-with-aria-attributes1").attr("aria-expanded", true);
+                        $("#region-of-accordion-with-aria-attributes1").css("display", "block");
+                        $("#accordion-with-aria-attributes1").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region-of-accordion-with-aria-attributes1").css("display", "none");
+                        $("#accordion-with-aria-attributes1").attr("aria-expanded", false);
+                        return false;
+                    }
+                break;
+
+                case "accordionWithDefaultAriaAttributes1":
+                
+                        var expands = $("#accordion-with-default-aria-attributes1").attr("aria-expanded");
+                        if(expands == "false")
+                        {
+                            $("#accordion-with-default-aria-attributes1").attr("aria-expanded" , true);
+                            $("#region-of-accordion-with-default-aria-attributes1").css("display" , "block");
+                            $("#accordion-with-default-aria-attributes1").focus();
+                            return false;
+                        }
+                        else
+                        {
+                            $("#accordion-with-default-aria-attributes1").attr("aria-expanded" , false);
+                            $("#region-of-accordion-with-default-aria-attributes1").css("display" , "none");
+                            return false;
+                        }
+                    break;
+
+                    case "accordionWithShowOnlyBehavior1":
+                    var expands = $("#accordion-with-show-only-behavior1").attr("aria-expanded");
+                    if (expands == "false") {
+                        $("#accordion-with-show-only-behavior1").attr("aria-expanded", true);
+                        $("#accordion-with-show-only-behavior2").attr("aria-expanded", false);
+                        $("#accordion-with-show-only-behavior3").attr("aria-expanded", false);
+                        $("#accordion-with-show-only-behavior1").attr("aria-disabled" , true);
+                        $("#accordion-with-show-only-behavior2").removeAttr("aria-disabled");
+                        $("#accordion-with-show-only-behavior3").removeAttr("aria-disabled");
+                        $("#region-of-accordion-with-show-only-behavior1").css("display", "block");
+                        $("#region-of-accordion-with-show-only-behavior2").css("display", "none");
+                        $("#region-of-accordion-with-show-only-behavior3").css("display", "none");
+                        return false;
+                    }
+                    break;
+
+                    case "accordionWithSupportedAriaAttributes1":
+                        var expand = $("#accordion-with-supported-aria-attributes1").attr("aria-expanded");
+                        if (expand == "false") {
+                            $("#accordion-with-supported-aria-attributes1").attr("aria-expanded", true);
+                            $("#region-of-accordion-with-supported-aria-attributes1").css("display", "block");
+                            $("#accordion-with-supported-aria-attributes1").focus();
+                            return false;
+                        }
+                        else {
+                            $("#region-of-accordion-with-supported-aria-attributes1").css("display", "none");
+                            $("#accordion-with-supported-aria-attributes1").attr("aria-expanded", false); 
+                            return false;
+                        }
+                        break;
+
+                    case "accordionWithRole1":
+                        var expand = $("#accordion-with-role1").attr("aria-expanded");
+                        if (expand == "false") {
+                            $("#accordion-with-role1").attr("aria-expanded", true);
+                            $("#region-of-accordion-with-role1").css("display", "block");
+                            $("#accordion-with-role1").focus();
+                            return false;
+                        }
+                        else {
+                            $("#region-of-accordion-with-role1").css("display", "none");
+                            $("#accordion-with-role1").attr("aria-expanded", false); 
+                            return false;
+                        }
+                        break;
+
+                    case "accordionWithAppropriateHtmlElement1":
+                        var expand = $("#accordion-with-appropriate-html-element1").attr("aria-expanded");
+                        if (expand == "false") {
+                            $("#accordion-with-appropriate-html-element1").attr("aria-expanded", true);
+                            $("#region-of-accordion-with-appropriate-html-element1").css("display", "block");
+                            $("#accordion-with-appropriate-html-element1").focus();
+                            return false;
+                        }
+                        else {
+                            $("#region-of-accordion-with-appropriate-html-element1").css("display", "none");
+                            $("#accordion-with-appropriate-html-element1").attr("aria-expanded", false); 
+                            return false;
+                        }
+                        break;
+            }
+        }
+
+        function accessibleAccordion2(accessible)
+        {
+            switch (accessible) {
+                case "accessibleAccordion2":
+                        var expands = $("#accessible-accordion2").attr("aria-expanded");
+                        if(expands == "false")
+                        {
+                            $("#accessible-accordion2").attr("aria-expanded" , true);
+                            $("#region-of-accessible-accordion2").css("display" , "block");
+                        }
+                        else
+                        {
+                            $("#accessible-accordion2").attr("aria-expanded" , false);
+                            $("#region-of-accessible-accordion2").css("display" , "none");
+                        }
+                    break;
+
+                case "KeyboardAccessibleAccordion2":
+                    var expands = $("#keyboard-accessible-accordion2").attr("aria-expanded");
+                    if (expands == "false") {
+                        $("#keyboard-accessible-accordion2").attr("aria-expanded", true);
+                        $("#region-of-keyboard-accessible-accordion2").css("display", "block");
+                        $("#keyboard-accessible-accordion2").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region-of-keyboard-accessible-accordion2").css("display", "none");
+                        $("#keyboard-accessible-accordion2").attr("aria-expanded", false);
+                        return false;
+                    }
+                break;
+
+                case "mouseAccessibleAccordion2":
+                    var expands = $("#mouse-accessible-accordion2").attr("aria-expanded");
+                    if (expands == "false") {
+                        $("#mouse-accessible-accordion2").attr("aria-expanded", true);
+                        $("#region-of-mouse-accessible-accordion2").css("display", "block");
+                        $("#mouse-accessible-accordion2").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region-of-mouse-accessible-accordion2").css("display", "none");
+                        $("#mouse-accessible-accordion2").attr("aria-expanded", false);
+                        return false;
+                    }
+                break;
+
+                case "accordionWithAriaAttributes2":
+                    var expands = $("#accordion-with-aria-attributes2").attr("aria-expanded");
+                    if (expands == "false") {
+                        $("#accordion-with-aria-attributes2").attr("aria-expanded", true);
+                        $("#region-of-accordion-with-aria-attributes2").css("display", "block");
+                        $("#accordion-with-aria-attributes2").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region-of-accordion-with-aria-attributes2").css("display", "none");
+                        $("#accordion-with-aria-attributes2").attr("aria-expanded", false);
+                        return false;
+                    }
+                break;
+
+                case "accordionWithDefaultAriaAttributes2":
+                        var expands = $("#accordion-with-default-aria-attributes2").attr("aria-expanded");
+                        if(expands == "false")
+                        {
+                            $("#accordion-with-default-aria-attributes2").attr("aria-expanded" , true);
+                            $("#region-of-accordion-with-default-aria-attributes2").css("display" , "block");
+                            $("#accordion-with-default-aria-attributes2").focus();
+                            return false;
+                        }
+                        else
+                        {
+                            $("#accordion-with-default-aria-attributes2").attr("aria-expanded" , false);
+                            $("#region-of-accordion-with-default-aria-attributes2").css("display" , "none");
+                            return false;
+                        }
+                    break;
+
+                    case "accordionWithShowOnlyBehavior2":
+                    var expands = $("#accordion-with-show-only-behavior2").attr("aria-expanded");
+                    if (expands == "false") {
+                        $("#accordion-with-show-only-behavior2").attr("aria-expanded", true);
+                        $("#accordion-with-show-only-behavior1").attr("aria-expanded", false);
+                        $("#accordion-with-show-only-behavior3").attr("aria-expanded", false);
+                        $("#accordion-with-show-only-behavior2").attr("aria-disabled" , true);
+                        $("#accordion-with-show-only-behavior1").removeAttr("aria-disabled");
+                        $("#accordion-with-show-only-behavior3").removeAttr("aria-disabled");
+                        $("#region-of-accordion-with-show-only-behavior2").css("display", "block");
+                        $("#region-of-accordion-with-show-only-behavior1").css("display", "none");
+                        $("#region-of-accordion-with-show-only-behavior3").css("display", "none");
+                        return false;
+                    }
+                    break;
+
+                    case "accordionWithSupportedAriaAttributes2":
+                        var expand = $("#accordion-with-supported-aria-attributes2").attr("aria-expanded");
+                        if (expand == "false") {
+                            $("#accordion-with-supported-aria-attributes2").attr("aria-expanded", true);
+                            $("#region-of-accordion-with-supported-aria-attributes2").css("display", "block");
+                            $("#accordion-with-supported-aria-attributes2").focus();
+                            return false;
+                        }
+                        else {
+                            $("#region-of-accordion-with-supported-aria-attributes2").css("display", "none");
+                            $("#accordion-with-supported-aria-attributes2").attr("aria-expanded", false); 
+                            return false;
+                        }
+                        break;
+
+                    case "accordionWithRole2":
+                        var expand = $("#accordion-with-role2").attr("aria-expanded");
+                        if (expand == "false") {
+                            $("#accordion-with-role2").attr("aria-expanded", true);
+                            $("#region-of-accordion-with-role2").css("display", "block");
+                            $("#accordion-with-role2").focus();
+                            return false;
+                        }
+                        else {
+                            $("#region-of-accordion-with-role2").css("display", "none");
+                            $("#accordion-with-role2").attr("aria-expanded", false); 
+                            return false;
+                        }
+                        break;
+
+                    case "accordionWithAppropriateHtmlElement2":
+                        var expand = $("#accordion-with-appropriate-html-element2").attr("aria-expanded");
+                        if (expand == "false") {
+                            $("#accordion-with-appropriate-html-element2").attr("aria-expanded", true);
+                            $("#region-of-accordion-with-appropriate-html-element2").css("display", "block");
+                            $("#accordion-with-appropriate-html-element2").focus();
+                            return false;
+                        }
+                        else {
+                            $("#region-of-accordion-with-appropriate-html-element2").css("display", "none");
+                            $("#accordion-with-appropriate-html-element2").attr("aria-expanded", false); 
+                            return false;
+                        }
+                        break;
+            }
+        }
+
+        function accessibleAccordion3(accessible)
+        {
+            switch (accessible) {
+                case "accessibleAccordion3":
+                        var expands = $("#accessible-accordion3").attr("aria-expanded");
+                        if(expands == "false")
+                        {
+                            $("#accessible-accordion3").attr("aria-expanded" , true);
+                            $("#region-of-accessible-accordion3").css("display" , "block");
+                            $("#accessible-accordion3").focus();
+                            return false;
+                        }
+                        else
+                        {
+                            $("#accessible-accordion3").attr("aria-expanded" , false);
+                            $("#region-of-accessible-accordion3").css("display" , "none");
+                            return false;
+                        }
+                    break;
+
+                case "keyboardAccessibleAccordion3":
+                    var expands = $("#keyboard-accessible-accordion3").attr("aria-expanded");
+                    if (expands == "false") {
+                        $("#keyboard-accessible-accordion3").attr("aria-expanded", true);
+                        $("#region-of-keyboard-accessible-accordion3").css("display", "block");
+                        $("#keyboard-accessible-accordion3").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region-of-keyboard-accessible-accordion3").css("display", "none");
+                        $("#keyboard-accessible-accordion3").attr("aria-expanded", false);
+                        return false;
+                    }
+                break;
+
+                case "mouseAccessibleAccordion3":
+                    var expands = $("#mouse-accessible-accordion3").attr("aria-expanded");
+                    if (expands == "false") {
+                        $("#mouse-accessible-accordion3").attr("aria-expanded", true);
+                        $("#region-of-mouse-accessible-accordion3").css("display", "block");
+                        $("#mouse-accessible-accordion3").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region-of-mouse-accessible-accordion3").css("display", "none");
+                        $("#mouse-accessible-accordion3").attr("aria-expanded", false);
+                        return false;
+                    }
+                break;
+
+                case "accordionWithAriaAttributes3":
+                
+                    var expands = $("#accordion-with-aria-attributes3").attr("aria-expanded");
+                    if (expands == "false") {
+                        $("#accordion-with-aria-attributes3").attr("aria-expanded", true);
+                        $("#region-of-accordion-with-aria-attributes3").css("display", "block");
+                        $("#accordion-with-aria-attributes3").focus();
+                        return false;
+                    }
+                    else {
+                        $("#region-of-accordion-with-aria-attributes3").css("display", "none");
+                        $("#accordion-with-aria-attributes3").attr("aria-expanded", false);
+                        return false;
+                    }
+                break;
+
+                case "accordionWithDefaultAriaAttributes3":
+                        var expands = $("#accordion-with-default-aria-attributes3").attr("aria-expanded");
+                        if(expands == "false")
+                        {
+                            $("#accordion-with-default-aria-attributes3").attr("aria-expanded" , true);
+                            $("#region-of-accordion-with-default-aria-attributes3").css("display" , "block");
+                            $("#accordion-with-default-aria-attributes3");
+                            return false;
+                        }
+                        else
+                        {
+                            $("#accordion-with-default-aria-attributes3").attr("aria-expanded" , false);
+                            $("#region-of-accordion-with-default-aria-attributes3").css("display" , "none");
+                            return false;
+
+                        }
+                    break;
+
+                case "accordionWithShowOnlyBehavior3":
+                    var expands = $("#accordion-with-show-only-behavior3").attr("aria-expanded");
+                    if (expands == "false") {
+                        $("#accordion-with-show-only-behavior3").attr("aria-expanded", true);
+                        $("#accordion-with-show-only-behavior1").attr("aria-expanded", false);
+                        $("#accordion-with-show-only-behavior2").attr("aria-expanded", false);
+                        $("#accordion-with-show-only-behavior3").attr("aria-disabled" , true);
+                        $("#accordion-with-show-only-behavior1").removeAttr("aria-disabled");
+                        $("#accordion-with-show-only-behavior2").removeAttr("aria-disabled");
+                        $("#region-of-accordion-with-show-only-behavior3").css("display", "block");
+                        $("#region-of-accordion-with-show-only-behavior1").css("display", "none");
+                        $("#region-of-accordion-with-show-only-behavior2").css("display", "none");
+                        return false;
+                    }
+                    break;
+
+                case "accordionWithSupportedAriaAttributes3":
+                        var expand = $("#accordion-with-supported-aria-attributes3").attr("aria-expanded");
+                        if (expand == "false") {
+                            $("#accordion-with-supported-aria-attributes3").attr("aria-expanded", true);
+                            $("#region-of-accordion-with-supported-aria-attributes3").css("display", "block");
+                            $("#accordion-with-supported-aria-attributes3").focus();
+                            return false;
+                        }
+                        else {
+                            $("#region-of-accordion-with-supported-aria-attributes3").css("display", "none");
+                            $("#accordion-with-supported-aria-attributes3").attr("aria-expanded", false); 
+                            return false;
+                        }
+                        break;
+
+                case "accordionWithRole3":
+                        var expand = $("#accordion-with-role3").attr("aria-expanded");
+                        if (expand == "false") {
+                            $("#accordion-with-role3").attr("aria-expanded", true);
+                            $("#region-of-accordion-with-role3").css("display", "block");
+                            $("#accordion-with-role3").focus();
+                            return false;
+                        }
+                        else {
+                            $("#region-of-accordion-with-role3").css("display", "none");
+                            $("#accordion-with-role3").attr("aria-expanded", false); 
+                            return false;
+                        }
+                        break;
+
+                case "accordionWithAppropriateHtmlElement3":
+                        var expand = $("#accordion-with-appropriate-html-element3").attr("aria-expanded");
+                        if (expand == "false") {
+                            $("#accordion-with-appropriate-html-element3").attr("aria-expanded", true);
+                            $("#region-of-accordion-with-appropriate-html-element3").css("display", "block");
+                            $("#accordion-with-appropriate-html-element3").focus();
+                            return false;
+                        }
+                        else {
+                            $("#region-of-accordion-with-appropriate-html-element3").css("display", "none");
+                            $("#accordion-with-appropriate-html-element3").attr("aria-expanded", false); 
+                            return false;
+                        }
+                        break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="accordion-failure-with-toggleabel" class="container">
+        <div class="failure-section">
+            <h1>Accordion failure with toggleabel behaviour</h1>
+            <div id="accordion-failure1" class="accordion-failure">
+                <h3>
+                    <button aria-expanded="false" aria-controls="region1" id="accordion1">
+                        <span class="accordion-header">
+                            Personal Information
+                        </span>
+                    </button>
+                </h3>
+                <div id="region1" role="region" aria-labelledby="accordion1" class="sect">
+                    <fieldset>
+                        <div>
+                            <label for="name1">Name:</label>
+                            <input type="text" id="name1">
+                        </div>
+                        <div>
+                            <label for="email1">Email:</label>
+                            <input type="email" id="email1">
+                        </div>
+                        <div>
+                            <label for="add1">Mob No:</label>
+                            <textarea name="add1" id="add1" cols="30" rows="5"></textarea>
+                        </div>
+                    </fieldset>
+                </div>
+                <h3>
+                    <button aria-expanded="false" aria-controls="region2" id="accordion2" class="accordion-buttton">
+                        <span class="accordion-header">
+                            Permenant Address
+                        </span>
+                    </button>
+                </h3>
+                <div id="region2" role="region" aria-labelledby="accordion2" class="sect">
+                    <fieldset>
+                        <div>
+                            <label for="house1">House/Flat No:</label>
+                            <input type="text" id="house1">
+                        </div>
+                        <div>
+                            <label for="city1">City/Town:</label>
+                            <input type="text" id="city1">
+                        </div>
+                        <div>
+                            <label for="district1">District:</label>
+                            <input type="text" id="district1">
+                        </div>
+                        <div>
+                            <label for="state1">State:</label>
+                            <input type="text" id="state1">
+                        </div>
+                    </fieldset>
+                </div>
+                <h3>
+                    <button aria-expanded="false" aria-controls="region3" id="accordion3" class="accordion-buttton">
+                        <span class="accordion-header">
+                            Office Address
+                        </span>
+                    </button>
+                </h3>
+                <div id="region3" role="region" aria-labelledby="accordion3" class="sect">
+                    <fieldset>
+                        <div>
+                            <label for="officeName1">Name:</label>
+                            <input type="text" id="officeName1">
+                        </div>
+                        <div>
+                            <label for="office1">House/Flat No:</label>
+                            <input type="text" id="office1">
+                        </div>
+                        <div>
+                            <label for="officeCity1">City/Town:</label>
+                            <input type="text" id="officeCity1">
+                        </div>
+                        <div>
+                            <label for="officeDistrict1">District:</label>
+                            <input type="text" id="officeDistrict1">
+                        </div>
+                        <div>
+                            <label for="officeState1">State:</label>
+                            <input type="text" id="officeState1">
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        <div class="passing-section">
+            <h1>Accessible accordion with toggleabel behaviour</h1>
+            <div id=" accessible-accordion1" class="accessible-accordion">
+                <h3>
+                    <button aria-expanded="false" aria-controls="region1" id="accessible-accordion1">
+                        <span class="accordion-header">
+                            Personal Information
+                        </span>
+                    </button>
+                </h3>
+                <div id="region-of-accessible-accordion1" role="region" aria-labelledby="acessible-accordion1" class="sect">
+                    <fieldset>
+                        <div>
+                            <label for="accName1">Name:</label>
+                            <input type="text" id="accName1">
+                        </div>
+                        <div>
+                            <label for="accEmail1">Email:</label>
+                            <input type="email" id="accEmail1">
+                        </div>
+                        <div>
+                            <label for="accAdd1">Mob No:</label>
+                            <textarea name="add1" id="accAdd1" cols="30" rows="5"></textarea>
+                        </div>
+                    </fieldset>
+                </div>
+                <h3>
+                    <button aria-expanded="false" aria-controls="region-of-accessible-accordion2" id="accessible-accordion2" class="accordion-buttton">
+                        <span class="accordion-header">
+                            Permenant Address
+                        </span>
+                    </button>
+                </h3>
+                <div id="region-of-accessible-accordion2" role="region" aria-labelledby="accessible-accordion2" class="sect">
+                    <fieldset>
+                        <div>
+                            <label for="accHouse1">House/Flat No:</label>
+                            <input type="text" id="accHouse1">
+                        </div>
+                        <div>
+                            <label for="accCity1">City/Town:</label>
+                            <input type="text" id="accCity1">
+                        </div>
+                        <div>
+                            <label for="accDistrict1">District:</label>
+                            <input type="text" id="accDistrict1">
+                        </div>
+                        <div>
+                            <label for="accState1">State:</label>
+                            <input type="text" id="accState1">
+                        </div>
+                    </fieldset>
+                </div>
+                <h3>
+                    <button aria-expanded="false" aria-controls="region-of-accessible-accordion3" id="accessible-accordion3" class="accordion-buttton">
+                        <span class="accordion-header">
+                            Office Address
+                        </span>
+                    </button>
+                </h3>
+                <div id="region-of-accessible-accordion3" role="region" aria-labelledby="accessible-accordion3" class="sect">
+                    <fieldset>
+                        <div>
+                            <label for="accOfficeName1">Name:</label>
+                            <input type="text" id="accOfficeName1">
+                        </div>
+                        <div>
+                            <label for="accOffice1">House/Flat No:</label>
+                            <input type="text" id="accOffice1">
+                        </div>
+                        <div>
+                            <label for="accOfficeCity1">City/Town:</label>
+                            <input type="text" id="accOfficeCity1">
+                        </div>
+                        <div>
+                            <label for="accOfficeDistrict1">District:</label>
+                            <input type="text" id="accOfficeDistrict1">
+                        </div>
+                        <div>
+                            <label for="accOfficeState1">State:</label>
+                            <input type="text" id="accOfficeState1">
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="accordion-keyboard-failure" class="container">
+        <div class="failure-section">
+                <h1>Accordion keyboard failure example</h1>
+                <div id="accordion-failure2" class="accordion-failure">
+                    <h3>
+                        <button aria-expanded="false" aria-controls="region-keyboard-failure1" id="accordion-keyboard-failure1">
+                            <span class="accordion-header">
+                                Personal Information
+                            </span>
+                        </button>
+                    </h3>
+                    <div id="region-keyboard-failure1" role="region" aria-labelledby="accordion-keyboard-failure1" class="sect">
+                        <fieldset>
+                            <div>
+                                <label for="name2">Name:</label>
+                                <input type="text" id="name2">
+                            </div>
+                            <div>
+                                <label for="email2">Email:</label>
+                                <input type="email" id="email2">
+                            </div>
+                            <div>
+                                <label for="add2">Mob No:</label>
+                                <textarea id="add2" cols="30" rows="5"></textarea>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <h3>
+                        <button aria-expanded="false" aria-controls="region-keyboard-failure2" id="accordion-keyboard-failure2"
+                            class="accordion-buttton">
+                            <span class="accordion-header">
+                                Permenant Address
+                            </span>
+                        </button>
+                    </h3>
+                    <div id="region-keyboard-failure2" role="region" aria-labelledby="accordion-keyboard-failure2" class="sect">
+                        <fieldset>
+                            <div>
+                                <label for="house2">House/Flat No:</label>
+                                <input type="text" id="house2">
+                            </div>
+                            <div>
+                                <label for="city2">City/Town:</label>
+                                <input type="text" id="city2">
+                            </div>
+                            <div>
+                                <label for="district2">District:</label>
+                                <input type="text" id="district2">
+                            </div>
+                            <div>
+                                <label for="state2">State:</label>
+                                <input type="text" id="state2">
+                            </div>
+                        </fieldset>
+                    </div>
+                    <h3>
+                        <button aria-expanded="false" aria-controls="region-keyboard-failure3" id="accordion-keyboard-failure3"
+                            class="accordion-buttton">
+                            <span class="accordion-header">
+                                Office Address
+                            </span>
+                        </button>
+                    </h3>
+                    <div id="region-keyboard-failure3" role="region" aria-labelledby="accordion-keyboard-failure3" class="sect">
+                        <fieldset>
+                            <div>
+                                <label for="officeName2">Name:</label>
+                                <input type="text" id="officeName2">
+                            </div>
+                            <div>
+                                <label for="office2">House/Flat No:</label>
+                                <input type="text" id="office2">
+                            </div>
+                            <div>
+                                <label for="officeCity2">City/Town:</label>
+                                <input type="text" id="officeCity2">
+                            </div>
+                            <div>
+                                <label for="officeDistrict2">District:</label>
+                                <input type="text" id="officeDistrict2">
+                            </div>
+                            <div>
+                                <label for="officeState2">State:</label>
+                                <input type="text" id="officeState2">
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+        </div>
+        <div class="passing-section">
+                <h1>keyboard accessible accordion example</h1>
+                <div id="accessible-accordion2" class="accessible-accordion">
+                    <h3>
+                        <button aria-expanded="false" aria-controls="region-of-keyboard-accessible-accordion1" id="keyboard-accessible-accordion1">
+                            <span class="accordion-header">
+                                Personal Information
+                            </span>
+                        </button>
+                    </h3>
+                    <div id="region-of-keyboard-accessible-accordion1" role="region" aria-labelledby="keyboard-accessible-accordion1" class="sect">
+                        <fieldset>
+                            <div>
+                                <label for="accName2">Name:</label>
+                                <input type="text" id="accName2">
+                            </div>
+                            <div>
+                                <label for="accEmail2">Email:</label>
+                                <input type="email" id="accEmail2">
+                            </div>
+                            <div>
+                                <label for="accAdd2">Mob No:</label>
+                                <textarea id="accAdd2" cols="30" rows="5"></textarea>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <h3>
+                        <button aria-expanded="false" aria-controls="region-of-keyboard-accessible-accordion2" id="keyboard-accessible-accordion2"
+                            class="accordion-buttton">
+                            <span class="accordion-header">
+                                Permenant Address
+                            </span>
+                        </button>
+                    </h3>
+                    <div id="region-of-keyboard-accessible-accordion2" role="region" aria-labelledby="keyboard-accessible-accordion2" class="sect">
+                        <fieldset>
+                            <div>
+                                <label for="accHouse2">House/Flat No:</label>
+                                <input type="text" id="accHouse2">
+                            </div>
+                            <div>
+                                <label for="accCity2">City/Town:</label>
+                                <input type="text" id="accCity2">
+                            </div>
+                            <div>
+                                <label for="accDistrict2">District:</label>
+                                <input type="text" id="accDistrict2">
+                            </div>
+                            <div>
+                                <label for="accState2">State:</label>
+                                <input type="text" id="accState2">
+                            </div>
+                        </fieldset>
+                    </div>
+                    <h3>
+                        <button aria-expanded="false" aria-controls="region-of-keyboard-accessible-accordion3" id="keyboard-accessible-accordion3"
+                            class="accordion-buttton">
+                            <span class="accordion-header">
+                                Office Address
+                            </span>
+                        </button>
+                    </h3>
+                    <div id="region-of-keyboard-accessible-accordion3" role="region" aria-labelledby="keyboard-accessible-accordion3" class="sect">
+                        <fieldset>
+                            <div>
+                                <label for="accOfficeName2">Name:</label>
+                                <input type="text" id="accOfficeName2">
+                            </div>
+                            <div>
+                                <label for="accOffice2">House/Flat No:</label>
+                                <input type="text" id="accOffice2">
+                            </div>
+                            <div>
+                                <label for="accOfficeCity2">City/Town:</label>
+                                <input type="text" id="accOfficeCity2">
+                            </div>
+                            <div>
+                                <label for="accOfficeDistrict2">District:</label>
+                                <input type="text" id="accOfficeDistrict2">
+                            </div>
+                            <div>
+                                <label for="accOfficeState2">State:</label>
+                                <input type="text" id="accOfficeState2">
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div id="accordion-mouse-event-failure" class="container">
+        <div class="failure-section">
+                <h1>Accordion mouse event failure example</h1>
+                <div id="accordion-failure3" class="accordion-failure">
+                    <h3>
+                        <button aria-expanded="false" aria-controls="region-mouse-event-failure1"
+                            id="accordion-mouse-event-failure1">
+                            <span class="accordion-header">
+                                Personal Information
+                            </span>
+                        </button>
+                    </h3>
+                    <div id="region-mouse-event-failure1" role="region" aria-labelledby="accordion-mouse-event-failure1"
+                        class="sect">
+                        <fieldset>
+                            <div>
+                                <label for="name3">Name:</label>
+                                <input type="text" id="name3">
+                            </div>
+                            <div>
+                                <label for="email3">Email:</label>
+                                <input type="email" id="email3">
+                            </div>
+                            <div>
+                                <label for="add3">Mob No:</label>
+                                <textarea id="add3" cols="30" rows="5"></textarea>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <h3>
+                        <button aria-expanded="false" aria-controls="region-mouse-event-failure2"
+                            id="accordion-mouse-event-failure2" class="accordion-buttton">
+                            <span class="accordion-header">
+                                Permenant Address
+                            </span>
+                        </button>
+                    </h3>
+                    <div id="region-mouse-event-failure2" role="region" aria-labelledby="accordion-mouse-event-failure2"
+                        class="sect">
+                        <fieldset>
+                            <div>
+                                <label for="house3">House/Flat No:</label>
+                                <input type="text" id="house3">
+                            </div>
+                            <div>
+                                <label for="city3">City/Town:</label>
+                                <input type="text" id="city3">
+                            </div>
+                            <div>
+                                <label for="district3">District:</label>
+                                <input type="text" id="district3">
+                            </div>
+                            <div>
+                                <label for="state3">State:</label>
+                                <input type="text" id="state3">
+                            </div>
+                        </fieldset>
+                    </div>
+                    <h3>
+                        <button aria-expanded="false" aria-controls="region-mouse-event-failure3"
+                            id="accordion-mouse-event-failure3" class="accordion-buttton">
+                            <span class="accordion-header">
+                                Office Address
+                            </span>
+                        </button>
+                    </h3>
+                    <div id="region-mouse-event-failure3" role="region" aria-labelledby="accordion-mouse-event-failure3"
+                        class="sect">
+                        <fieldset>
+                            <div>
+                                <label for="officeName3">Name:</label>
+                                <input type="text" id="officeName3">
+                            </div>
+                            <div>
+                                <label for="office3">House/Flat No:</label>
+                                <input type="text" id="office3">
+                            </div>
+                            <div>
+                                <label for="officeCity3">City/Town:</label>
+                                <input type="text" id="officeCity3">
+                            </div>
+                            <div>
+                                <label for="officeDistrict3">District:</label>
+                                <input type="text" id="officeDistrict3">
+                            </div>
+                            <div>
+                                <label for="officeState3">State:</label>
+                                <input type="text" id="officeState3">
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+        </div>
+        <div class="passing-section">
+                <h1>Mouse accessible accordion example</h1>
+                <div id="accessible-accordion3" class="accessible-accordion">
+                    <h3>
+                        <button aria-expanded="false" aria-controls="region-of-mouse-accessible-accordion1"
+                            id="mouse-accessible-accordion1">
+                            <span class="accordion-header">
+                                Personal Information
+                            </span>
+                        </button>
+                    </h3>
+                    <div id="region-of-mouse-accessible-accordion1" role="region" aria-labelledby="mouse-accessible-accordion1"
+                        class="sect">
+                        <fieldset>
+                            <div>
+                                <label for="accName3">Name:</label>
+                                <input type="text" id="accName3">
+                            </div>
+                            <div>
+                                <label for="accEmail3">Email:</label>
+                                <input type="email" id="accEmail3">
+                            </div>
+                            <div>
+                                <label for="accAdd3">Mob No:</label>
+                                <textarea id="accAdd3" cols="30" rows="5"></textarea>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <h3>
+                        <button aria-expanded="false" aria-controls="region-of-mouse-accessible-accordion2"
+                            id="mouse-accessible-accordion2" class="accordion-buttton">
+                            <span class="accordion-header">
+                                Permenant Address
+                            </span>
+                        </button>
+                    </h3>
+                    <div id="region-of-mouse-accessible-accordion2" role="region" aria-labelledby="mouse-accessible-accordion2"
+                        class="sect">
+                        <fieldset>
+                            <div>
+                                <label for="accHouse3">House/Flat No:</label>
+                                <input type="text" id="accHouse3">
+                            </div>
+                            <div>
+                                <label for="accCity3">City/Town:</label>
+                                <input type="text" id="accCity3">
+                            </div>
+                            <div>
+                                <label for="accDistrict3">District:</label>
+                                <input type="text" id="accDistrict3">
+                            </div>
+                            <div>
+                                <label for="accState3">State:</label>
+                                <input type="text" id="accState3">
+                            </div>
+                        </fieldset>
+                    </div>
+                    <h3>
+                        <button aria-expanded="false" aria-controls="region-of-mouse-accessible-accordion3"
+                            id="mouse-accessible-accordion3" class="accordion-buttton">
+                            <span class="accordion-header">
+                                Office Address
+                            </span>
+                        </button>
+                    </h3>
+                    <div id="region-of-mouse-accessible-accordion3" role="region" aria-labelledby="mouse-accessible-accordion3"
+                        class="sect">
+                        <fieldset>
+                            <div>
+                                <label for="accOfficeName3">Name:</label>
+                                <input type="text" id="accOfficeName3">
+                            </div>
+                            <div>
+                                <label for="accOffice3">House/Flat No:</label>
+                                <input type="text" id="accOffice3">
+                            </div>
+                            <div>
+                                <label for="accOfficeCity3">City/Town:</label>
+                                <input type="text" id="accOfficeCity3">
+                            </div>
+                            <div>
+                                <label for="accOfficeDistrict3">District:</label>
+                                <input type="text" id="accOfficeDistrict3">
+                            </div>
+                            <div>
+                                <label for="accOfficeState3">State:</label>
+                                <input type="text" id="accOfficeState3">
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+        </div>
+        
+    </div>
+
+    <div id="accordion-missing-aria-attributes" class="container">
+
+        <div class="failure-section">
+                <h1>Accordion with missing aria attributes</h1>
+                <div id="accordion-failure4" class="accordion-failure">
+                    <h3>
+                        <button id="accordion-missing-aria-attributes1">
+                            <span class="accordion-header">
+                                Personal Information
+                            </span>
+                        </button>
+                    </h3>
+                    <div id="region-accordion-with-missing-aria-attributes1" role="region" class="sect">
+                        <fieldset>
+                            <div>
+                                <label for="name4">Name:</label>
+                                <input type="text" id="name4">
+                            </div>
+                            <div>
+                                <label for="email4">Email:</label>
+                                <input type="email" id="email4">
+                            </div>
+                            <div>
+                                <label for="add4">Mob No:</label>
+                                <textarea id="add4" cols="30" rows="5"></textarea>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <h3>
+                        <button id="accordion-missing-aria-attributes2" class="accordion-buttton">
+                            <span class="accordion-header">
+                                Permenant Address
+                            </span>
+                        </button>
+                    </h3>
+                    <div id="region-accordion-with-missing-aria-attributes2" role="region" class="sect">
+                        <fieldset>
+                            <div>
+                                <label for="office4">House/Flat No:</label>
+                                <input type="text" id="office4">
+                            </div>
+                            <div>
+                                <label for="officeCity4">City/Town:</label>
+                                <input type="text" id="officeCity4">
+                            </div>
+                            <div>
+                                <label for="officeDistrict4">District:</label>
+                                <input type="text" id="officeDistrict4">
+                            </div>
+                            <div>
+                                <label for="officeState4">State:</label>
+                                <input type="text" id="officeState4">
+                            </div>
+                        </fieldset>
+                    </div>
+                    <h3>
+                        <button id="accordion-missing-aria-attributes3" class="accordion-buttton">
+                            <span class="accordion-header">
+                                Office Address
+                            </span>
+                        </button>
+                    </h3>
+                    <div id="region-accordion-with-missing-aria-attributes3" role="region" class="sect">
+                        <fieldset>
+                            <div>
+                                <label for="officeName4">Name:</label>
+                                <input type="text" id="officeName4">
+                            </div>
+                            <div>
+                                <label for="office4">House/Flat No:</label>
+                                <input type="text" id="office4">
+                            </div>
+                            <div>
+                                <label for="officeCity4">City/Town:</label>
+                                <input type="text" id="officeCity4">
+                            </div>
+                            <div>
+                                <label for="officeDistrict4">District:</label>
+                                <input type="text" id="officeDistrict4">
+                            </div>
+                            <div>
+                                <label for="officeState4">State:</label>
+                                <input type="text" id="officeState4">
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+        </div>
+        <div class="passing-section">
+                <h1>Accordion with aria attributes</h1>
+                <div id="accessible-accordion4" class="accessible-accordion">
+                    <h3>
+                        <button id="accordion-with-aria-attributes1" aria-controls="region-of-accordion-with-aria-attributes1" aria-expanded="false">
+                            <span class="accordion-header">
+                                Personal Information
+                            </span>
+                        </button>
+                    </h3>
+                    <div id="region-of-accordion-with-aria-attributes1" role="region" aria-labelledby="accordion-with-aria-attributes1" class="sect">
+                        <fieldset>
+                            <div>
+                                <label for="accName4">Name:</label>
+                                <input type="text" id="accName4">
+                            </div>
+                            <div>
+                                <label for="accEmail4">Email:</label>
+                                <input type="email" id="accEmail4">
+                            </div>
+                            <div>
+                                <label for="accAdd4">Mob No:</label>
+                                <textarea id="accAdd4" cols="30" rows="5"></textarea>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <h3>
+                        <button id="accordion-with-aria-attributes2" class="accordion-buttton" aria-controls="region-of-accordion-with-aria-attributes2" aria-expanded="false">
+                            <span class="accordion-header">
+                                Permenant Address
+                            </span>
+                        </button>
+                    </h3>
+                    <div id="region-of-accordion-with-aria-attributes2" role="region" aria-labelledby="accordion-with-aria-attributes2" class="sect">
+                        <fieldset>
+                            <div>
+                                <label for="accOffice4">House/Flat No:</label>
+                                <input type="text" id="accOffice4">
+                            </div>
+                            <div>
+                                <label for="accOfficeCity4">City/Town:</label>
+                                <input type="text" id="accOfficeCity4">
+                            </div>
+                            <div>
+                                <label for="accOfficeDistrict4">District:</label>
+                                <input type="text" id="accOfficeDistrict4">
+                            </div>
+                            <div>
+                                <label for="accOfficeState4">State:</label>
+                                <input type="text" id="accOfficeState4">
+                            </div>
+                        </fieldset>
+                    </div>
+                    <h3>
+                        <button id="accordion-with-aria-attributes3" class="accordion-buttton" aria-controls="region-of-accordion-with-aria-attribute3" aria-expanded="false">
+                            <span class="accordion-header">
+                                Office Address
+                            </span>
+                        </button>
+                    </h3>
+                    <div id="region-of-accordion-with-aria-attributes3" role="region" aria-labelledby="accordion-with-aria-attributes3" class="sect">
+                        <fieldset>
+                            <div>
+                                <label for="accOfficeName4">Name:</label>
+                                <input type="text" id="accOfficeName4">
+                            </div>
+                            <div>
+                                <label for="accOffice4">House/Flat No:</label>
+                                <input type="text" id="accOffice4">
+                            </div>
+                            <div>
+                                <label for="accOfficeCity4">City/Town:</label>
+                                <input type="text" id="accOfficeCity4">
+                            </div>
+                            <div>
+                                <label for="accOfficeDistrict4">District:</label>
+                                <input type="text" id="accOfficeDistrict4">
+                            </div>
+                            <div>
+                                <label for="accOfficeState4">State:</label>
+                                <input type="text" id="accOfficeState4">
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+        </div>  
+    </div>
+
+    <div id="accordion-adding-attribute-on-state-change" class="container">
+        <div class="failure-section">
+                <h1>Accordion adding attributes on state change</h1>
+                <div id="accordion-failure5" class="accordion-failure">
+                    <h3>
+                        <button id="accordion-adding-attribute-on-state-change1"
+                            aria-controls="region-accordion-adding-attribute-on-state-change1">
+                            <span class="accordion-header">
+                                Personal Information
+                            </span>
+                        </button>
+                    </h3>
+                    <div id="region-accordion-adding-attribute-on-state-change1" role="region" class="sect"
+                        aria-labelledby="accordion-adding-attribute-on-state-change1">
+                        <fieldset>
+                            <div>
+                                <label for="name5">Name:</label>
+                                <input type="text" id="name5">
+                            </div>
+                            <div>
+                                <label for="email5">Email:</label>
+                                <input type="email" id="email5">
+                            </div>
+                            <div>
+                                <label for="add5">Mob No:</label>
+                                <textarea id="add5" cols="30" rows="5"></textarea>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <h3>
+                        <button id="accordion-adding-attribute-on-state-change2" class="accordion-buttton"
+                            aria-controls="region-accordion-adding-attribute-on-state-change2">
+                            <span class="accordion-header">
+                                Permenant Address
+                            </span>
+                        </button>
+                    </h3>
+                    <div id="region-accordion-adding-attribute-on-state-change2" role="region" class="sect"
+                        aria-labelledby="accordion-adding-attribute-on-state-change2">
+                        <fieldset>
+                            <div>
+                                <label for="house5">House/Flat No:</label>
+                                <input type="text" id="house5">
+                            </div>
+                            <div>
+                                <label for="city5">City/Town:</label>
+                                <input type="text" id="city5">
+                            </div>
+                            <div>
+                                <label for="district5">District:</label>
+                                <input type="text" id="district5">
+                            </div>
+                            <div>
+                                <label for="state5">State:</label>
+                                <input type="text" id="state5">
+                            </div>
+                        </fieldset>
+                    </div>
+                    <h3>
+                        <button id="accordion-adding-attribute-on-state-change3" class="accordion-buttton"
+                            aria-controls="region-accordion-adding-attribute-on-state-change3">
+                            <span class="accordion-header">
+                                Office Address
+                            </span>
+                        </button>
+                    </h3>
+                    <div id="region-accordion-adding-attribute-on-state-change3" role="region" class="sect"
+                        aria-labelledby="accordion-adding-attribute-on-state-change3">
+                        <fieldset>
+                            <div>
+                                <label for="officeName5">Name:</label>
+                                <input type="text" id="officeName5">
+                            </div>
+                            <div>
+                                <label for="office5">House/Flat No:</label>
+                                <input type="text" id="office5">
+                            </div>
+                            <div>
+                                <label for="officeCity5">City/Town:</label>
+                                <input type="text" id="officeCity5">
+                            </div>
+                            <div>
+                                <label for="officeDistrict5">District:</label>
+                                <input type="text" id="officeDistrict5">
+                            </div>
+                            <div>
+                                <label for="officeState5">State:</label>
+                                <input type="text" id="officeState5">
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+        </div>
+        <div class="passing-section">
+                <h1>Accordion adding attributes on state change</h1>
+                <div id="accessible-accordion5" class="accessible-accordion">
+                    <h3>
+                        <button id="accordion-with-default-aria-attributes1"
+                            aria-controls="region-of-accordion-with-default-aria-attributes1" aria-expanded="false">
+                            <span class="accordion-header">
+                                Personal Information
+                            </span>
+                        </button>
+                    </h3>
+                    <div id="region-of-accordion-with-default-aria-attributes1" role="region" class="sect"
+                        aria-labelledby="accordion-adding-attribute-on-state-change1">
+                        <fieldset>
+                            <div>
+                                <label for="accName5">Name:</label>
+                                <input type="text" id="accName5">
+                            </div>
+                            <div>
+                                <label for="accEmail5">Email:</label>
+                                <input type="email" id="accEmail5">
+                            </div>
+                            <div>
+                                <label for="accAdd5">Mob No:</label>
+                                <textarea id="accAdd5" cols="30" rows="5"></textarea>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <h3>
+                        <button id="accordion-with-default-aria-attributes2" class="accordion-buttton"
+                            aria-controls="region-of-accordion-with-default-aria-attributes2" aria-expanded="false">
+                            <span class="accordion-header">
+                                Permenant Address
+                            </span>
+                        </button>
+                    </h3>
+                    <div id="region-of-accordion-with-default-aria-attributes2" role="region" class="sect"
+                        aria-labelledby="accordion-with-default-aria-attributes2">
+                        <fieldset>
+                            <div>
+                                <label for="accHouse5">House/Flat No:</label>
+                                <input type="text" id="accHouse5">
+                            </div>
+                            <div>
+                                <label for="accCity5">City/Town:</label>
+                                <input type="text" id="accCity5">
+                            </div>
+                            <div>
+                                <label for="accDistrict5">District:</label>
+                                <input type="text" id="accDistrict5">
+                            </div>
+                            <div>
+                                <label for="accState5">State:</label>
+                                <input type="text" id="accState5">
+                            </div>
+                        </fieldset>
+                    </div>
+                    <h3>
+                        <button id="accordion-with-default-aria-attributes3" class="accordion-buttton"
+                            aria-controls="region-of-accordion-with-default-aria-attributes3" aria-expanded="false">
+                            <span class="accordion-header">
+                                Office Address
+                            </span>
+                        </button>
+                    </h3>
+                    <div id="region-of-accordion-with-default-aria-attributes3" role="region" class="sect"
+                        aria-labelledby="accordion-with-default-aria-attributes3">
+                        <fieldset>
+                            <div>
+                                <label for="accOfficeName5">Name:</label>
+                                <input type="text" id="accOfficeName5">
+                            </div>
+                            <div>
+                                <label for="accOffice5">House/Flat No:</label>
+                                <input type="text" id="accOffice5">
+                            </div>
+                            <div>
+                                <label for="accOfficeCity5">City/Town:</label>
+                                <input type="text" id="accOfficeCity5">
+                            </div>
+                            <div>
+                                <label for="accOfficeDistrict5">District:</label>
+                                <input type="text" id="accOfficeDistrict5">
+                            </div>
+                            <div>
+                                <label for="accOfficeState5">State:</label>
+                                <input type="text" id="accOfficeState5">
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+
+        </div>
+        
+    </div>
+
+    <div id="accordion-failure-with-show-only" class="container">
+        <div class="failure-section">
+                <h1>Accordion failure with show only behaviour</h1>
+                <div id="accordion-failure6" class="accordion-failure">
+                    <h3>
+                        <button aria-expanded="true" aria-controls="region-accordion-failure-with-show-only1"
+                            id="accordion-failure-with-show-only1">
+                            <span class="accordion-header">
+                                Personal Information
+                            </span>
+                        </button>
+                    </h3>
+                    <div id="region-accordion-failure-with-show-only1" role="region"
+                        aria-labelledby="accordion-failure-with-show-only1" class="sect" style="display: block">
+                        <fieldset>
+                            <div>
+                                <label for="name6">Name:</label>
+                                <input type="text" id="name6">
+                            </div>
+                            <div>
+                                <label for="email6">Email:</label>
+                                <input type="email" id="email6">
+                            </div>
+                            <div>
+                                <label for="add6">Mob No:</label>
+                                <textarea id="add6" cols="30" rows="5"></textarea>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <h3>
+                        <button aria-expanded="false" aria-controls="region-accordion-failure-with-show-only2"
+                            id="accordion-failure-with-show-only2" class="accordion-buttton">
+                            <span class="accordion-header">
+                                Permenant Address
+                            </span>
+                        </button>
+                    </h3>
+                    <div id="region-accordion-failure-with-show-only2" role="region"
+                        aria-labelledby="accordion-failure-with-show-only2" class="sect">
+                        <fieldset>
+                            <div>
+                                <label for="house6">House/Flat No:</label>
+                                <input type="text" id="house6">
+                            </div>
+                            <div>
+                                <label for="city6">City/Town:</label>
+                                <input type="text" id="city6">
+                            </div>
+                            <div>
+                                <label for="district6">District:</label>
+                                <input type="text" id="district6">
+                            </div>
+                            <div>
+                                <label for="state6">State:</label>
+                                <input type="text" id="state6">
+                            </div>
+                        </fieldset>
+                    </div>
+                    <h3>
+                        <button aria-expanded="false" aria-controls="region-accordion-failure-with-show-only3"
+                            id="accordion-failure-with-show-only3" class="accordion-buttton">
+                            <span class="accordion-header">
+                                Office Address
+                            </span>
+                        </button>
+                    </h3>
+                    <div id="region-accordion-failure-with-show-only3" role="region"
+                        aria-labelledby="accordion-failure-with-show-only3" class="sect">
+                        <fieldset>
+                            <div>
+                                <label for="officeName6">Name:</label>
+                                <input type="text" id="officeName6">
+                            </div>
+                            <div>
+                                <label for="office6">House/Flat No:</label>
+                                <input type="text" id="office6">
+                            </div>
+                            <div>
+                                <label for="officeCity6">City/Town:</label>
+                                <input type="text" id="officeCity6">
+                            </div>
+                            <div>
+                                <label for="officeDistrict6">District:</label>
+                                <input type="text" id="officeDistrict6">
+                            </div>
+                            <div>
+                                <label for="officeState6">State:</label>
+                                <input type="text" id="officeState6">
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+        </div>
+        <div class="passing-section">
+                <h1>Accordion with show only behaviour</h1>
+                <div id="accessible-accordion6" class="accessible-accordion">
+                    <h3>
+                        <button aria-expanded="true" aria-controls="region-of-accordion-with-show-only-behavior1"
+                            id="accordion-with-show-only-behavior1">
+                            <span class="accordion-header">
+                                Personal Information
+                            </span>
+                        </button>
+                    </h3>
+                    <div id="region-of-accordion-with-show-only-behavior1" role="region"
+                        aria-labelledby="accordion-with-show-only-behavior1" class="sect" style="display: block">
+                        <fieldset>
+                            <div>
+                                <label for="accName6">Name:</label>
+                                <input type="text" id="accName6">
+                            </div>
+                            <div>
+                                <label for="accEmail6">Email:</label>
+                                <input type="email" id="accEmail6">
+                            </div>
+                            <div>
+                                <label for="accAdd6">Mob No:</label>
+                                <textarea id="accAdd6" cols="30" rows="5"></textarea>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <h3>
+                        <button aria-expanded="false" aria-controls="region-of-accordion-with-show-only-behavior2"
+                            id="accordion-with-show-only-behavior2" class="accordion-buttton">
+                            <span class="accordion-header">
+                                Permenant Address
+                            </span>
+                        </button>
+                    </h3>
+                    <div id="region-of-accordion-with-show-only-behavior2" role="region"
+                        aria-labelledby="accordion-with-show-only-behavior2" class="sect">
+                        <fieldset>
+                            <div>
+                                <label for="accHouse6">House/Flat No:</label>
+                                <input type="text" id="accHouse6">
+                            </div>
+                            <div>
+                                <label for="accCity6">City/Town:</label>
+                                <input type="text" id="accCity6">
+                            </div>
+                            <div>
+                                <label for="accDistrict6">District:</label>
+                                <input type="text" id="accDistrict6">
+                            </div>
+                            <div>
+                                <label for="accState6">State:</label>
+                                <input type="text" id="accState6">
+                            </div>
+                        </fieldset>
+                    </div>
+                    <h3>
+                        <button aria-expanded="false" aria-controls="region-of-accordion-with-show-only-behavior3"
+                            id="accordion-with-show-only-behavior3" class="accordion-buttton">
+                            <span class="accordion-header">
+                                Office Address
+                            </span>
+                        </button>
+                    </h3>
+                    <div id="region-of-accordion-with-show-only-behavior3" role="region"
+                        aria-labelledby="accordion-with-show-only-behavior3" class="sect">
+                        <fieldset>
+                            <div>
+                                <label for="accOfficeName6">Name:</label>
+                                <input type="text" id="accOfficeName6">
+                            </div>
+                            <div>
+                                <label for="accOffice6">House/Flat No:</label>
+                                <input type="text" id="accOffice6">
+                            </div>
+                            <div>
+                                <label for="accOfficeCity6">City/Town:</label>
+                                <input type="text" id="accOfficeCity6">
+                            </div>
+                            <div>
+                                <label for="accOfficeDistrict6">District:</label>
+                                <input type="text" id="accOfficeDistrict6">
+                            </div>
+                            <div>
+                                <label for="accOfficeState6">State:</label>
+                                <input type="text" id="accOfficeState6">
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div id="accordion-failure-with-unsupported-aria-attributes" class="container">
+            <div class="failure-section">
+                    <h1>Accordion with unsupported aria-attributes</h1>
+                    <div id="accordion-failure7" class="accordion-failure">
+                        <h3>
+                            <button aria-pressed="false" aria-controls="region-of-accordion-with-unsupported-aria-attributes1"
+                                id="accordion-with-unsupported-aria-attributes1" aria-expanded="false">
+                                <span class="accordion-header">
+                                    Personal Information
+                                </span>
+                            </button>
+                        </h3>
+                        <div id="region-of-accordion-with-unsupported-aria-attributes1" role="region"
+                            aria-labelledby="accordion-with-unsuppotrd-aria-attributes1" class="sect" aria-hidden="true">
+                            <fieldset>
+                                <div>
+                                    <label for="name7">Name:</label>
+                                    <input type="text" id="name7">
+                                </div>
+                                <div>
+                                    <label for="email7">Email:</label>
+                                    <input type="email" id="email7">
+                                </div>
+                                <div>
+                                    <label for="add7">Mob No:</label>
+                                    <textarea id="add7" cols="30" rows="5"></textarea>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <h3>
+                            <button aria-pressed="false" aria-controls="region-of-accordion-with-unsupported-aria-attributes2"
+                                id="accordion-with-unsupported-aria-attributes2" class="accordion-buttton" aria-expanded="false">
+                                <span class="accordion-header">
+                                    Permenant Address
+                                </span>
+                            </button>
+                        </h3>
+                        <div id="region-of-accordion-with-unsupported-aria-attributes2" role="region"
+                            aria-labelledby="accordion-with-unsupported-aria-attributes2" class="sect" aria-hidden="true">
+                            <fieldset>
+                                <div>
+                                    <label for="house7">House/Flat No:</label>
+                                    <input type="text" id="house6">
+                                </div>
+                                <div>
+                                    <label for="city7">City/Town:</label>
+                                    <input type="text" id="city7">
+                                </div>
+                                <div>
+                                    <label for="district7">District:</label>
+                                    <input type="text" id="district7">
+                                </div>
+                                <div>
+                                    <label for="state7">State:</label>
+                                    <input type="text" id="state7">
+                                </div>
+                            </fieldset>
+                        </div>
+                        <h3>
+                            <button aria-pressed="false" aria-controls="region-of-accordion-with-unsupported-aria-attributes3"
+                                id="accordion-with-unsupported-aria-attributes3" class="accordion-buttton" aria-expanded="false">
+                                <span class="accordion-header">
+                                    Office Address
+                                </span>
+                            </button>
+                        </h3>
+                        <div id="region-of-accordion-with-unsupported-aria-attributes3" role="region"
+                            aria-labelledby="accordion-with-unsupported-aria-attributes3" class="sect" aria-hidden="true">
+                            <fieldset>
+                                <div>
+                                    <label for="officeName7">Name:</label>
+                                    <input type="text" id="officeName7">
+                                </div>
+                                <div>
+                                    <label for="office7">House/Flat No:</label>
+                                    <input type="text" id="office7">
+                                </div>
+                                <div>
+                                    <label for="officeCity7">City/Town:</label>
+                                    <input type="text" id="officeCity7">
+                                </div>
+                                <div>
+                                    <label for="officeDistrict7">District:</label>
+                                    <input type="text" id="officeDistrict7">
+                                </div>
+                                <div>
+                                    <label for="officeState7">State:</label>
+                                    <input type="text" id="officeState7">
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+            </div>
+            <div class="passing-section">
+                    <h1>Accordion with supported aria-attributes</h1>
+                    <div id="accessible-accordion7" class="accessible-accordion">
+                        <h3>
+                            <button aria-expanded="false" aria-controls="region-of-accordion-with-supported-aria-attributes1"
+                                id="accordion-with-supported-aria-attributes1">
+                                <span class="accordion-header">
+                                    Personal Information
+                                </span>
+                            </button>
+                        </h3>
+                        <div id="region-of-accordion-with-supported-aria-attributes1" role="region"
+                            aria-labelledby="accordion-with-supported-aria-attributes1" class="sect">
+                            <fieldset>
+                                <div>
+                                    <label for="accName7">Name:</label>
+                                    <input type="text" id="accName7">
+                                </div>
+                                <div>
+                                    <label for="accEmail7">Email:</label>
+                                    <input type="email" id="accEmail7">
+                                </div>
+                                <div>
+                                    <label for="accAdd7">Mob No:</label>
+                                    <textarea id="accAdd7" cols="30" rows="5"></textarea>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <h3>
+                            <button aria-expanded="false" aria-controls="region-of-accordion-with-supported-aria-attributes2"
+                                id="accordion-with-supported-aria-attributes2" class="accordion-buttton">
+                                <span class="accordion-header">
+                                    Permenant Address
+                                </span>
+                            </button>
+                        </h3>
+                        <div id="region-of-accordion-with-supported-aria-attributes2" role="region"
+                            aria-labelledby="accordion-with-supported-aria-attributes2" class="sect">
+                            <fieldset>
+                                <div>
+                                    <label for="accHouse7">House/Flat No:</label>
+                                    <input type="text" id="accHouse7">
+                                </div>
+                                <div>
+                                    <label for="accCity7">City/Town:</label>
+                                    <input type="text" id="accCity7">
+                                </div>
+                                <div>
+                                    <label for="accDistrict7">District:</label>
+                                    <input type="text" id="accDistrict7">
+                                </div>
+                                <div>
+                                    <label for="accState7">State:</label>
+                                    <input type="text" id="accState7">
+                                </div>
+                            </fieldset>
+                        </div>
+                        <h3>
+                            <button aria-expanded="false" aria-controls="region-of-accordion-with-supported-aria-attributes3"
+                                id="accordion-with-supported-aria-attributes3" class="accordion-buttton">
+                                <span class="accordion-header">
+                                    Office Address
+                                </span>
+                            </button>
+                        </h3>
+                        <div id="region-of-accordion-with-supported-aria-attributes3" role="region"
+                            aria-labelledby="accordion-with-supported-aria-attributes3" class="sect">
+                            <fieldset>
+                                <div>
+                                    <label for="accOfficeName7">Name:</label>
+                                    <input type="text" id="accOfficeName7">
+                                </div>
+                                <div>
+                                    <label for="accOffice7">House/Flat No:</label>
+                                    <input type="text" id="accOffice7">
+                                </div>
+                                <div>
+                                    <label for="accOfficeCity7">City/Town:</label>
+                                    <input type="text" id="accOfficeCity7">
+                                </div>
+                                <div>
+                                    <label for="accOfficeDistrict7">District:</label>
+                                    <input type="text" id="accOfficeDistrict7">
+                                </div>
+                                <div>
+                                    <label for="accOfficeState7">State:</label>
+                                    <input type="text" id="accOfficeState7">
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <div id="accordion-with-missing-role" class="container">
+                <div class="failure-section">
+                        <h1>Accordion with missing role</h1>
+                        <div id="accordion-failure8" class="accordion-failure">
+                            <h3>
+                                <button aria-controls="region-of-accordion-with-missing-role1"
+                                    id="accordion-with-missing-role1" aria-expanded="false">
+                                    <span class="accordion-header" role="menu">
+                                        Personal Information
+                                    </span>
+                                </button>
+                            </h3>
+                            <div id="region-of-accordion-with-missing-role1" role="menuitem"
+                                aria-labelledby="accordion-with-missing-role1" class="sect">
+                                <fieldset>
+                                    <div>
+                                        <label for="name8">Name:</label>
+                                        <input type="text" id="name8">
+                                    </div>
+                                    <div>
+                                        <label for="email8">Email:</label>
+                                        <input type="email" id="email8">
+                                    </div>
+                                    <div>
+                                        <label for="add8">Mob No:</label>
+                                        <textarea id="add8" cols="30" rows="5"></textarea>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <h3>
+                                <button aria-controls="region-of-accordion-with-missing-role2"
+                                    id="accordion-with-missing-role2" class="accordion-buttton" aria-expanded="false" role="menu">
+                                    <span class="accordion-header">
+                                        Permenant Address
+                                    </span>
+                                </button>
+                            </h3>
+                            <div id="region-of-accordion-with-missing-role2" role="menuitem"
+                                aria-labelledby="accordion-with-missing-role2" class="sect">
+                                <fieldset>
+                                    <div>
+                                        <label for="house8">House/Flat No:</label>
+                                        <input type="text" id="house8">
+                                    </div>
+                                    <div>
+                                        <label for="city8">City/Town:</label>
+                                        <input type="text" id="city8">
+                                    </div>
+                                    <div>
+                                        <label for="district8">District:</label>
+                                        <input type="text" id="district8">
+                                    </div>
+                                    <div>
+                                        <label for="state8">State:</label>
+                                        <input type="text" id="state8">
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <h3>
+                                <button aria-controls="region-of-accordion-with-missing-role3"
+                                    id="accordion-with-missing-role3" class="accordion-buttton" aria-expanded="false" role="menu">
+                                    <span class="accordion-header">
+                                        Office Address
+                                    </span>
+                                </button>
+                            </h3>
+                            <div id="region-of-accordion-with-missing-role3" role="menuitem"
+                                aria-labelledby="accordion-with-missing-role3" class="sect">
+                                <fieldset>
+                                    <div>
+                                        <label for="officeName8">Name:</label>
+                                        <input type="text" id="officeName8">
+                                    </div>
+                                    <div>
+                                        <label for="office8">House/Flat No:</label>
+                                        <input type="text" id="office8">
+                                    </div>
+                                    <div>
+                                        <label for="officeCity8">City/Town:</label>
+                                        <input type="text" id="officeCity8">
+                                    </div>
+                                    <div>
+                                        <label for="officeDistrict8">District:</label>
+                                        <input type="text" id="officeDistrict8">
+                                    </div>
+                                    <div>
+                                        <label for="officeState8">State:</label>
+                                        <input type="text" id="officeState8">
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                </div>
+                <div class="passing-section">
+                        <h1>Accordion with supported aria-attributes</h1>
+                        <div id="accessible-accordion8" class="accessible-accordion">
+                            <h3>
+                                <button aria-expanded="false" aria-controls="region-of-accordion-with-role1"
+                                    id="accordion-with-role1">
+                                    <span class="accordion-header">
+                                        Personal Information
+                                    </span>
+                                </button>
+                            </h3>
+                            <div id="region-of-accordion-with-role1" role="region"
+                                aria-labelledby="accordion-with-role1" class="sect">
+                                <fieldset>
+                                    <div>
+                                        <label for="accName8">Name:</label>
+                                        <input type="text" id="accName8">
+                                    </div>
+                                    <div>
+                                        <label for="accEmail8">Email:</label>
+                                        <input type="email" id="accEmail8">
+                                    </div>
+                                    <div>
+                                        <label for="accAdd8">Mob No:</label>
+                                        <textarea id="accAdd8" cols="30" rows="5"></textarea>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <h3>
+                                <button aria-expanded="false" aria-controls="region-of-accordion-with-role2"
+                                    id="accordion-with-role2" class="accordion-buttton">
+                                    <span class="accordion-header">
+                                        Permenant Address
+                                    </span>
+                                </button>
+                            </h3>
+                            <div id="region-of-accordion-with-role2" role="region"
+                                aria-labelledby="accordion-with-role2" class="sect">
+                                <fieldset>
+                                    <div>
+                                        <label for="accHouse8">House/Flat No:</label>
+                                        <input type="text" id="accHouse8">
+                                    </div>
+                                    <div>
+                                        <label for="accCity8">City/Town:</label>
+                                        <input type="text" id="accCity8">
+                                    </div>
+                                    <div>
+                                        <label for="accDistrict8">District:</label>
+                                        <input type="text" id="accDistrict8">
+                                    </div>
+                                    <div>
+                                        <label for="accState8">State:</label>
+                                        <input type="text" id="accState8">
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <h3>
+                                <button aria-expanded="false" aria-controls="region-of-accordion-with-role3"
+                                    id="accordion-with-role3" class="accordion-buttton">
+                                    <span class="accordion-header">
+                                        Office Address
+                                    </span>
+                                </button>
+                            </h3>
+                            <div id="region-of-accordion-with-role3" role="region"
+                                aria-labelledby="accordion-with-role3" class="sect">
+                                <fieldset>
+                                    <div>
+                                        <label for="accOfficeName8">Name:</label>
+                                        <input type="text" id="accOfficeName8">
+                                    </div>
+                                    <div>
+                                        <label for="accOffice8">House/Flat No:</label>
+                                        <input type="text" id="accOffice8">
+                                    </div>
+                                    <div>
+                                        <label for="accOfficeCity8">City/Town:</label>
+                                        <input type="text" id="accOfficeCity8">
+                                    </div>
+                                    <div>
+                                        <label for="accOfficeDistrict8">District:</label>
+                                        <input type="text" id="accOfficeDistrict8">
+                                    </div>
+                                    <div>
+                                        <label for="accOfficeState8">State:</label>
+                                        <input type="text" id="accOfficeState8">
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+            <div id="accordion-without-maintainig-appropriate-html-element" class="container">
+                <div class="failure-section">
+                        <h1>Accordion without maintaining appropriate html element</h1>
+                        <div id="accordion-failure9" class="accordion-failure">
+                            <div>
+                                <div aria-expanded="false" tabindex="0" id="btn1" aria-controls="region-ps">
+                                    <span id="s1">
+                                        Personal Information
+                                    </span>
+                                </div>
+                            </div>
+                            <div id="region-ps" aria-labelledby="btn1" class="sect">
+                                    <fieldset>
+                                            <div>
+                                                <label for="name9">Name:</label>
+                                                <input type="text" id="name9">
+                                            </div>
+                                            <div>
+                                                <label for="email9">Email:</label>
+                                                <input type="email" id="email9">
+                                            </div>
+                                            <div>
+                                                <label for="add9">Mob No:</label>
+                                                <textarea id="add9" cols="30" rows="5"></textarea>
+                                            </div>
+                                        </fieldset>
+                            </div>
+                            <div>
+                                    <div id="btn2" tabindex="0" aria-expanded="false" aria-controls="region-pa">
+                                        <span id="s2">
+                                            Permenent Address
+                                        </span>
+                                    </div>
+                                </div>
+                                <div id="region-pa" aria-labelledby="btn2" class="sect">
+                                        <fieldset>
+                                                <div>
+                                                    <label for="house9">House/Flat No:</label>
+                                                    <input type="text" id="house8">
+                                                </div>
+                                                <div>
+                                                    <label for="city9">City/Town:</label>
+                                                    <input type="text" id="city9">
+                                                </div>
+                                                <div>
+                                                    <label for="district9">District:</label>
+                                                    <input type="text" id="district9">
+                                                </div>
+                                                <div>
+                                                    <label for="state9">State:</label>
+                                                    <input type="text" id="state9">
+                                                </div>
+                                            </fieldset>
+                                </div>
+                                <div>
+                                        <div aria-expanded="false" id="btn3" aria-controls="region-oa" tabindex="0">
+                                            <span id="s3">
+                                                Office Address
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div id="region-oa" aria-labelledby="btn3" class="sect">
+                                            <fieldset>
+                                                    <div>
+                                                        <label for="officeName9">Name:</label>
+                                                        <input type="text" id="officeName9">
+                                                    </div>
+                                                    <div>
+                                                        <label for="office9">House/Flat No:</label>
+                                                        <input type="text" id="office9">
+                                                    </div>
+                                                    <div>
+                                                        <label for="officeCity9">City/Town:</label>
+                                                        <input type="text" id="officeCity9">
+                                                    </div>
+                                                    <div>
+                                                        <label for="officeDistrict9">District:</label>
+                                                        <input type="text" id="officeDistrict9">
+                                                    </div>
+                                                    <div>
+                                                        <label for="officeState9">State:</label>
+                                                        <input type="text" id="officeState9">
+                                                    </div>
+                                                </fieldset>
+                                    </div>
+                        </div>
+                </div>
+                <div class="passing-section">
+                        <h1>Accordion with appropriate html element</h1>
+                        <div id="accessible-accordion9" class="accessible-accordion">
+                            <h3>
+                                <button aria-expanded="false" aria-controls="region-of-accordion-with-appropriate-html-element1"
+                                    id="accordion-with-appropriate-html-element1">
+                                    <span class="accordion-header">
+                                        Personal Information
+                                    </span>
+                                </button>
+                            </h3>
+                            <div id="region-of-accordion-with-appropriate-html-element1" role="region"
+                                aria-labelledby="accordion-with-appropriate-html-element1" class="sect">
+                                <fieldset>
+                                    <div>
+                                        <label for="accName9">Name:</label>
+                                        <input type="text" id="accName9">
+                                    </div>
+                                    <div>
+                                        <label for="accEmail9">Email:</label>
+                                        <input type="email" id="accEmail9">
+                                    </div>
+                                    <div>
+                                        <label for="accAdd9">Mob No:</label>
+                                        <textarea id="accAdd9" cols="30" rows="5"></textarea>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <h3>
+                                <button aria-expanded="false" aria-controls="region-of-accordion-with-appropriate-html-element2"
+                                    id="accordion-with-appropriate-html-element2" class="accordion-buttton">
+                                    <span class="accordion-header">
+                                        Permenant Address
+                                    </span>
+                                </button>
+                            </h3>
+                            <div id="region-of-accordion-with-appropriate-html-element2" role="region"
+                                aria-labelledby="accordion-with-appropriate-html-element2" class="sect">
+                                <fieldset>
+                                    <div>
+                                        <label for="accHouse9">House/Flat No:</label>
+                                        <input type="text" id="accHouse9">
+                                    </div>
+                                    <div>
+                                        <label for="accCity9">City/Town:</label>
+                                        <input type="text" id="accCity9">
+                                    </div>
+                                    <div>
+                                        <label for="accDistrict9">District:</label>
+                                        <input type="text" id="accDistrict9">
+                                    </div>
+                                    <div>
+                                        <label for="accState9">State:</label>
+                                        <input type="text" id="accState9">
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <h3>
+                                <button aria-expanded="false" aria-controls="region-of-accordion-with-appropriate-html-element3"
+                                    id="accordion-with-appropriate-html-element3" class="accordion-buttton">
+                                    <span class="accordion-header">
+                                        Office Address
+                                    </span>
+                                </button>
+                            </h3>
+                            <div id="region-of-accordion-with-appropriate-html-element3" role="region"
+                                aria-labelledby="accordion-with-appropriate-html-element3" class="sect">
+                                <fieldset>
+                                    <div>
+                                        <label for="accOfficeName9">Name:</label>
+                                        <input type="text" id="accOfficeName9">
+                                    </div>
+                                    <div>
+                                        <label for="accOffice9">House/Flat No:</label>
+                                        <input type="text" id="accOffice9">
+                                    </div>
+                                    <div>
+                                        <label for="accOfficeCity9">City/Town:</label>
+                                        <input type="text" id="accOfficeCity9">
+                                    </div>
+                                    <div>
+                                        <label for="accOfficeDistrict9">District:</label>
+                                        <input type="text" id="accOfficeDistrict9">
+                                    </div>
+                                    <div>
+                                        <label for="accOfficeState9">State:</label>
+                                        <input type="text" id="accOfficeState9">
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                </div>
+            </div>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<html>
+	<head>
+		<title>Tab Naviagtions</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="../Practicles Examples/Web Grid Example/jquery-ui.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../Practicles Examples/Web Grid Example/jquery-ui.min.css">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script>
+			$(document).ready(function()
+			{
+				$(".nav-link").keydown(function(e)
+				{
+					//alert('hello');
+					switch(e.keyCode)
+					{
+						case 37 : $(this).parent().prev().children().focus();break;
+						case 39 : $(this).parent().next().children().focus();break;
+					}
+				});
+				$(".nav-link").focusin(function()
+				{
+					$(this).parent().css({"background-color":"white", "box-shadow":"#333 0px 0px 15px", "outline":"dashed steelblue 2px"});
+				});
+				$(".nav-link").focusout(function()
+				{
+					$(this).parent().css({"background-color":"none", "box-shadow":"none", "outline":"none"});
+				});
+			});
+		</script>
+		<style>
+		body{background:pink;}
+			@media only screen and (max-width: 600px) {
+				#myTab {
+					background-color: lightblue;
+					margin-top:20px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="nav nav-tabs" id="myTab" role="tablist">
+			<li class="nav-item">
+				<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Introduction</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Core Principles</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+			</li>
+		</ul>
+		<div class="tab-content" id="myTabContent">
+			<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+				In practice, accessibility is about designing for users with disabilities. Philosophically, it isn’t so much about designing for disability as it is about designing for everyone. 
+				Designing Interactive Systems’ author, David Benyon, offers five reasons an inaccessible product excludes users:
+
+				Physical – takes too much strength to use.
+				Conceptual – has hard-to-understand instructions.
+				Economic – is too expensive.
+				Cultural – users can’t understand metaphors regarding product interaction.
+				Social – on joining a group, users don’t understand that group’s social conventions.
+			</div>
+			<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+				<p>
+					Accessibility Principles: POUR. ... POUR is an acronym for four high-level principles that describe functional accessibility. 
+					Accessible technology is Perceivable, Operable, Understandable, and Robust.
+					In addition to websites, most other information technology can be made accessible by applying the POUR principles.
+			    </p>
+			</div>
+
+			<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+		</div>
+		
+		
+		<img src="https://imgsv.imaging.nikon.com/lineup/lens/zoom/normalzoom/af-s_dx_18-140mmf_35-56g_ed_vr/img/sample/sample1_l.jpg" title="hello i am madhav saraf" id="ms_img">
+		<input type="number" aria-label="hello" aria-describedby="ms_img">
+	</body>
+	
+</html>

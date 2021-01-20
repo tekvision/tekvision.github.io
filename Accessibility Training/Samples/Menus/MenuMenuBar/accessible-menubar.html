@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+	<head>
+		<title>Accessible Menubar Example</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="accessible-menuBar.js"></script>
+		<link rel="stylesheet" type="text/css" href="accessible-menubar.css">
+	</head>
+	<body>
+		<h1>Accessible Menubar Implementation</h1>
+		<h2>Navigation Menubar</h2>
+		<div class="nav-container">
+			<nav aria-label="General Navigational Menus">
+				<ul role="menubar" id="general-menubar">
+					<li role="none">
+						<a href="#" role="menuitem" tabindex="0">Home</a>
+					</li>
+					<li role="none">
+						<a href="#" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="-1">Courses
+							<img src="fav_down_arrow.png" height="20px" width="25px" role="presentation"/>
+						</a>
+						<ul role="menu" aria-label="Courses" class="popup-menu"> 
+							<li role="none">
+								<a href="#" role="menuitem" tabindex="-1">HTML</a>
+							</li>
+							<li role="none">
+								<a href="#" role="menuitem" tabindex="-1">Java Script</a>
+							</li>
+							<li role="none">
+								<a href="#" role="menuitem" tabindex="-1">JQuery</a>
+							</li>
+							<li role="none">
+								<a href="#" role="menuitem" tabindex="-1">Bootstrap</a>
+							</li>
+						</ul>
+					</li>
+					<li role="none">
+						<a href="#" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="-1">Videos 
+							<img src="fav_down_arrow.png" height="20px" width="25px"role="presentation"/>
+						</a>
+						<ul role="menu" aria-label="Videos" class="popup-menu"> 
+							<li role="none">
+								<a href="#" role="menuitem" tabindex="-1">HTML</a>
+							</li>
+							<li role="none">
+								<a href="#" role="menuitem" tabindex="-1">XML</a>
+							</li>
+							<li role="none">
+								<a href="#" role="menuitem" tabindex="-1">Java</a>
+							</li>
+							<li role="none">
+								<a href="#" role="menuitem" tabindex="-1">Python</a>
+							</li>
+						</ul>
+					</li>
+					<li role="none">
+						<a href="#" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="-1">Accessibility 
+							<img src="fav_down_arrow.png" height="20px" width="25px" role="presentation"/>
+						</a>
+						<ul role="menu" aria-label="Accessibility" class="popup-menu"> 
+							<li role="none">
+								<a href="#" role="menuitem" tabindex="-1">Overview</a>
+							</li>
+							<li role="none">
+								<a href="#" role="menuitem" tabindex="-1">Guidelines</a>
+							</li>
+							<li role="none">
+								<a href="#" role="menuitem" tabindex="-1">Aria authoring practices
+									<img src="fav_right_arrow.png" height="20px" width="25px"role="presentation"/>
+								</a>
+								<ul role="menu" aria-label="Aria Authoring Practices" class="float-right">
+									<li role="none">
+										<a role="menuitem" href="#" tabindex="-1">1.1</a>
+									</li>
+									<li role="none">
+										<a role="menuitem" href="#" tabindex="-1">1.2</a>
+									</li>
+								</ul>
+							</li>
+							<li role="none">
+								<a href="#" role="menuitem" tabindex="-1">Design Patterns</a>
+							</li>
+						</ul>
+					</li>	
+					<li role="none">
+						<a href="#" role="menuitem" tabindex="-1">Contact Us</a>
+					</li>
+					<li role="none">
+						<a href="#" role="menuitem" tabindex="-1">About Us</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</body>
+</html>
