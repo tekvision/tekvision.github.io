@@ -1,0 +1,10 @@
+
+		LOGIN DIALOG
+
+	Username:
+	Enter your username or email
+
+	Password:
+	Enter your password
+
+			Login	Cancel
