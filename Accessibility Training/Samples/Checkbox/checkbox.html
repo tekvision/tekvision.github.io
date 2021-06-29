@@ -1,0 +1,116 @@
+<html>
+
+<head>
+    <title>
+        checkbox example
+    </title>
+    <style>
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="checkbox.js"></script>
+    <link rel="stylesheet" href="checkbox.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="failing-section">
+            <h1>Failing Checkbox example</h1>
+            <div class="checkbox">
+                <h2 id="label1">Menu:</h2>
+                <div aria-labelledby="label">
+                    <ul>
+                        <li>
+                            <div id="c1" tabindex="0" class="ch" aria-labelledby="f-label1">
+                                    Americano
+                            </div>
+                        </li>
+                        <li>
+                            <div id="c2" tabindex="0" class="ch" aria-labelledby="f-label2">
+                                    Latte
+                            </div>
+                        </li>
+                        <li>
+                            <div id="c3" tabindex="0" class="ch" aria-labelledby="f-label3">
+                                    Cafe Mocha
+                            </div>
+                        </li>
+                        <li>
+                            <div id="c4" tabindex="0" class="ch" aria-labelledby="f-label4">
+                                    Cappuccino
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="passing-section">
+            <h1>Passing Checkbox example</h1>
+            <div class="checkbox">
+                <h2 id="checkbox-label">Menu:</h2>
+                <div aria-labelledby="checkbox-label" role="group">
+                    <ul>
+                        <li>
+                            <div role="checkbox" aria-checked="true" id="ch1" tabindex="0" class="ch checked1">
+                                Americano
+                            </div>
+                        </li>
+                        <li>
+                            <div role="checkbox" aria-checked="false" id="ch2" tabindex="0" class="ch">
+                                Latte
+                        </div>
+                        </li>
+                        <li>
+                            <div role="checkbox" aria-checked="false" id="ch3" tabindex="0" class="ch">
+                                Cafe Mocha
+                            </div>
+                        </li>
+                        <li>
+                            <div role="checkbox" aria-checked="false" id="ch4" tabindex="0" class="ch">
+                                Cappuccino
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="failing-section">
+            <h1>Failing default checked checkbox example</h1>
+            <div class="checkbox">
+                <h2 id="label3">Menu:</h2>
+                    <div aria-labelledby="label3" class="a-ch">
+                        <input type="checkbox" id="f-c1" class="ch">
+                        <label for="f-c1">Americano</label><br>
+                        <input type="checkbox" id="f-c2" class="ch">
+                        <label for="f-c2">Latte</label><br>
+                        <input type="checkbox" id="f-c3" class="ch">
+                        <label for="f-c3">Cafe Mocha</label><br>
+                        <input type="checkbox" id="f-c4" class="ch">
+                        <label for="f-c4">Cappuccino</label>
+                    </div>
+            </div>
+        </div>
+        <div class="passing-section">
+            <h1>Passing default checked checkbox example</h1>
+            <div class="checkbox">
+                <h2 id="label4">Menu:</h2>
+                <div aria-labelledby="label4" class="a-ch">
+                    <input type="checkbox" id="a-c1" class="ch" checked>
+                    <label for="a-c1">Americano</label><br> 
+                    <input type="checkbox" id="a-c2" class="ch">
+                    <label for="a-c2">Latte</label><br>
+                    <input type="checkbox" id="a-c3" class="ch">
+                    <label for="a-c3">Cafe Mocha</label><br>
+                    <input type="checkbox" id="a-c4" class="ch">
+                    <label for="a-c4">Cappuccino</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

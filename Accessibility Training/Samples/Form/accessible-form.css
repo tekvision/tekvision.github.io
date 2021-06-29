@@ -1,0 +1,62 @@
+body{
+	background:#e0e2e4;
+}
+fieldset{
+	border: solid 2px;
+}
+.accessible-input{
+	float:left;
+	height:30px;
+	width:300px;
+	border-radius:5px;
+	background:transparent;
+	border:solid mediumseagreen 2px;
+	padding-left:15px;
+}
+.accessible-button
+{
+	border:none;
+	background:#217ff3;
+	width:100px;
+	height:35px;
+	box-shadow: 1px 1px 1px;
+	color:white;
+	border-radius:5px;
+}
+.accessible-button:focus, .accessible-button:focus
+{
+	outline:dotted blue 2px;
+}
+ 
+.accessible-label{
+	width:200px;
+	height:100%;
+	font-size:1.1em;
+	font-weight:bold;
+	float:left;
+}
+.profile-view
+{
+	margin:3px;
+	border:solid 2px;
+}
+
+.input-container
+{
+	width:100%;
+	height:40px;
+}
+.accessible-error
+{
+	display:none;
+	margin:0px;
+	font-weight:bold;
+	color:red;
+}
+
+.accessible-label > span
+{
+	margin:0px;
+	font-weight:bold;
+	color:red;
+}

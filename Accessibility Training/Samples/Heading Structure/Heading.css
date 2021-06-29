@@ -1,0 +1,38 @@
+ .passing-container, .failing-container
+        {
+            border: 1px solid black;
+            margin-top: 10px;
+            padding: 10px;
+        }
+        .failing-container
+        {
+            background: #dc3545;
+        }
+        .passing-container
+        {
+            background: #28a745;
+        }
+        .main
+        {
+            text-align: center;
+            font-size: 50px;
+        }
+        .sub-heading,.sub-Heading2, .failing-subHeading2, .failing-subHeading
+        {
+            text-align: center;
+            font-size: 40px;
+            padding: 10px;
+        }
+        .sub,.failing-sub, .sub2, .failing-sub2
+        {
+            text-align: center;
+            padding: 10px;
+            font-size: 25px;
+        }
+        .title
+        {
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            padding: 10px;
+        }

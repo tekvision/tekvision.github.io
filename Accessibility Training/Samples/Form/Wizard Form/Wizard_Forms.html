@@ -1,0 +1,208 @@
+<html>
+    <Head>
+        <title>Wizard Forms</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="Wizard_Forms.js"></script>
+        <link rel="stylesheet" href="Wizard_Forms.css">
+    </Head>
+    <body>
+        <div class="container">
+            <div class="inaccessible-container" style="float: left;">
+                <h1>Inaccessible Wizard form</h1>
+                        
+                <div class="inacce-progressbar">
+                    <div class="form-steps" id="inacce-p-step1">Step 1</div>
+                    <div class="form-steps" id="inacce-p-step2">Step 2</div>
+                    <div class="form-steps" id="inacce-p-step3">Step 3</div>
+                </div>
+
+                <form id="inacce-wiz-form1" action="" style="display: block">
+                    <div class="inacce-tab" id="inacce-step1">
+                        <h2>Step 1</h2>
+                        <p>
+                            <label for="inacce-fname">First Name</label>
+                            <input placeholder="Enter First name" aria-invalid="false" class="inacce-formFields1" required name="inacceFname" id="inacce-fname">
+                        </p>
+                        <div class="error" aria-live="polite"></div>
+                        <p>
+                            <label for="inacce-lname">Last Name</label>
+                            <input placeholder="Enter Last name" aria-invalid="false" required class="inacce-formFields1" name="inacceLname" id="inacce-lname">
+                        </p>
+                        <div class="error" aria-live="polite"></div>
+                    </div>
+                </form>
+
+                <form id="inacce-wiz-form2" action="" style="display: none">
+                    <div class="inacce-tab" id="inacce-step2">
+                        <h2>Step 2</h2>
+                        <p>
+                            <label for="inacce-cname">Company Name</label>
+                            <input placeholder="Enter Company Name" class="inacce-formFields2" required name="cname" aria-invalid="false" id="inacce-cname">
+                        </p>
+                        <div class="error" aria-live="polite"></div>
+                        <p>
+                            <label for="inacce-cAdd">Company Address</label>
+                            <input placeholder="Enter Comapany Address" class="inacce-formFields2" required aria-invalid="false" name="inacceCAdd" id="inacce-cAdd">
+                        </p>
+                        <div class="error" aria-live="polite"></div>
+                    </div>
+                </form>
+
+                <form id="inacce-wiz-form3" action="" style="display: none">
+                    <div class="inacce-tab" id="inacce-step3">
+                        <h2>Step 3</h2>
+                        <p>
+                            <label for="inacce-email">Email</label>
+                            <input placeholder="Enter E-mail" name="inacceEmail" class="inacce-formFields3" required aria-invalid="false" id="inacce-email">
+                        </p>
+                        <div class="error" aria-live="polite"></div>
+                        <p>
+                            <label for="inacce-mob">Mob No</label>
+                            <input placeholder="Enter Mobile Number" class="inacce-formFields3" required aria-invalid="false" id="inacce-mob" name="inacceMob">
+                        </p>
+                        <div class="error" aria-live="polite"></div>
+                    </div>
+                </form>    
+
+                <div class="tab" id="inacce-wiz-form4" aria-live="polite" style="display: none">
+                </div>
+
+                <div class="inacce-wiz-buttons">
+                    <button type="submit" id="inacce-wiz-nextBtn">Next</button>
+                </div>
+        
+            </div>
+            
+            <div class="accessible-container">
+                <h1>Accessible Wizard form</h1>
+
+                <div class="live-region" style="opacity: 0" aria-live="polite"></div>
+                
+                <div class="progressbar">
+                    <div class="form-steps" id="p-step1">Step 1</div>
+                    <div class="form-steps" id="p-step2">Step 2</div>
+                    <div class="form-steps" id="p-step3">Step 3</div>
+                </div>
+                
+                <form id="acce-wiz-form1" action="">
+                    <div class="tab" id="step1">
+                        <h2>Step 1</h2> 
+                        <p>
+                            <label for="fname">First Name</label>
+                            <input placeholder="Enter First name" aria-invalid="false" class="formFields1" required name="fname" id="fname">
+                        </p>
+                        <div class="error"></div>
+                        <p>
+                            <label for="lname">Last Name</label>
+                            <input placeholder="Enter Last name" aria-invalid="false" required class="formFields1" name="lname" id="lname">
+                        </p>
+                        <div class="error"></div>
+                    </div>
+                </form>
+
+                <form id="acce-wiz-form2" action="" style="display: none">
+                    <div class="tab" id="step2">
+                        <h2>Step 2</h2>
+                        <p>
+                            <label for="cname">Company Name</label>
+                            <input placeholder="Enter Company Name" class="formFields2" required name="cname" aria-invalid="false" id="cname">
+                        </p>
+                        <div class="error"></div>
+                        <p>
+                            <label for="cAdd">Company Address</label>
+                            <input placeholder="Enter Comapany Address" class="formFields2" required aria-invalid="false" name="cAdd" id="cAdd">
+                        </p>
+                        <div class="error" ></div>
+                    </div>
+                </form>
+
+                <form id="acce-wiz-form3" action="" style="display: none">
+                    <div class="tab" id="step3">
+                        <h2>Step 3</h2>
+                        <p>
+                            <label for="email">Email</label>
+                            <input placeholder="Enter E-mail" name="email" class="formFields3" required aria-invalid="false" id="email">
+                        </p>
+                        <div class="error"></div>
+                        <p>
+                            <label for="mob">Mob No</label>
+                            <input placeholder="Enter Mobile Number" class="formFields3" required aria-invalid="false" id="mob" name="mob">
+                        </p>
+                        <div class="error"></div>
+                    </div>
+                </form>
+        
+                <div class="tab" id="acce-wiz-form4" aria-live="polite" style="display: none">
+                </div>
+
+                <div class="acce-wiz-buttons">
+                    <button type="submit" id="acce-wiz-nextBtn" >Next</button>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="inaccessible-container">
+                <h1>Inaccessible Dynamic Wizard Form</h1>
+                
+                <div class="progressbar">
+                    <div class="dynamic-form-steps" id="inacce-dynamicWiz-step1">Step 1</div>
+                    <div class="dynamic-form-steps" id="inacce-dynamicWiz-step2">Step 2</div>
+                </div>
+                
+                <form id="inacce-dynamicWiz-form1" novalidate action="">
+                    <div class="tab" id="inacce-wiz-step1">
+                    <h2>Step 1</h2>
+                    <p>
+                        <label for="inacce-fname2">First Name</label>
+                        <input placeholder="Enter First name" aria-invalid="false" class="inacce-wiz-formFields1" aria-required="true" name="inacce-fname2" id="inacce-fname2">
+                    </p>
+                    <div class="error"></div>
+                    <p>
+                        <label for="inacce-lname2">Last Name</label>
+                        <input placeholder="Enter Last name" aria-invalid="false" class="inacce-wiz-formFields1" aria-required="true" name="inacceLname2" id="inacce-lname2">
+                    </p>
+                    <div class="error"></div>
+                    </div>
+                </form>
+
+                <div class="inacce-dynamicWiz-buttons">
+                    <button type="button" id="inacce-dynamicWiz-nextBtn">Next</button>
+                </div>
+            </div>
+
+            <div class="accessible-container">
+                
+                <h1>Accessible Dynamic Wizard Form</h1>
+                
+                <div class="live-region2" aria-live="polite" style="opacity: 0"></div>
+                
+                <div class="progressbar">
+                    <div class="dynamic-form-steps" id="acce-dynamicWiz-step1">Step 1</div>
+                    <div class="dynamic-form-steps" id="acce-dynamicWiz-step2">Step 2</div>
+                </div>
+                
+                <form id="acce-dynamicWiz-form1" novalidate action="">
+                    <div class="tab" id="wiz-step1">
+                    <h2>Step 1</h2>
+                    <p>
+                        <label for="fname2">First Name</label>
+                        <input placeholder="Enter First name" aria-invalid="false" class="wiz-formFields1" aria-required="true" name="fname2" id="fname2">
+                    </p>
+                    <div class="error"></div>
+                    <p>
+                        <label for="lname2">Last Name</label>
+                        <input placeholder="Enter Last name" aria-invalid="false" class="wiz-formFields1" aria-required="true" name="lname2" id="lname2">
+                    </p>
+                    <div class="error"></div>
+                    </div>
+                </form>
+                
+                <div class="acce-dynamicWiz-buttons">
+                    <button type="button" id="acce-dynamicWiz-nextBtn">Next</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

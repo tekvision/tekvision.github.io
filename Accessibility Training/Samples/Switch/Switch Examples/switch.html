@@ -1,0 +1,57 @@
+<html>
+
+<head>
+	<title>Switch Examples</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="switch.js"></script>
+	<link rel="stylesheet" href="switch.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body class="bg-info">
+	<h1 class="text-center p-4">Switch Examples</h1>
+	
+	<div class="container-fluid">
+		<div class="row border mx-1 mb-5">
+					
+			<div class="failing-section col-md-6 bg-danger p-5 rounded">
+				<h2 class="text-center pb-4">Inaccessible Switch Example</h2>
+				<div class="container my-4 py-4 z-depth-1 border bg-light">
+						<h3 class="ml-5">Settings :- </h3>
+						<div id="failure-set1Label" style="width:200px;">Show Bookmark Bar:- <strong class="status">OFF</strong></div>
+						<div tabindex="0" aria-labelledby="failure-set1Label" id="failure-set1Container" class="containerElem">
+							<div class="toggler"></div>
+							<input type="checkbox" name="failure-bookmarkSwitch" id="failure-bookmarkSwitch" style="display:none">
+						</div>
+				
+						<div id="failure-set2Label">Show Home Button:- <strong class="status">OFF</strong></div>
+						<div tabindex="0" aria-labelledby="failure-set2Label" aria-live="polite" id="failure-set2Container" class="containerElem">
+							<div class="toggler"></div>
+							<input type="checkbox" name="failure-homeSwitch" id="failure-homeSwitch" style="display:none">
+						</div>
+				</div>
+			</div>
+
+			<div class="passing-section col-md-6 bg-success p-5 rounded">
+				<h2 class="text-center pb-4">Accessible Switch Example</h2>
+				<div class="container my-4 py-4 z-depth-1 border bg-light">
+						<h3 class="ml-5">Settings :- </h3>
+						<div id="set1Label" style="width:200px;">Show Bookmark Bar:- <strong class="status">OFF</strong></div>
+						<div aria-checked="false" tabindex="0" role="switch" aria-labelledby="set1Label" id="set1Container" class="containerElem">
+							<div class="toggler"></div>
+							<input type="checkbox" name="bookmarkSwitch" id="bookmarkSwitch" style="display:none">
+						</div>
+			
+						<div id="set2Label">Show Home Button:- <strong class="status">OFF</strong></div>
+						<div aria-checked="false" tabindex="0" role="switch" aria-labelledby="set2Label" id="set2Container"class="containerElem">
+							<div class="toggler"></div>
+							<input type="checkbox" name="homeSwitch" id="homeSwitch" style="display:none">
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE HTML lang="en-US">
+	<head>
+		<title>Accessible Tabs implementation</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script type="text/javascript" src="accessible-tabs.js"></script>
+		<link rel="stylesheet" type="text/css" href="accessible-tabs.css">
+	</head>
+	<body>
+		<h1>Accessible Tabs implementation</h1>
+		<h2>Automatic Tabs Activation for profile completion form</h2>
+		<div class="tab_container">
+			<div class="tablist" role="tablist" id="autoActivationTabs">
+				<button role="tab" class="tab activate" aria-selected="true" aria-controls="panelPD" id="tabPD" tabindex="0">Personal Details</button>
+				<button role="tab" class="tab" aria-selected="false" aria-controls="panelED" id="tabED" tabindex="-1">Education Details</button>
+				<button role="tab" class="tab" aria-selected="false" aria-controls="panelAD" id="tabAD" tabindex="-1">Address Details</button>
+			</div>
+			<div class="tab_panel show" role="tabpanel" id="panelPD" tabindex="0">
+				<div class="accessible-form-container">
+					<form aria-label="Personal Details Form" class="accessible-form" method="post">
+						<fieldset id="pd">
+							<legend>Personal Details</legend>
+							<div class="input-container">
+								<label for="fname" class="accessible-label">First Name <span aria-hidden="true">*</span></label>
+								<input type="text" id="fname" class="accessible-input" placeholder="First Name" aria-label="first name" aria-required="true">
+								<label class="accessible-error" id="frname" role="alert">First Name Cannot be empty</label>
+							</div>
+							<div class="input-container">
+								<label for="email" class="accessible-label">Email Id <span aria-hidden="true">*</span></label>
+								<input type="email" id="email" class="accessible-input" placeholder="Email Id" aria-label="Email Id" aria-required="true">
+								<label class="accessible-error" id="emailid" role="alert">Email cannot be empty</label>
+							</div>
+							<div class="input-container">
+								<label for="mob" class="accessible-label">Mobile Number <span aria-hidden="true">*</span></label>
+								<input type="text" id="mob" class="accessible-input" placeholder="Mobile Number" aria-label="Mobile Number" aria-required="true">
+								<label class="accessible-error" id="mobno" role="alert"> Mobile cannot be empty</label>
+							</div>
+							<div role="group" aria-label="Buttons Panel">
+								<input type="submit" class="accessible-button" aria-label="Show Profile" id="btnShow" value="Show Profile" aria-describedby="showdescr">
+								<input type="reset" class="accessible-button" aria-label="Reset" id="btnReset" value="Reset">
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+			<div class="tab_panel hide" role="tabpanel" id="panelED" tabindex="0">
+				<div class="accessible-form-container">
+					<form aria-label="Education Details Form" class="accessible-form" method="post">
+						<fieldset id="pd">
+							<legend>Education Details</legend>
+							<div class="input-container">
+								<label for="qualiName" class="accessible-label">Highest Qualification <span aria-hidden="true">*</span></label>
+								<input type="text" id="qualiName" class="accessible-input" placeholder="Highest Qualification" aria-label="Highest Qualification" aria-required="true">
+								<label class="accessible-error" id="qualiNameError" role="alert">Highest Qualification Cannot be empty</label>
+							</div>
+							<div class="input-container">
+								<label for="passYear" class="accessible-label">Passing Year <span aria-hidden="true">*</span></label>
+								<input type="date" id="passYear" class="accessible-input" placeholder="Passing Year" aria-label="passing year" aria-required="true">
+								<label class="accessible-error" id="yearError" role="alert">passing year cannot be empty</label>
+							</div>
+							<div class="input-container">
+								<label for="grade" class="accessible-label">Your Grade(A, A+, etc.) <span aria-hidden="true">*</span></label>
+								<input type="text" id="grade" class="accessible-input" placeholder="Grade" aria-label="Grade(A, A+, etc.)" aria-required="true">
+								<label class="accessible-error" id="gradeError" role="alert"> Grade cannot be empty</label>
+							</div>
+							<div role="group" aria-label="Buttons Panel">
+								<input type="submit" class="accessible-button" aria-label="Submit" id="btnShow" value="Submit Details" aria-describedby="showdescr">
+								<input type="reset" class="accessible-button" aria-label="Reset" id="btnReset" value="Reset">
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+			<div class="tab_panel hide" role="tabpanel" id="panelAD" tabindex="0">
+				<div class="accessible-form-container">
+					<form aria-label="Address Details Form" class="accessible-form" method="post">
+						<fieldset id="pd">
+							<legend>Address Details</legend>
+							<div class="input-container">
+								<label for="addrLine1" class="accessible-label">Address Line 1 <span aria-hidden="true">*</span></label>
+								<input type="text" id="addrLine1" class="accessible-input" placeholder="Address Line 1" aria-label="Address Line 1" aria-required="true">
+								<label class="accessible-error" id="addrLine1Error" role="alert">Address Cannot be empty</label>
+							</div>
+							<div class="input-container">
+								<label for="addrLine2" class="accessible-label">Address Line 2 </label>
+								<input type="text" id="addrLine1" class="accessible-input" placeholder="Address Line 2" aria-label="Address Line 2">
+							</div>
+							<div class="input-container">
+								<label for="pincode" class="accessible-label">Pincode <span aria-hidden="true">*</span></label>
+								<input type="text" id="pincode" class="accessible-input" placeholder="Pincode" aria-label="Pincode" aria-required="true">
+								<label class="accessible-error" id="pincodeError" role="alert"> Pincode cannot be empty</label>
+							</div>
+							<div role="group" aria-label="Buttons Panel">
+								<input type="submit" class="accessible-button" aria-label="Show Profile" id="btnShow" value="Show Profile" aria-describedby="showdescr">
+								<input type="reset" class="accessible-button" aria-label="Reset" id="btnReset" value="Reset">
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+		<h2>Manual Tab Activation Behavior for User Login form</h2>
+		<div class="tab_container">
+			<div class="tablist" role="tablist" id="manualActivationTabs">
+				<div role="tab" class="tab activate" aria-selected="true" aria-controls="panelCust" id="tabCust" tabindex="0">Customer Login</div>
+				<div role="tab" class="tab" aria-selected="false" aria-controls="panelAgent" id="tabAgent" tabindex="-1">Agent Login</div>
+				<div role="tab" class="tab" aria-selected="false" aria-controls="panelAdmin" id="tabAdmin" tabindex="-1">Admin Login</div>
+			</div>
+			<div class="tab_panel show" role="tabpanel" id="panelCust" tabindex="0" style="margin-top:4px">
+				<div class="accessible-form-container">
+					<form aria-label="Personal Details Form" class="accessible-form" method="post">
+						<fieldset id="pd">
+							<legend>User Login</legend>
+							<div class="input-container">
+								<label for="custUname" class="accessible-label">UserName <span aria-hidden="true">*</span></label>
+								<input type="text" id="custUname" class="accessible-input" placeholder="User Name" aria-label="User name" aria-required="true">
+								<label class="accessible-error" id="custNameError" role="alert">User Name Cannot be empty</label>
+							</div>
+							<div class="input-container">
+								<label for="userPwd" class="accessible-label">Password <span aria-hidden="true">*</span></label>
+								<input type="password" id="userPwd" class="accessible-input" placeholder="Password" aria-label="Password" aria-required="true">
+								<label class="accessible-error" id="userPwdError" role="alert">Password cannot be empty</label>
+							</div>
+							<div class="input-container">
+								<label for="userDob" class="accessible-label">Date of Birth <span aria-hidden="true">*</span></label>
+								<input type="date" id="userDob" class="accessible-input" placeholder="Date of Birth" aria-label="Date of Birth" aria-required="true">
+								<label class="accessible-error" id="userDobError" role="alert"> Date of Birth cannot be empty</label>
+							</div>
+							<div role="group" aria-label="Buttons Panel">
+								<input type="submit" class="accessible-button" aria-label="Login" id="userLogin" value="Login" aria-describedby="showdescr">
+								<input type="reset" class="accessible-button" aria-label="Reset" id="btnReset" value="Reset">
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+			<div class="tab_panel hide" role="tabpanel" id="panelAgent" tabindex="0" style="margin-top:4px">
+				<div class="accessible-form-container">
+					<form aria-label="Education Details Form" class="accessible-form" method="post">
+						<fieldset id="pd">
+							<legend>Agent Login</legend>
+							<div class="input-container">
+								<label for="agentId" class="accessible-label">Agent ID <span aria-hidden="true">*</span></label>
+								<input type="text" id="agentID" class="accessible-input" placeholder="Agent ID" aria-label="Agent ID" aria-required="true">
+								<label class="accessible-error" id="agentIdError" role="alert">Agent ID Cannot be empty</label>
+							</div>
+							<div class="input-container">
+								<label for="agentCode" class="accessible-label">Agent 6 Digit Code <span aria-hidden="true">*</span></label>
+								<input type="password" id="agentCode" class="accessible-input" maxlength="6" placeholder="Agent 6 Digit Code" aria-label="Agent 6 Digit Code" aria-required="true">
+								<label class="accessible-error" id="agentCodeError" role="alert">Code cannot be empty</label>
+							</div>
+							<div role="group" aria-label="Buttons Panel">
+								<input type="submit" class="accessible-button" aria-label="Login" id="agentLogin" value="Login" aria-describedby="showdescr">
+								<input type="reset" class="accessible-button" aria-label="Reset" id="btnReset" value="Reset">
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+			<div class="tab_panel hide" role="tabpanel" id="panelAdmin" tabindex="0" style="margin-top:4px">
+				<div class="accessible-form-container">
+					<form aria-label="Address Details Form" class="accessible-form" method="post">
+						<fieldset id="pd">
+							<legend>Address Details</legend>
+							<div class="input-container">
+								<label for="adminId" class="accessible-label">Admin ID<span aria-hidden="true">*</span></label>
+								<input type="text" id="adminID" class="accessible-input" placeholder="Admin ID" aria-required="true">
+								<label class="accessible-error" id="adminIDError" role="alert">Admin Id Cannot be empty</label>
+							</div>
+							<div class="input-container">
+								<label for="adminPwd" class="accessible-label">Password</label>
+								<input type="text" id="adminPwd" class="accessible-input" placeholder="Password" aria-required="true">
+								<label class="accessible-error" id="adminPwdError" role="alert">Password Cannot be empty</label>
+							</div>
+							<div role="group" aria-label="Buttons Panel">
+								<input type="submit" class="accessible-button" aria-label="Admin Login" id="adminLogin" value="Admin Login" aria-describedby="showdescr">
+								<input type="reset" class="accessible-button" aria-label="Reset" id="btnReset" value="Reset">
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>

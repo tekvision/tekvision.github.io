@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en-in">
+	<head>
+		<title>Registration Form</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="registration.js"></script>
+		<script src="accessible-form.js"></script>
+		<script src="failing-form.js"></script>
+		<link rel="stylesheet" href="accessible-form.css">
+		<link rel="stylesheet" href="registration.css">
+	</head>
+	<body>
+		<div id="main" role="main">
+			<div class="container">
+				<h1>Registration form</h1>
+				<h2> Please Fill the following Form to register yourself.</h2>
+				<div>
+					<form role="form" aria-label="registration" id="form" action="success.html" novalidate method ="post">
+						<div id="summaryError" role="alert"></div>
+						<div>
+							<div class="formLabels"><label for="firstName">Enter your first name</label></div>
+							<div class="formInputs"><input type="text" id="firstName" class="required form" aria-required="true" /></div>
+							<br><br>
+							<span class="error" id="firstNameError" hidden></span>
+						<br>
+						</div>
+						<div>
+							<div class="formLabels"><label for="middleName">Enter your middle name</label></div>
+							<div class="formInputs"><input type="text" class="optional form" id="middleName" /></div>
+							<br><br><br>
+						</div>
+						<div>
+							<div class="formLabels"><label for="lastName">Enter your last name</label></div>
+							<div class="formInputs"><input type="text" class="required form" id="lastName" aria-required="true" /></div>
+							<br><br>
+							<span id="lastNameError" class="error" hidden></span><br>
+						</div>
+						<div>
+							<fieldset id="gender" aria-required="true">
+								<legend>Select your gender</legend>
+								<div>
+									<input type="radio" name="gender" id="male" class="required form" value="male" />
+									<label for="male">Male</label>
+								</div>
+								<div>
+									<input type="radio" name="gender" id="female" class="required form" value="female"/>
+									<label for="female">Female</label>
+								</div>
+								<div>
+									<input type="radio" name="gender" id="other" class="required form" value="other"/>
+									<label for="other">Other</label>
+								</div>
+							</fieldset>
+							<span id="radioError" class="error" hidden></span>
+						</div>
+						<div>
+							<div class="formLabels"><label for="qualification">Select Your qualification</label></div>
+							<div class="formInputs">
+								<select id="qualification" class="required form" aria-required="true">
+										<option value="">Please select</opption>
+										<option value="10">10TH</option>
+										<option value="12">12TH</option>
+										<option value="graduate">graduate</option>
+										<option value="pg">Post graduate</option>
+									</select>
+							</div>
+							<br><br>
+							<span id="qualificationError" class="error" hidden></span><br>
+						</div>
+						<div>
+							<div class="formLabels"><label for="primaryEmail">Enter your primary email</label></div>
+							<div class="formInputs"><input type="email" class="required form" id="primaryEmail" aria-required="true" /></div>
+							<br><br>
+							<span id="primaryEmailError" class="error" hidden></span><br>
+						</div>
+						<div>
+							<div class="formLabels"><label for="altEmail">Enter your alternate email </label></div>
+							<div class="formInputs"><input type="text" class="optional form" id="altEmail" /></div>
+							<br><br>
+							<span id="altEmailError" class="error" hidden></span><br>
+						</div>
+						<div>
+							<div class="formLabels"><label for="password">Enter your password</label></div>
+							<div class="formInputs"><input type="password" class="required form" id="password" aria-required="true" /></div>
+							<br><br>
+							<span id="passwordError" class="error" hidden></span><br>
+						</div>
+						<div>
+							<div class="formLabels"><label for="cnfPassword">Enter your confirm password</label></div>
+							<div class="formInputs"><input type="password" class="required form" id="cnfPassword" aria-required="true" /></div>
+							<br><br>
+							<span id="cnfPasswordError" class="error" hidden></span><br>
+						</div>
+						<div>
+							<input type="submit" value="submit" id="submit" />
+							<input type="reset" id="reset" value="reset" />
+						</div>
+					</form>
+				</div>
+			</div>
+			<div>
+				<h2>Failing example of Form</h2>
+				<div>
+					<form role="form" aria-label="failing registration " id="failing-form">
+						<div>
+							<label for="first-name">Enter your first name</label>
+							<input type="text" id="first-name" class="fail-required fail-form" aria-required="false" aria-describedby="ABC" /><br>
+							<span id="first-name-error" hidden></span><br>
+						</div>
+						<div>
+							<label for="middle-name">Enter your middle name</label>
+							<input type="text" class="fail-optional fail-form" id="middle-name" tabindex="-1" /><br><br>
+						</div>
+						<div>
+							<label for="last-name"> Enter your last name</label>
+							<input type="text" class="fail-required fail-form" id="last-name" /><br>
+							<span id="last-name-error" hidden></span><br>
+						</div>
+						<div>
+							<label for="fail-qualification">Select Your qualification</label>
+							<select id="fail-qualification" class="fail-required fail-form">
+								<option value="">Please select</opption>
+								<option value="10">10TH</option>
+								<option value="12">12TH</option>
+								<option value="graduate">graduate</option>
+								<option value="pg">Post graduate</option>
+							</select><br>
+							<span id="fail-qualification-error" hidden></span><br>
+						</div>
+						<div>
+							<label for="primary-email">Enter your primary email</label>
+							<input type="email" class="fail-required fail-form" id="primary-email" aria-required="false" /><br>
+							<span id="primary-email-error" hidden></span><br>
+						</div>
+						<div>
+							<label for="alt-email"> enter your alternate email </label>
+							<input type="text" class="fail-optional fail-form" id="alt-email" /><br><br>
+						</div>
+						<div>
+							<label for="fail-password"> enter your password</label>
+							<input type="password" class="fail-required fail-form" id="fail-password" aria-required="true" /><br>
+							<span id="fail-password-error" hidden></span><br>
+						</div>
+						<div>
+							<label for="cnf-password"> enter your confirm password</label>
+							<input type="password" class="fail-required fail-form" id="cnf-password" aria-required="live" /><br>
+							<span id="cnf-password-error" hidden></span><br>
+						</div>
+						<div>
+							<input type="submit" value="submit" id="fail-submit" />
+							<input type="reset" id="fail-reset" value="reset" />
+						</div>
+					</form>
+				</div>
+			</div>
+			</div>
+			<div class="accessible-form-container">
+				<form aria-label="User Registration	Profile" class="accessible-form" method="post">
+				<fieldset id="pd">
+					<legend>Personal Details</legend>
+					<div class="input-container">
+						<label for="fname" class="accessible-label">First Name <span aria-hidden="true">*</span></label>
+						<input type="text" id="fname" class="accessible-input" placeholder="First Name" aria-label="first name" aria-required="true">
+						<label class="accessible-error" id="frname" role="alert">First Name Cannot be empty</label>
+					</div>
+					<div class="input-container">
+						<label for="mname" class="accessible-label">Middle Name</label>
+						<input type="text" id="mname" class="accessible-input" placeholder="Middle Name" aria-label="Middle Name">
+					</div>
+					<div class="input-container">
+						<label for="lname" class="accessible-label">Last Name <span aria-hidden="true">*</span></label>
+						<input type="text" id="lname" class="accessible-input" placeholder="Last Name" aria-label="Last name" aria-required="true">
+						<label class="accessible-error"" id="lsname" role="alert">Last Name cannot be empty</label>
+					</div>
+					<div class="input-container">
+						<label for="email" class="accessible-label">Email Id <span aria-hidden="true">*</span></label>
+						<input type="email" id="email" class="accessible-input" placeholder="Email Id" aria-label="Email Id" aria-required="true">
+						<label class="accessible-error" id="emailid" role="alert">Email cannot be empty</label>
+					</div>
+					<div class="input-container">
+						<label for="mob" class="accessible-label">Mobile Number <span aria-hidden="true">*</span></label>
+						<input type="text" id="mob" class="accessible-input" placeholder="Mobile Number" aria-label="Mobile Number" aria-required="true">
+						<label class="accessible-error" id="mobno" role="alert"> Mobile cannot be empty</label>
+					</div>
+					<div role="group" aria-label="Buttons Panel">
+						<input type="submit" class="accessible-button" aria-label="Show Profile" id="btnShow" value="Show Profile" aria-describedby="showdescr">
+						<input type="reset" class="accessible-button" aria-label="Reset" id="btnReset" value="Reset">
+					</div>
+				</fieldset>
+			</form>
+			
+			<section aria-label="User Profile" class="profile-view">
+				<div>
+					<h1 id="unameProf" role="region" aria-label="Show Profile" aria-live="assertive" aria-atomic="true" aria-relevent="text"> Showing Profile For</h1>
+					<h2>Personal Details</h2>
+					<table id="dispPD" aria-label="Personal Details" border="1">
+						<tr style="background:grey;">
+							<th>Field Name</th>
+							<th>Value</th>
+						</tr>
+					</table>
+				</div>
+				<p role="alert" aria-live="assertive" aria-atomic="true" aria-relevent="removals" style="display:none" id="dataClear">Profile Data Cleared Successfully..!!</p>
+			</section>
+			</div>
+		</body>
+	</html>
