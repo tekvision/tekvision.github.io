@@ -1,0 +1,343 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Table Examples</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="accessible-tables.js"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	</head>
+	<body class="bg-info">
+		
+		<h1 class="text-center p-4">Various Type Of Tables</h1>
+
+		<div class="container-fluid">
+			<div class="row border mx-1 mb-5">
+					
+				<div class="inaccessible-container col-md-6 bg-danger p-5 rounded">
+					<h2 class="text-center pb-4">Inaccessible One Header table</h2>
+					<table class="table table-striped table-hover border table-light" id="inacce-oneHeaderTable">
+						<tr class="text-dark">
+							<td>Name</td>
+							<td>Email</td>
+							<td>Mobile</td>
+							<td>Address</td>
+						</tr>
+						<tr>
+							<td>John</td>
+							<td>johncena@gmail.com</td>
+							<td>+1-22552255</td>
+							<td>USA</td>
+						</tr>
+						<tr>
+							<td>Rock</td>
+							<td>therock@gmail.com</td>
+							<td>+1-33352255</td>
+							<td>USA</td>
+						</tr>
+					</table>
+				</div>
+							
+				<div class="accessible-container col-md-6 bg-success p-5 rounded">
+					<h2 class="text-center pb-4">Accessible One Header table</h2>
+					<table class="table table-striped table-dark table-hover" id="acce-oneHeaderTable">
+						<tr>
+							<th>Name</th>
+							<th>Email</th>
+							<th>Mobile</th>
+							<th>Address</th>
+						</tr>
+						<tr>
+							<td>John</td>
+							<td>johncena@gmail.com</td>
+							<td>+1-22552255</td>
+							<td>USA</td>
+						</tr>
+						<tr>
+							<td>Rock</td>
+							<td>therock@gmail.com</td>
+							<td>USA</td>
+							<td>+1-33352255</td>
+						</tr>
+					</table>
+				</div>
+		
+			</div>
+		</div>
+			
+		<div class="container-fluid">
+			<div class="row border mx-1 mb-5">
+			  
+				<div class="inaccessible-container col-md-6 bg-danger p-5 rounded">
+					<h2 class="text-center pb-4">Inaccessible Two Header table</h2>
+					<div role="table" class="table-light table-hover table-striped" id="inacce-twoHeaderTable">
+						<div role="row" class="border p-2">
+							<span role="columnheader" class="w-30 px-5">
+							Name
+							</span>
+							<span role="columnheader" class="w-30 px-5">
+							Email
+							</span>
+							<span role="columnheader" class="w-30 px-5">
+							Mobile
+							</span>
+							<span role="columnheader" class="w-30 px-4">
+							Address
+							</span>
+						</div>
+						<div role="row" class="border p-2">
+							<span role="cell" class="w-30 px-5">
+							John
+							</span>
+							<span role="cell" class="w-30 px-3">
+							johncena@gmail.com
+							</span>
+							<span role="cell" class="w-30">
+							+1-22552255
+							</span>
+							<span role="cell" class="w-30 pl-5">
+							USA
+							</span>
+						</div>
+						<div role="row" class="border p-2">
+							<span role="cell" class="w-30 px-5">
+							Rock
+							</span>
+							<span role="cell" class="w-30 px-3">
+							therock@gmail.com
+							</span>
+							<span role="cell" class="w-30">
+							+1-33352255
+							</span>
+							<span role="cell" class="w-30 pl-5">
+							USA
+							</span>
+						</div>
+					</div>  
+				</div>
+						
+				<div class="accessible-container col-md-6 bg-success shadow-lg p-5 mb-6 rounded">
+					<h2 class="text-center pb-4">Accessible Two Header table</h2>
+					<table class="table table-hover table-striped table-dark" id="acce-twoHeaderTable">
+						<tr>
+							<th>Name</th>
+							<th>Email</th>
+							<th>Mobile</th>
+							<th>Address</th>
+						</tr>
+						<tr>
+							<th>John</th>
+							<td>johncena@gmail.com</td>
+							<td>+1-22552255</td>
+							<td>USA</td>
+						</tr>
+						<tr>
+							<th>Rock</th>
+							<td>therock@gmail.com</td>
+							<td>+1-33352255</td>
+							<td>USA</td>
+						</tr>
+					</table>
+				</div>
+		
+			</div>
+		</div>
+			
+		<div class="container-fluid">
+			<div class="row border mx-1 mb-5">
+				
+				<div class="inaccessible-conatiner col-md-6 bg-danger p-5 rounded">
+					<h2 class="text-center pb-4">Inaccessible Table with Irregular Header</h2>
+						<table class="table table-light table-hover table-striped" id="inacce-irregularHeaderTable">    
+							<colgroup span="2">
+								<col>
+							<colgroup>
+							<tr>
+								<td rowspan="2"></td>
+								<td colspan="2">Purchase</th>
+								<td colspan="2">Sale</th>
+							</tr>
+							<tr>
+								<td>Inward</td>
+								<td>Outward</td>
+								<td>Inward</td>
+								<td>Outward</td>
+							</tr>
+							<tr>
+								<td>Tekvision</td>
+								<td>10000</td>
+								<td>2000</td>
+								<td>6500</td>
+								<td>1900</td>
+							</tr>
+							<tr>
+								<td>Google</td>
+								<td>5000</td>
+								<td>2000</td>
+								<td>4500</td>
+								<td>1900</td>
+							</tr>
+						</table>
+				</div>
+					
+				<div class="accessible-container col-md-6 bg-success p-5 rounded">
+					<h2 class="text-center pb-4">Accessible Table with Irregular Header</h2>
+					<table class="table table-dark table-hover table-striped" id="acce-irregularHeaderTable">            
+						<colgroup span="2">
+							<col>
+						<colgroup>
+						<tr>
+							<td rowspan="2"></td>
+							<th colspan="2" scope="colgroup">Purchase</th>
+							<th colspan="2" scope="colgroup">Sale</th>
+						</tr>
+						<tr>
+							<th>Inward</th>
+							<th>Outward</th>
+							<th>Inward</th>
+							<th>Outward</th>
+						</tr>
+						<tr>
+							<th>Tekvision</th>
+							<td>10000</td>
+							<td>2000</td>
+							<td>6500</td>
+							<td>1900</td>
+						</tr>
+						<tr>
+							<th>Google</th>
+							<td>5000</td>
+							<td>2000</td>
+							<td>4500</td>
+							<td>1900</td>
+						</tr>
+					</table>
+				</div>
+		 
+			</div>
+		</div>
+			
+		<div class="container-fluid">
+			<div class="row border mx-1 mb-5">
+				
+				<div class="inaccessible-container col-md-6 bg-danger p-5 rounded">
+					<h2 class="text-center pb-4">Inaccessible Table with Multilevel header</h2>
+					<table class="table table-light table-striped table-hover" id="inacce-multilevelHeaderTable">
+						<thead>
+							<th rowspan="1">Subjects</td>
+							<th colspan="1" scope="colgroup">C++</th>
+							<th colspan="1" scope="colgroup">Java</th>
+							<th colspan="1" scope="colgroup">C#</th></th>
+							<th colspan="1" scope="colgroup">Python</th>
+						</thead>
+						<tr class="text-center">
+							<th colspan="5">Marks</th>
+						</tr>
+						<tr>
+							<th>Madhav</th>
+							<th>52</td>
+							<th>62</th>
+							<td>72</td>
+							<th>82</th>
+						</tr>
+						<tr>
+							<th>Saraf</th>
+							<th>50</th>
+							<th>52</th>
+							<td>450</td>
+							<td>67</td>
+						</tr>
+					</table>
+				</div>
+					
+				<div class="accessible-container col-md-6 bg-success p-5 rounded">
+					<h2 class="text-center pb-4">Accessible Table with Multilevel header</h2>
+					<table class="table table-dark table-striped table-hover" id="acce-multilevelHeaderTable">
+						<colgroup span="2">
+							<col>
+						<colgroup>
+						<tr>
+							<td rowspan="1">Subjects</td>
+							<th colspan="1" scope="colgroup">C++</th>
+							<th colspan="1" scope="colgroup">Java</th>
+							<th colspan="1" scope="colgroup">C#</th></th>
+							<th colspan="1" scope="colgroup">Python</th>
+						</tr>
+						<tr class="text-center">
+							<th colspan="5">Marks</th>
+						</tr>
+						<tr>
+							<th>Madhav</th>
+							<td>52</td>
+							<td>62</td>
+							<td>72</td>
+							<td>82</td>
+						</tr>
+						<tr>
+							<th>Saraf</th>
+							<td>50</td>
+							<td>52</td>
+							<td>450</td>
+							<td>67</td>
+						</tr>
+					</table>
+				</div>
+				
+			</div>
+		</div>
+			
+		<div class="container-fluid">
+			<div class="row border mx-1 mb-5">
+		
+				<div class="inaccessible-container col-md-6 p-5 bg-danger rounded">
+					<h2 class="text-center pb-4">Inaccessible Sortable Table</h2>
+					<table class="table table-light table table-striped table-hover" id="inacce-sortableTable">
+						<tr>
+							<td><button class="sortableElement btn btn-light">Subjects <span class=""></span></button></td>
+							<td><button class="sortableElement btn btn-light">Student Name <span class=""></span></button></td>
+							<td><button class="sortableElement btn btn-light">Marks <span class=""></span></button></td>
+							<td><button class="sortableElement btn btn-light">Result <span class=""></span></button></td>
+						</tr>
+						<tr>
+							<td>Java</td>
+							<td>Jonas</td>
+							<td>62</td>
+							<td>Pass</td>
+						</tr>
+						<tr>
+							<td>CPP</td>
+							<td>Adam</td>
+							<td>52</td>
+							<td>Pass/td>
+						</tr>
+					</table>
+				</div>
+					
+				<div class="accessible-container col-md-6 p-5 bg-success rounded">
+					<h2 class="text-center pb-4">Accessible Sortable Table</h2>
+					<table class="table table-dark table-striped table-hover" id="acce-sortableTable">
+						<tr>
+							<th><button class="sortableElement btn btn-dark" aria-sort="none">Subjects <span class=""></span></button></th>
+							<th><button class="sortableElement btn btn-dark" aria-sort="none">Student Name <span class=""></span></button></th>
+							<th><button class="sortableElement btn btn-dark" aria-sort="none">Marks <span class=""></span></button></th>
+							<th><button class="sortableElement btn btn-dark" aria-sort="none">Result <span class=""></span></button></th>
+						</tr>
+						<tr>
+							<td>Java</td>
+							<td>Jonas</td>
+							<td>62</td>
+							<td>Pass</td>
+						</tr>
+						<tr>
+							<td>CPP</td>
+							<td>Adam</td>
+							<td>52</td>
+							<td>Pass/td>
+						</tr>
+					</table>
+				</div>
+		
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,121 @@
+.container
+{
+    border: 2px solid black;
+    padding: 50px;
+    overflow: auto;
+    margin: 3px;
+    background: linear-gradient(to right, red 50%, #28a745 50%);
+}
+
+.progressbar, .inacce-progressbar
+{
+    position: inherit;
+    z-index: 1;
+    overflow: auto;
+    margin-left: -10px;
+    margin-right: 230px;
+    width: 600px;
+}
+
+.inaccessible-container, .accessible-container
+{
+    overflow: hidden;
+    text-align: center;
+    border-radius: 5px;
+    padding:10px;
+    width: 40%;
+    box-shadow:  5px 5px 10px #888888;
+    background-color: white;
+    border: 1px solid black;
+    float: left;
+}
+
+.accessible-container
+{
+    margin-left: 200px;
+} 
+
+.form-steps
+{
+    float: left;
+    background-color: aliceblue;
+    padding: 5px;
+    height: 20px;
+    width: 182px;
+}
+
+.dynamic-form-steps
+{
+    float: left;
+    background-color: aliceblue;
+    padding: 5px;
+    height: 20px;
+    width: 280px;
+}
+
+.compeleted-step
+{
+    float: left;
+    border-radius: 5px;
+    background-color: #90EE90;
+    box-shadow: 4px 4px 8px aliceblue;
+    border: 1px solid black;
+    padding-top: 8px;
+    padding-bottom: 8px; 
+    z-index: 1;
+    width: 190px;
+}
+
+.dynamicWizForm-compeleted-step
+{
+    float: left;
+    border-radius: 5px;
+    background-color: #90EE90;
+    box-shadow: 4px 4px 8px aliceblue;
+    border: 1px solid black;
+    padding-top: 8px;
+    padding-bottom: 8px; 
+    z-index: 1;
+    width: 287px;
+    border: 1px solid black;
+}
+
+.inaccessible-compeleted-step
+{
+    float: left;
+    border-radius: 5px;
+    background-color: rgb(255, 111, 111);
+    box-shadow: 4px 4px 8px aliceblue;
+    border: 1px solid black;
+    padding-top: 8px;
+    padding-bottom: 8px; 
+    z-index: 1;
+    width: 190px;
+}
+
+.dynamicWizForm-inaccessible-compeleted-step
+{
+    float: left;
+    border-radius: 5px;
+    background-color: rgb(255, 111, 111);
+    box-shadow: 4px 4px 8px aliceblue;
+    border: 1px solid black;
+    padding-top: 8px;
+    padding-bottom: 8px; 
+    z-index: 1;
+    width: 287px;
+    border: 1px solid black;
+}
+
+.inaccessible-container
+{
+    margin-left: 20px;
+}
+
+.inline-error
+{
+    color: red;
+    margin-left: 60px;
+    font-weight: bold;
+}
+

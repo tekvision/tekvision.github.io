@@ -1,0 +1,233 @@
+<html>
+    <head>
+        <title>
+            ToggleButton Example
+        </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <!-- <script src="jquery-3.4.1.min.js"></script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("div [role = 'button']").click(function(){
+                    var id = $(this).attr("id");
+                    switch (id) {
+                        case "accessible-toggleButton1":
+                        accessibleToggleButton("accessibleToggleButton1") 
+                            break;
+                    
+                        case "failure-toggleButton2":
+                        failureToggleButton("failureToggleButton2")
+                            break;
+
+                        case "accessible-toggleButton2":
+                        accessibleToggleButton("accessibleToggleButton2")
+                        break;
+                    }
+                   
+                })
+
+                $("#failure-togglebutton").click(function(e){
+                    e.preventDefault();
+                })
+
+                $("div [role = 'button']").keydown(function(e){
+                    if(e.keyCode == 13 || e.keyCode == 32)
+                    {
+                        var id = $(this).attr("id");
+                        switch (id) 
+                        {
+                            case "accessible-toggleButton1":
+                                accessibleToggleButton("accessibleToggleButton1") 
+                            break;
+                    
+                            case "failure-toggleButton2":
+                                failureToggleButton("failureToggleButton2")
+                            break;
+
+                            case "accessible-toggleButton2":
+                                accessibleToggleButton("accessibleToggleButton2")
+                            break;
+                        }
+                    }
+                })
+            });
+
+            function failureToggleButton(failure)
+            {
+                switch (failure) {
+                    case "failureToggleButton2":
+                        var class1 = $("#failure-toggleButton2").attr("class")
+                        if(class1 == "btn btn-success")
+                        {   
+                            $("#failure-toggleButton2").removeClass("btn-success");
+                            $("#failure-toggleButton2").addClass("btn-danger");
+                            $("#img2").removeAttr("src");
+                            $("#img2").attr("src" , "unmute1.png");
+                            return false;
+                        }
+                        else
+                        {
+                            $("#failure-toggleButton2").removeClass("btn-danger");
+                            $("#failure-toggleButton2").addClass("btn-success");
+                            $("#img2").removeAttr("src");
+                            $("#img2").attr("src" , "mute1.png")
+                            return false;
+                        }      
+                        break;
+                }
+            }
+
+            function accessibleToggleButton(accessible)
+            {
+                switch (accessible) {
+                    case "accessibleToggleButton1":
+                        var class1 = $("#accessible-toggleButton1").attr("class")
+                        if(class1 == "btn btn-success")
+                        {   
+                            $("#accessible-toggleButton1").removeClass("btn-success");
+                            $("#accessible-toggleButton1").addClass("btn-danger");
+                            $("#acce-mute1").hide();
+                            $("#acce-unmute1").show();
+                            return false;
+                        }
+                        else
+                        {
+                            $("#accessible-toggleButton1").removeClass("btn-danger");
+                            $("#accessible-toggleButton1").addClass("btn-success");
+                            $("#acce-unmute1").hide();
+                            $("#acce-mute1").show();
+                            return false;
+                        }      
+                        break;
+                
+                    case "accessibleToggleButton2":
+                        var class1 = $("#accessible-toggleButton2").attr("class")
+                        if(class1 == "btn btn-success")
+                        {   
+                            $("#accessible-toggleButton2").removeClass("btn-success");
+                            $("#accessible-toggleButton2").addClass("btn-danger");
+                            $("#accessible-toggleButton2").removeAttr("aria-pressed");
+                            $("#accessible-toggleButton2").attr("aria-pressed" , "true");
+                            $("#acce-img2").removeAttr("src");
+                            $("#acce-img2").attr("src" , "unmute1.png");
+                            return false;
+                        }
+                        else
+                        {
+                            $("#accessible-toggleButton2").removeClass("btn-danger");
+                            $("#accessible-toggleButton2").addClass("btn-success");
+                            $("#accessible-toggleButton2").removeAttr("aria-pressed");
+                            $("#accessible-toggleButton2").attr("aria-pressed" , "false");
+                            $("#acce-img2").removeAttr("src");
+                            $("#acce-img2").attr("src" , "mute1.png")
+                            return false;
+                        }      
+                        break;
+                }
+                
+            }
+
+        </script>
+        <style>
+        .container
+        {
+            border: 2px solid black;
+            overflow: hidden;
+            margin: 0%;
+            width: 100%;
+            padding: 0%;
+            margin-top: 10px;
+        }
+        .failure-section
+        {
+            border: 1px solid black;
+            float: left;
+            width: 50%;
+            margin-left: 0%;
+            left: 0%;
+        }
+        .passing-section
+        {
+            border: 1px solid black;
+            margin-left: 50%;
+            width: 50%;
+        }
+        .btn
+        {
+            /* width: 500px;   */
+            margin-left: 300px;
+            margin-top: 30px;
+            margin-bottom: 50px;
+            width: 100px;
+            height: 50px;
+        } 
+        #unmute1, #unmute2, #acce-unmute1, #acce-unmute2
+        {
+            display: none;
+        }
+        .button-text
+        {
+            /* margin: 10px 10px 0 0;
+            padding: 30px; */
+            text-align: center;
+            font-size: 20px;
+        }
+        h1
+        {
+            text-align: center;
+           
+        }
+        img
+        {
+            width: 30px;
+            height: 30px;
+            margin-left: 3px;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="container" id="1">
+            <div class="failure-section">
+                <h1>ToggleButton failure example with label behavior</h1>
+                <div tabindex="0" role="button" class="btn btn-success" id="failure-toggleButton">
+                    <span id="mute" class="button-text">
+                        Mute
+                    </span>
+                    <span id="unmute1" class="button-text">
+                        Unmute
+                    </span>
+                </div>
+            </div>
+            <div class="passing-section">
+                    <h1>Accessible ToggleButton example with label behavior</h1>
+                    <div tabindex="0" role="button" class="btn btn-success" id="accessible-toggleButton1">
+                        <span id="acce-mute1" class="button-text">
+                            Mute
+                        </span>
+                        <span id="acce-unmute1" class="button-text">
+                            Unmute
+                        </span>
+            </div>
+        </div>
+
+        <div class="container" id="2">
+                <div class="failure-section">
+                    <h1>ToggleButton failure example with state behavior</h1>
+                    <div tabindex="0" role="button" class="btn btn-success" id="failure-toggleButton2">
+                        <span id="mute2" class="button-text">
+                            Mute
+                            <img src="C:\Users\Admin\Desktop\ToggleButton Examples\mute1.png" class="img-circle" alt="Mute" id="img2">
+                        </span>
+                    </div>
+                </div>
+                <div class="passing-section">
+                        <h1>Accessible ToggleButton example with state behavior</h1>
+                        <div tabindex="0" role="button" class="btn btn-success" id="accessible-toggleButton2" aria-pressed="false">
+                            <span id="acc-mute2" class="button-text">
+                                Mute
+                                <img src="C:\Users\Admin\Desktop\ToggleButton Examples\mute1.png" class="img-circle" alt="Mute" id="acce-img2">
+                            </span>
+                        </div>
+                </div>
+    </body>
+</html>

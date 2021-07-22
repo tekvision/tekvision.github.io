@@ -1,0 +1,72 @@
+body
+{
+    background: lightsteelblue;
+}
+.accordion-container
+{
+    width:80%;
+    margin:25px auto;
+}
+.accordion
+{
+    background:ghostwhite;
+    box-shadow: 0px 0px 10px 5px grey;  
+    border-radius:10px;
+
+}
+.heading{
+    font-weight:bold;
+    height:auto;
+    margin:auto;
+    padding:15px;
+}
+.accordion-header
+{
+    width:95%;
+    height:80px;
+    margin:auto;
+}
+.header-button {
+    width:100%;
+    top:0;
+    bottom:0;
+    padding: 14px 24px;
+    border: 0 none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align:left;
+    font-size: 12pt;
+    background:none;
+    box-sizing: border-box;
+}
+.header-button:focus, .header-button:active:focus, .header-button.active:focus 
+{
+    outline: 0 none;
+    border:solid 2px;
+    border-radius:5px;
+}
+.showOnyPanel{
+    background:white;
+    height:200px;
+}
+.toggleablePanel{
+    background:white;
+    height:200px;
+} 
+.center{
+    margin:auto;
+}
+.collapse{
+    display:none;
+}
+.expand{
+    display:block;
+}
+.panel-content
+{
+    width:95%;
+    height:auto;
+    padding:15px;
+    margin:auto;
+    box-sizing: border-box;
+}

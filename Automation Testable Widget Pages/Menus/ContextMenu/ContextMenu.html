@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<title>Accessible ContextMenu Example</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		
+		<style>
+			.context-menu
+			{
+				background:white;
+				height:auto;
+				width:210px;
+				overflow:none;
+				box-shadow:2px 2px 2px grey;
+				list-style-type:none;
+				border:solid grey 1px;
+				display:none;
+				padding:0;
+			}
+			.context-menu li
+			{
+				width:100%;
+				text-align:left;
+				height:30px;
+				font-size:15px;
+				font-family:calibri;
+				text-align:left;
+			}
+			.context-menu li a
+			{
+				display:inline-block;
+				text-decoration:none;
+				color:black;
+				font-size:15px;
+				width:94%;
+				outline:none;
+				padding-left:15px;
+				cursor:default;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="context-menu" role="menu" aria-label="Context-menu">
+			<li role="none">
+				<a href="../MenuMenuBar/Navigation_MenuBar.html" role="menuitem" class="btn_menu">Navigation MenuBar Example</a>
+			</li>
+			<li role="none">
+				<a href="../MenuButton/MenuButton.html" role="menuitem" class="btn_menu">Menu Button Example</a>
+			</li>
+			<li role="none">
+				<a href="#" role="menuitem" onclick="reloadAction();" class="btn_menu">Reload</a>
+			</li>
+			<li role="none">
+				<a href="#" role="menuitem" onclick= "disableContextAction();" class="btn_menu">Disable Context Menu</a>
+			</li>
+			<li role="none">
+				<a href="#" role="menuitem" onclick="closeAction();" class="btn_menu">Exit</a>
+			</li>
+		</ul>
+		<script src="ContextMenu.js"></script>
+	</body>
+</html>
