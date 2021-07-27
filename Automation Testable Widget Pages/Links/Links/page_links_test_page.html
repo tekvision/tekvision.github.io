@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<title>Example of links</title>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+            <link rel="stylesheet" href="page_link_test_page.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+			<script type="text/javascript" src="page_link_test_page.js"></script>
+		</head>
+		<body class="bg-info">
+            <div class="container-fluid">
+			    <div id="main" role="main">
+				    <h1 class="text-center p-4">Various Accessible and Inaccessible Examples Of Page Links</h1>
+                    <div class="card" id="acce-section">
+                        <div class="card-body bg-success">
+                            <h2 class="card-title">Accessible and Passing Page Links</h2>
+                            <h3>&lt;a&gt; element with proper href attribute</h3>
+                            <a id="acce-google-link" href="https://google.com" class="link mx-5 btn btn-dark">Google</a><br/>
+                            <h3>Email link</h3>
+                            <a id="acce-email-link" href="mailto:info@tekvision.in" class="link mx-5 btn btn-dark">Reach Tekvision</a><br/>
+                            <h3>Telephone link</h3>
+                            <a id="acce-tel-link" href="tel:8390909811" class="link mx-5 btn btn-dark">Call to Tekvision</a><br/>
+                            <h3>Role link with non semantic html element</h3>
+                            <span id="acce-custom-ele-page-link" role="link" tabindex="0" class="link mx-5 btn btn-dark" onclick="goToLink(event, 'https://tekvision.in/')" onkeydown="goToLink(event, 'https://tekvision.in/')">Visit Tekvision</span><br/>
+                            <h3>Same Page Link</h3>
+                            <a id="acce-same-page-link" href="#inacce-section" class="link mx-5 btn btn-dark">Skip to Inaccessible Section</a>                            
+                        </div>
+                    </div>
+                    <div class="card" id="inacce-section">
+                        <div class="card-body bg-danger">
+                            <h2 class="card-title text-white">Inaccessible and Failing Page Links</h2>
+                            <h3 class="text-white">&lt;a&gt; element missing href attribute</h3>
+                            <a id="inacce-google-link" class="link mx-5 btn btn-warning">Google</a><br/>
+                            <h3 class="text-white">&lt;a&gt;'s href contains empty string</h3>
+                            <a id="inacce-facebook-link" href="" class="link mx-5 btn btn-warning">facebook</a><br/>
+                            <h3 class="text-white">&lt;a&gt;'s href contains javascript:void(0)</h3>
+                            <a id="inacce-void-link" href="javascript:void(0)" class="link mx-5 btn btn-warning">Open Chatbox</a><br/>
+                            <h3 class="text-white">&lt;a&gt; element contains tabindex='-1'</h3>
+                            <a id="inacce-twitter-link" href="https://twitter.com" class="link mx-5 btn btn-warning">Twitter</a><br/>
+                            <h3 class="text-white">Inaccessible Email link</h3>
+                            <a id="inacce-email-link" href="info@tekvision.in" class="link mx-5 btn btn-warning">Reach Tekvision</a><br/>
+                            <h3 class="text-white">Inaccessible Telephone link</h3>
+                            <a id="inacce-tel-link" href="8390909811" class="link mx-5 btn btn-warning">Call to Tekvision</a><br/>
+                            <h3 class="text-white">Role link is missing on non semantic html element</h3>
+                            <span id="acce-custom-ele-page-link" class="link mx-5 btn btn-warning" onclick="goToLink(event, 'https://tekvision.in')" onkeydown="goToLink(event, 'https://tekvision.in/')">Visit Tekvision</span><br/>
+                            <h3 class="text-white">Inaccessible Same Page link</h3>
+                            <a id="inacce-same-page-link" href="#myfooter" class="link mx-5 btn btn-warning">Skip to Footer</a>                            
+                        </div>
+                    </div>
+			    </div>
+                <div id="footer" class="bg-warning" role="contentinfo">
+                    <a id="main-footer-link" href="#main" class="link btn btn-dark">Go back to Main</a>
+                    <a id="acce-footer-link" href="#acce-section" class="link btn btn-dark">Go back Accessible Section</a>
+                    <a id="inacce-footer-link" href="#inacce-section" class="link btn btn-dark">Go back to Inaccessible Section</a>
+                </div>
+            </div>
+		</body>
+	</html>

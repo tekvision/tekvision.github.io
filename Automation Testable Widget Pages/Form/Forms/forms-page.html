@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en-in">
+	<head>
+		<title>Registration Form</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+		<script src="forms-page.js"></script>
+		<link rel="stylesheet" href="forms-page.css">
+	</head>
+	<body>
+		<div class="container-fluid">
+            <main>
+                <h1>Accessible and Inaccessible Example of Forms</h1>
+                <div class="row">
+                <div class="acce-form-container col-xl-6 col-sm-12">                   
+                    <form aria-label="User Registration	Profile" class="accessible-form" method="post">
+                        <fieldset id="acce-pd">
+                            <legend>Accessible Personal Details</legend>
+                            <p>Scenarios to be tested in Forms:</p>
+                            <ol>
+                                <li>Form Labels</li>
+                                <li>From Groupings with Labels</li>
+                                <li>On Blur Validations</li>
+                                <li>On Input Validations</li>
+                                <li>On Submit Validations</li>
+                                <li>Required Validations</li>
+                                <li>Alert/Announcements</li>
+                            </ol>
+                            <div class="form-group row">
+                                <label for="acce-fname" class="col-sm-12 col-xl-3 col-form-label accessible-label">First Name <span aria-hidden="true">*</span></label>
+                                <div class="col-sm-12 col-xl-6">
+                                    <input type="text" id="acce-fname" class="accessible-input" placeholder="First Name" aria-label="first name" aria-required="true">
+                                </div>
+                                <label class="accessible-error col-sm-12 col-xl-6 m-auto" id="acce-error-fname" role="alert">First Name Cannot be empty</label>
+                            </div>
+                            <div class="form-group row">
+                                <label for="acce-mname" class="col-sm-12 col-xl-3 col-form-label accessible-label">Middle Name</label>
+                                <div class="col-sm-12 col-xl-6">
+                                    <input type="text" id="acce-mname" class="accessible-input" placeholder="Middle Name" aria-label="Middle Name">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="acce-lname" class="col-sm-12 col-xl-3 col-form-label accessible-label">Last Name <span aria-hidden="true">*</span></label>
+                                <div class="col-sm-12 col-xl-6">
+                                    <input type="text" id="acce-lname" class="accessible-input" placeholder="Last Name" aria-label="Last name" aria-required="true">
+                                </div>
+                                <label class="accessible-error col-sm-12 col-xl-6 m-auto" id="acce-error-lname" role="alert">Last Name cannot be empty</label>
+                            </div>
+                            <div class="form-group row">
+                                <label for="acce-email" class="col-sm-12 col-xl-3 col-form-label accessible-label">Email Id <span aria-hidden="true">*</span></label>
+                                <div class="col-sm-12 col-xl-6">
+                                    <input type="email" id="acce-email" class="accessible-input" placeholder="Email Id" aria-label="Email Id" aria-required="true">
+                                </div>
+                                <label class="accessible-error col-sm-12 col-xl-6 m-auto" id="acce-error-email" role="alert">Email cannot be empty</label>
+                            </div>
+                            <div class="form-group row">
+                                <label for="acce-mob" class="col-sm-12 col-xl-3 col-form-label accessible-label">Mobile Number <span aria-hidden="true">*</span></label>
+                                <div class="col-sm-12 col-xl-6">
+                                    <input type="text" id="acce-mob" class="accessible-input" placeholder="Mobile Number" aria-label="Mobile Number" aria-required="true">
+                                </div>
+                                <label class="accessible-error col-sm-12 col-xl-6 m-auto" id="acce-error-mobno" role="alert">Mobile cannot be empty</label>
+                            </div>
+                            <div class="form-group row">
+                                <label for="acce-qualification" class="col-sm-12 col-xl-3 col-form-label accessible-label">Qualification <span aria-hidden="true">*</span></label>
+                                <div class="col-sm-12 col-xl-6">
+                                    <select id="acce-qualification" class="accessible-input form-select" name="acce-qualification" aria-label="Select Qualification" aria-required="true">
+                                        <option selected disabled>Select Your Qualification</option>
+                                        <option>10th</option>
+                                        <option>12th</option>
+                                        <option>Graduate</option>
+                                        <option>Post Graduate</option>
+                                    </select>
+                                </div>
+                                <label class="accessible-error col-sm-12 col-xl-6 m-auto" id="acce-error-qualification" role="alert">Please Select Your Qualification</label>
+                            </div>
+                            <div class="form-group row">
+                                <fieldset id="acce-gender-group" class="col-xl-6 col-sm-11 m-auto">
+                                    <legend>Gender <span aria-hidden="true">*</span></legend>
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" name="acce-gender" id="acce-male" value="male">
+                                        <label for="acce-male" class="form-check-label accessible-label">Male</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" name="acce-gender" id="acce-female" value="female">
+                                        <label for="acce-female" class="form-check-label accessible-label">Female</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" name="acce-gender" id="acce-other" value="other">
+                                        <label for="acce-other" class="form-check-label accessible-label">Other</label>
+                                    </div>
+                                    <label class="accessible-error col-sm-12 col-xl-12 m-auto" id="acce-error-gender" role="alert">Please Choose Your Gender</label>
+                                </fieldset>
+                            </div>
+                            <div role="group" aria-label="Buttons Panel">
+                                <input type="submit" class="accessible-button" aria-label="Show Profile" id="acce-btnShow" value="Show Profile" aria-describedby="showdescr">
+                                <input type="reset" class="accessible-button" aria-label="Reset" id="acce-btnReset" value="Reset">
+                            </div>
+                        </fieldset>  
+                    </form>
+                </div>
+                <div class="inaccessible-form-container col-xl-6 col-sm-12">
+                    <form aria-label="User Registration	Profile" class="inaccessible-form" method="post">
+                        <fieldset id="inacce-pd">
+                            <p>Inaccessible Personal Details</p>
+                            <p>Scenarios to be tested in Forms:</p>
+                            <ol>
+                                <li>Missing Form Labels</li>
+                                <li>No From Groupings with Labels</li>
+                                <li>No On Blur Validations</li>
+                                <li>No On Input Validations</li>
+                                <li>No On Submit Validations</li>
+                                <li>Missing Required Validations</li>
+                                <li>No Alert/Announcements</li>
+                            </ol>
+                            <div class="form-group row">
+                                <label class="col-sm-12 col-xl-3 col-form-label inaccessible-label">First Name <span aria-hidden="true">*</span></label>
+                                <div class="col-sm-12 col-xl-6">
+                                    <input type="text" id="inacce-fname" class="inaccessible-input" placeholder="First Name" aria-label="first name" aria-required="true">
+                                </div>
+                                <label class="inaccessible-error col-sm-12 col-xl-6 m-auto" id="inacce-error-fname" role="alert">First Name Cannot be empty</label>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 col-xl-3 col-form-label inaccessible-label">Middle Name</label>
+                                <div class="col-sm-12 col-xl-6">
+                                    <input type="text" id="inacce-mname" class="inaccessible-input" placeholder="Middle Name" aria-label="Middle Name">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 col-xl-3 col-form-label inaccessible-label">Last Name <span aria-hidden="true">*</span></label>
+                                <div class="col-sm-12 col-xl-6">
+                                    <input type="text" id="inacce-lname" class="inaccessible-input" placeholder="Last Name" aria-label="Last name" aria-required="true">
+                                </div>
+                                <label class="inaccessible-error col-sm-12 col-xl-6 m-auto" id="inacce-error-lname" role="alert">Last Name cannot be empty</label>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 col-xl-3 col-form-label inaccessible-label">Email Id <span aria-hidden="true">*</span></label>
+                                <div class="col-sm-12 col-xl-6">
+                                        <input type="email" id="inacce-email" class="inaccessible-input" placeholder="Email Id" aria-label="Email Id" aria-required="true">
+                                </div>
+                                <label class="inaccessible-error col-sm-12 col-xl-6 m-auto" id="inacce-error-email" role="alert">Email cannot be empty</label>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 col-xl-3 col-form-label inaccessible-label">Mobile Number <span aria-hidden="true">*</span></label>
+                                <div class="col-sm-12 col-xl-6">
+                                    <input type="text" id="inacce-mob" class="inaccessible-input" placeholder="Mobile Number" aria-label="Mobile Number" aria-required="true">
+                                </div>
+                                <label class="inaccessible-error col-sm-12 col-xl-6 m-auto" id="inacce-error-mobno" role="alert">Mobile cannot be empty</label>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 col-xl-3 col-form-label inaccessible-label">Qualification <span aria-hidden="true">*</span></label>
+                                <div class="col-sm-12 col-xl-6">
+                                        <select id="inacce-qualification" class="inaccessible-input" name="inacce-qualification" aria-required="true">
+                                            <option selected disabled>Select Your Qualification</option>
+                                            <option>10th</option>
+                                            <option>12th</option>
+                                            <option>Graduate</option>
+                                            <option>Post Graduate</option>
+                                        </select>
+                                </div>
+                                <label class="inaccessible-error col-sm-12 col-xl-6 m-auto" id="inacce-error-qualification" role="alert">Please Select Your Qualification</label>
+                            </div>
+                            <div class="form-group row">
+                                <fieldset id="inacce-gender-group" class="col-xl-6 col-sm-11 m-auto">
+                                    <p>Gender <span aria-hidden="true">*</span></p>
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" name="gender" id="inacce-male" value="male">
+                                        <label for="inacce-male" class="form-check-label inaccessible-label">Male</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" name="gender" id="inacce-female" value="female">
+                                        <label for="inacce-female" class="form-check-label inaccessible-label">Female</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" name="gender" id="inacce-other" value="other">
+                                        <label for="inacce-other" class="form-check-label inaccessible-label">Other</label>
+                                    </div>
+                                    <label class="inaccessible-error col-sm-12 col-xl-12 m-auto" id="inacce-error-gender" role="alert">Please Choose Your Gender</label>
+                                </fieldset>
+                            </div>
+                            <div role="group" aria-label="Buttons Panel">
+                                <input type="submit" class="inaccessible-button" id="inacce-btnShow" value="Show Profile" aria-describedby="showdescr">
+                                <input type="reset" class="inaccessible-button" id="inacce-btnReset" value="Reset">
+                            </div>
+                        </fieldset>  
+                    </form>
+                </div>
+                </div>
+                <section aria-label="User Profile" class="profile-view">
+                    <div>
+                        <h2 id="unameProf" role="region" aria-label="Show Profile" aria-live="assertive" aria-atomic="true" aria-relevent="text"> Showing Profile For</h2>
+                        <h3>Personal Details</h3>
+                        <table id="dispPD" aria-label="Personal Details" border="1">
+                            <tr style="background:grey;">
+                                <th>Field Name</th>
+                                <th>Value</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <p role="alert" aria-live="assertive" aria-atomic="true" aria-relevent="removals" style="display:none" id="dataClear">Profile Data Cleared Successfully..!!</p>
+                </section>
+            </main>
+        </div>
+    </body>
+</html>
