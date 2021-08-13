@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Passing and Failing Example of Accordion</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="accordion.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="accordion.js"></script>
+    </head>
+    <body>
+        <h1>Passing and failing accordion for both behavior(Toggleable and ShowOnly)</h1>
+        <h2 class="center">ShowOnly Behavior Accordion</h2>
+        <div class="accordion-container">
+            <div class="accordion">
+                <div class="accordion-header">
+                    <div class="heading" role="heading" aria-level="3">
+                        <div id="pl" class="header-button showOnly" role="button" tabindex="0" aria-expanded="true" aria-disabled="true" aria-controls="one" >
+                            Personal Loans
+                            <i class="fa fa-caret-down text-right" style="float:right"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="showOnlyPanel expand" id="one">
+                    <div class="panel-content">
+                        <ul>
+                            <li>Business Loans</li>
+                            <li>EMI Calculator</li>
+                            <li>Balance Transfer Calculator</li>
+                            <li>Eligibility</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion-header">
+                    <h3 class="heading">
+                        <button tabindex="0" id="hl" class="header-button showOnly" aria-expanded="false" aria-disabled="false" aria-controls="two">
+                            Home Loan
+                            <i class="fa fa-caret-down text-right" style="float:right"></i>
+                        </button>
+                    </h3>
+                </div>
+                <div class="showOnlyPanel collapse" id="two">
+                    <div class="panel-content">
+                        <ul>
+                            <li>Business Loans</li>
+                            <li>EMI Calculator</li>
+                            <li>Balance Transfer Calculator</li>
+                            <li>Home Loan Intrest Ratey</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion-header">
+                    <h3 class="heading">
+                        <button id="cl" class="header-button showOnly" aria-expanded="false" aria-disabled="false" aria-controls="three" id="pd">
+                            Car Loan
+                            <i class="fa fa-caret-down text-right" style="float:right"></i>
+                        </button>
+                    </h3>
+                </div>
+                <div class="showOnlyPanel collapse" id="three">
+                    <div class="panel-content">
+                        <ul>
+                            <li>About Car Loans</li>
+                            <li>New & Pre-Owned Car Loan</li>
+                            <li>Loan against Car</li>
+                            <li>Smart EMI</li>
+                            <li>Search for Dream Car</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2>Toggleable Accordion</h2>
+        <div class="accordion-container">
+            <div class="accordion">
+                <div class="accordion-header">
+                    <div class="heading" role="heading" aria-level="3">
+                        <div id="cc" class="header-button toggleable" role="button" tabindex="0" aria-expanded="true" aria-controls="one" >
+                            Credit Card
+                            <i class="fa fa-caret-down text-right" style="float:right"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="toggleablePanel expand" id="one">
+                    <div class="panel-content">
+                        <ul>
+                            <li>Types of Credit Card</li>
+                            <li>Compare Cards</li>
+                            <li>Reward Programmes</li>
+                            <li>ICICI Bank Credit Cards Experience</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion-header">
+                    <h3 class="heading">
+                        <button tabindex="0" id="dc" class="header-button toggleable" aria-expanded="false" aria-controls="two">
+                            Debit Card
+                            <i class="fa fa-caret-down text-right" style="float:right"></i>
+                        </button>
+                    </h3>
+                </div>
+                <div class="toggleablePanel collapse" id="two">
+                    <div class="panel-content">
+                        <ul>
+                            <li>Choose your Debit Card</li>
+                            <li>Get Expression Cardr</li>
+                            <li>Generate ATM/Debit Card PINr</li>
+                            <li>Touch & Pay using NFC</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion-header">
+                    <h3 class="heading">
+                        <button id="plcc" class="header-button toggleable" aria-expanded="false" aria-controls="three" id="pd">
+                            PL on Credit Card
+                            <i class="fa fa-caret-down text-right" style="float:right"></i>
+                        </button>
+                    </h3>
+                </div>
+                <div class="toggleablePanel collapse" id="three">
+                    <div class="panel-content">
+                        <ul>
+                            <li>About Personal Loan on Credit Card</li>
+                            <li>Features</li>
+                            <li>Eligibility</li>
+                            <li>Documentation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

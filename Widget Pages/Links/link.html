@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<title>Example of links</title>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+			<script type="text/javascript" src="link.js"></script>
+		</head>
+		<body class="bg-info">
+			<div id="main" role="main">
+				<h1 class="text-center p-4">Various Examples Of Link</h1>
+				<div class="container-fluid">
+					<div class="row border mx-1 mb-5">
+						<div class="inaccessible-container col-md-6 bg-danger p-5 rounded">
+							<div class="card">
+								<div class="card-body">
+									<h2 class="card-title text-center mb-5" id="inacce-anchor">Inaccessible links with anchor tag</h2>
+									<a id="inacce-home" class="link mx-5 btn btn-primary stretched-link nav-link">Home</a><br/>
+									<a id="inacce-google" class="link mx-5 mb-4 btn btn-primary stretched-link nav-link">Google</a>
+								</div>
+							</div>
+						</div>
+						
+						<div class="accessible-container col-md-6 bg-success p-5 rounded">
+							<div class="card">
+								<div class="card-body">
+									<h2 class="card-title text-center mb-5" id="acce-anchor">Accessible links with anchor tag</h2>
+									<a href="link.html" id="acce-home" class="acce-link mx-5 btn btn-primary stretched-link nav-link">Home</a><br/>
+									<a href="https://www.google.com" id="acce-google" class="acce-link mx-5 mb-4 btn btn-primary nav-link">Google</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="container-fluid">
+					<div class="row border mx-1 mb-5">
+						<div class="inaccessible-container col-md-6 bg-danger p-5 rounded">
+							<div class="card">
+								<div class="card-body">
+									<h2 class="card-title text-center pb-4">Inaccessible links without role link</h2>
+									<span tabindex="0" id="inacce-tekvision" class="link mx-5 mb-4 btn btn-primary nav-link" onclick="goToLink(event, 'http://tekvision.in/')" onkeydown="goToLink(event, 'http://tekvision.in/')">Tekvision</span>		
+								</div>
+							</div>
+						</div>
+
+						<div class="accessible-container col-md-6 bg-success p-5 rounded">
+							<div class="card">
+								<div class="card-body">
+									<h2 class="card-title text-center pb-4">Accessible links with role link</h2>
+									<span role="link" tabindex="0" id="acce-tekvision" class="acce-link mx-5 mb-4 btn btn-primary nav-link" onclick="goToLink(event, 'http://tekvision.in/')" onkeydown="goToLink(event, 'http://tekvision.in/')">Tekvision</span>
+								</div>
+							</div>		
+						</div>
+					</div>
+				</div>
+				
+				<div class="container-fluid">
+					<div class="row border mx-1 mb-5">
+						<div class="inaccessible-container col-md-6 bg-danger p-5 rounded">
+							<div class="card">
+								<div class="card-body">
+									<h2 class="card-title text-center pb-4">Inaccessible example of Email link.</h2>
+									<a href="info@abc.com" class="link mx-5 mb-4 btn btn-primary nav-link" id="inacce-email">Drop us a mail</a>	
+								</div>
+							</div>
+						</div>
+						<div class="accessible-container col-md-6 bg-success p-5 rounded">
+							<div class="card">
+								<div class="card-body">
+									<h2 class="card-title text-center pb-4">Accessible example of Email link.</h2>
+									<a href="mailto: info@abc.com" class="acce-link mx-5 mb-4 btn btn-primary nav-link" id="acce-email">Drop us a mail</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="container-fluid">
+					<div class="row border mx-1 mb-5">
+						<div class="inaccessible-container col-md-6 bg-danger p-5 rounded">
+							<div class="card">
+								<div class="card-body">
+									<h2 class="card-text text-center pb-4">Inaccessible example of Tel link</h2>		
+									<a href="" class="link mx-5 mb-4 btn btn-primary nav-link" id="inacce-call">Call us</a>
+								</div>
+							</div>
+						</div>
+						<div class="accessible-container col-md-6 bg-success p-5 rounded">
+							<div class="card">
+								<div class="card-body">
+									<h2 class="text-center pb-4">Accessible example of Tel link</h2>
+									<a href="tel:123456789" class="acce-link mx-5 mb-4 btn btn-primary nav-link" id="acce-call">Call us</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="container-fluid">
+					<div class="row border mx-1 mb-5">
+						<div class="inaccessible-container col-md-6 bg-danger p-5 rounded">
+							<div class="card">
+								<div class="card-body">
+									<h2 class="card-text text-center pb-4">Inaccessible example of same page link</h2>
+									<a href="" class="link mx-5 mb-4 btn btn-primary nav-link" id="inacce_same_page">Go to links with anchor tag</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="accessible-container col-md-6 bg-success p-5 rounded">
+							<div class="card">
+								<div class="card-body">
+									<h2 class="card-text text-center pb-4">Accessible example of same page link</h2>
+									<a href="#anchor" class="acce-link mx-5 mb-4 btn btn-primary nav-link" id="acce_same_page">Go to links with anchor tag</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</body>
+	</html>

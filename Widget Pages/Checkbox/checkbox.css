@@ -1,0 +1,85 @@
+.container
+{
+    margin-top: 10px;
+    border: 2px solid black;
+    width: 100%;
+    overflow: hidden;
+
+}
+.failing-section
+{
+    float: left;
+    width: 50%;
+    padding-bottom: 10px;
+    border: 1px solid red;
+    background-color: #e62438;
+}
+
+.passing-section
+{
+    border: 1px solid #34c556;
+    margin-left:50%; 
+    padding-bottom: 10px;
+    background: #34c556;
+}
+
+ul {
+    list-style: none;
+    padding-left: 1em;
+    margin-top: -20px;
+    width: 30%;
+    padding: 50px;
+}
+h2{
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    width: 20%;
+    z-index: 1;
+}
+.checkbox
+{
+    background-color: rgb(194, 191, 191);
+    width: 43%;
+    margin-left:25%;
+    padding-left: 10px;
+    margin-top: 20px; 
+    border-radius: 20px;
+    box-shadow: 4px 5px 10px white;
+}
+
+h1
+{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.label
+{
+    margin-left: 40px;
+}
+
+li
+{
+    margin-left:0%;
+    padding:10px;
+}
+
+.ch {
+    width: 23px;
+    height: 21px;
+    margin-left: 0%;
+    text-indent: 40px;
+    left: 0%;
+    background: transparent url(http://i.stack.imgur.com/S4p2R.png ) no-repeat 0 50%
+}
+
+.checked1 {
+    background: transparent url(http://i.stack.imgur.com/S4p2R.png ) no-repeat 80% 50%
+}
+
+.a-ch
+{
+    padding: 50px;
+}

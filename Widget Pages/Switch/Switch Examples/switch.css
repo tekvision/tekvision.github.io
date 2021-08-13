@@ -1,0 +1,31 @@
+.containerElem{
+	width:100px;
+	height:30px;
+	background: linear-gradient(to right, grey 50%, grey 100%);
+	outline:none;
+	border:none;
+	color:white;
+	border-radius:100px;
+	position:relative;
+	left:10px;
+}
+.toggler{
+	
+	height:100%;
+	background:white;
+	width:30%;
+	border-radius:100%;
+	float:left;
+	box-shadow:0px 0px 2px 2px grey; 
+}
+.containerElem:focus{
+	border:solid black 2px;
+}
+.onCheck{
+	background: linear-gradient(to left, lightsteelblue 50%, lightsteelblue 100% );
+}
+#set1Label , #set2Label , #failure-set1Label , #failure-set2Label , .containerElem
+{
+	margin-left: 100px;
+	padding: 5px;
+}

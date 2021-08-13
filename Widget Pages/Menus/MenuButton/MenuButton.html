@@ -1,0 +1,158 @@
+<html>
+
+<head>
+	<title>Accessible MenuButton Example</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="MenuButton.js"></script>
+	<style>
+		.container
+		{
+			border: 2px solid black;
+			overflow: hidden;
+			width: 100%;
+		}
+		.failing-section
+		{
+			float: left;
+			width: 50%;
+			margin: 0%;
+			left: 0%;
+		}
+		.passing-section
+		{
+			width: 50%;
+			margin-left: 50%;
+		}
+		.nav-menu-button, .f-menubutton {
+			width: 200px;
+			height: 35px;
+			background: orange;
+			border: none;
+			margin: 10px;
+			box-shadow: 0px 0px 4px 0px grey;
+			border-radius: 5px;
+			font-family: calibri;
+			font-size: 20px;
+		}
+
+		.nav-menu-button:focus,.f-menubutton:focus {
+			border: solid steelblue 3px;
+		}
+
+		.nav-sub-menu, .f-subMenu {
+			background: lightgrey;
+			width: 450px;
+			height: 162px;
+			margin: -10px 0px 0px 10px;
+			box-shadow: 0px 5px 10px #888888;
+			position: relative;
+			display: none;
+			list-style-type: none;
+			overflow: none;
+			padding: 0;
+		}
+
+		.nav-sub-menu li,.f-subMenu li {
+			height: 30px;
+			font-size: 15px;
+			font-weight: bold;
+			font-family: calibri;
+			text-align: left;
+			border: solid grey 1px;
+		}
+
+		a {
+			text-decoration: none;
+			outline: none;
+			padding: 10px;
+			color: black;
+			display: inline-block;
+			width: 100%;
+		}
+
+		.btn_menu {
+			border: none;
+			background: transparent;
+			width: 100%;
+			color: purple;
+			;
+		}
+
+		img[role="presentation"] {
+			position: absolute;
+			margin: -3px 0px 0px 5px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="failing-section">
+			<h1>
+				Failing example of Menubutton
+			</h1>
+				<nav>
+						<div>
+							<div tabindex="0" class="f-menubutton" id="f-menuButton">
+								Accessibility
+								<img src="fav_down_arrow.png" height="20px" width="20px" alt="" role="presentation">
+						</div>
+							<ul class="f-subMenu" role="menu" aria-labelledby="menuButton" id="f-menu1">
+								<li role="none">
+									<a tabindex="0" role="menuitem" class="f-a" href="#">Overview</a>
+								</li>
+								<li role="none">
+									<a tabindex="-1" role="menuitem" class="f-a" href="https://www.google.com">WCAG 2.1</a>
+								</li>
+								<li role="none">
+									<a tabindex="-1" role="menuitem" class="f-a" href="#">Aria Authoring Practices 1.1</a>
+								</li>
+								<li role="none">
+									<a tabindex="-1" role="menuitem" class="f-a" href="#">Design Patterns</a>
+								</li>
+								<li role="none">
+									<a tabindex="-1" role="menuitem" class="f-a" href="#">Keyboard Interactions</a>
+								</li>
+							</ul>
+						</div>
+					</nav>
+		</div>
+		<div class="passing-section">
+			<h1>Passing example of Menubutton</h1>
+			<nav>
+				<div>
+					<button type="button" class="nav-menu-button" id="menuButton" aria-haspopup="true"
+						aria-expanded="false" aria-controls="menu1">
+						Accessibility
+						<img src="fav_down_arrow.png" height="20px" width="20px" alt="" role="presentation">
+					</button>
+					<ul class="nav-sub-menu" role="menu" aria-labelledby="menuButton" id="menu1">
+						<li role="none">
+							<a tabindex="0" role="menuitem" href="#">Overview</a>
+						</li>
+						<li role="none">
+							<a tabindex="-1" role="menuitem" href="https://www.google.com">WCAG 2.1</a>
+						</li>
+						<li role="none">
+							<a tabindex="-1" role="menuitem" href="#">Aria Authoring Practices 1.1</a>
+						</li>
+						<li role="none">
+							<a tabindex="-1" role="menuitem" href="#">Design Patterns</a>
+						</li>
+						<li role="none">
+							<a tabindex="-1" role="menuitem" href="#">Keyboard Interactions</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<h1>Failing Example of toggling menuButton</h1>
+		<div>
+			<button  class="menu-button" id="menuButton2" aria-haspopup="true"
+				aria-expanded="false" >
+				<img src="fav_down_arrow.png" height="20px" width="20px" alt="" role="presentation">
+			</button>
+		</div>
+	</div>
+</body>
+</html>

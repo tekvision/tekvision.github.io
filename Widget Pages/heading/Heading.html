@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Heading Structure</title>
+        <link rel="stylesheet" href="Heading.css">
+    </head>
+    <body>
+        <div class="passing-container">
+            <!-- <div id="main-heading" class="main">No Challenges is impossible</div> -->
+            <div class="title">Passsing Heading Structure With H1 to H6 Element</div>
+            <h1 id="main-heading" class="main">No Challenges is impossible</h1>
+            <h2 class="sub-heading" id="subHeading">Our Services</h2>
+                <h3 class="sub">Web Accessibility</h3>
+                <h3 class="sub">Mobile Accessibility</h3>
+            <h2 class="sub-heading">Client Testimonials</h2>
+            <h2 class="sub-heading">Contact Us</h2>
+        </div>
+
+        <div class="failing-container">
+            <!-- <div id="main-heading" class="main">No Challenges is impossible</div> -->
+            <div class="title">Failing Heading Structure With H1 to H6 Element</div>
+            <h2 id="failing-mainHeading" class="main">No Challenges is impossible</h2>
+            <h1 class="failing-subHeading" id="failing-subHeading">Our Services</h1>
+                <h2 class="failing-sub">Web Accessibility</h2>
+                <h2 class="failing-sub">Mobile Accessibility</h2>
+            <h1 class="failing-subHeading">Client Testimonials</h1>
+            <h1 class="failing-subHeading">Contact Us</h1>
+        </div>
+
+        <div class="passing-container">
+                <div class="title">Passsing Heading Structure With Aria</div>
+            <div aria-level="1" role="heading" class="main" id="main-heading2">
+            No Challenges is impossible
+            </div>
+            <div aria-level="2" role="heading" class="sub-heading2" id="subHeading2">Our Services</div>
+            <div aria-level="3" role="heading" class="sub2" >Web Accessibility</div>
+            <div aria-level="3" role="heading" class="sub2">Mobile Accessibility</div>
+            <div aria-level="2" role="heading" class="sub-heading2">Client Testimonials</div>
+            <div aria-level="2" role="heading"class="sub-heading2">Contact Us</div>
+        </div>
+
+        <div class="failing-container">
+                <div class="title">Failing Heading Structure With Aria</div>
+            <div aria-level="2" role="heading" class="main" id="failing-mainHeading2">
+            No Challenges is impossible
+            </div>
+            <div aria-level="3" role="heading" class="failing-subHeading2">Our Services</div>
+            <div aria-level="4" role="heading" class="failing-sub2" >Web Accessibility</div>
+            <div aria-level="4" role="heading" class="failing-sub2">Mobile Accessibility</div>
+            <div aria-level="3" role="heading" class="failing-subHeading2">Client Testimonials</div>
+            <div aria-level="3" role="heading"class="failing-subHeading2">Contact Us</div>
+        </div>
+    </body>
+</html>

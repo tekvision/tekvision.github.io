@@ -1,0 +1,113 @@
+body{
+	background:#e0e2e4;
+}
+fieldset{
+	border: solid 2px;
+}
+fieldset legend{
+	width:auto;
+}
+.accessible-input{
+	float:left;
+	height:30px;
+	width:300px;
+	border-radius:5px;
+	background:transparent;
+	border:solid mediumseagreen 2px;
+	padding-left:15px;
+}
+.accessible-input:focus, .accessible-input:active{
+	border: solid 2px;
+    border-radius:5px;
+}
+
+.accessible-button
+{
+	border:none;
+	background:#217ff3;
+	width:100px;
+	height:35px;
+	box-shadow: 1px 1px 1px;
+	color:white;
+	border-radius:5px;
+}
+.accessible-button:focus, .accessible-button:focus
+{
+	outline:dotted blue 2px;
+}
+ 
+.accessible-label:not(#acce-gender-group .accessible-label){
+	width:200px;
+	height:100%;
+	font-size:1.1em;
+	font-weight:bold;
+	float:left;
+}
+.profile-view
+{
+	margin:3px;
+	border:solid 2px;
+}
+
+.form-group
+{
+	width:100%;
+	height:auto;
+}
+.accessible-error
+{
+	display:none;
+	margin:0px;
+	font-weight:bold;
+	color:red;
+}
+
+.accessible-label > span
+{
+	margin:0px;
+	font-weight:bold;
+	color:red;
+}
+.inaccessible-error
+{
+	display:none;
+	margin:0px;
+	font-weight:bold;
+	color:red;
+}
+.inaccessible-label:not(#inacce-gender-group .inaccessible-label){
+	width:200px;
+	height:100%;
+	font-size:1.1em;
+	font-weight:bold;
+	float:left;
+}
+.inaccessible-input{
+	float:left;
+	height:30px;
+	width:300px;
+	border-radius:5px;
+	background:transparent;
+	border:solid mediumseagreen 2px;
+	padding-left:15px;
+}
+.inaccessible-input:focus, .inaccessible-input:active{
+	border: solid 2px;
+    border-radius:5px;
+}
+.inaccessible-button
+{
+	border:none;
+	background:#217ff3;
+	width:100px;
+	height:35px;
+	box-shadow: 1px 1px 1px;
+	color:white;
+	border-radius:5px;
+}
+.inaccessible-label > span
+{
+	margin:0px;
+	font-weight:bold;
+	color:red;
+}
