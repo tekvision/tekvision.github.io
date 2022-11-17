@@ -4,9 +4,9 @@
 		<title>Combobox Example As Per ARIA Spec >=1.2</title>
 	</head>
 	<body>
-		<div aria-owns="state list-1">
+		<div role="combobox" aria-owns="state list-1" aria-expanded="true">
 		<label for="state">State: </label>
-		<input type="text" role="combobox" aria-autocomplete="list" aria-controls="list-1" aria-expanded="true" id="state" aria-activedescendant="list-item-1">
+		<input type="text" aria-autocomplete="list" aria-controls="list-1" id="state" aria-activedescendant="list-item-1">
 		</div>
 		<p>A paragraph in between just to represent some random content </p>
 		<label for="email">Email:</label>
