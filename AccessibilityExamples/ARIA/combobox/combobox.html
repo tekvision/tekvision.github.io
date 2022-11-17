@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Combobox Example As Per ARIA Spec >=1.2</title>
+	</head>
+	<body>
+		<label for="state">State: </label>
+		<input type="text" role="combobox" aria-autocomplete="list" aria-controls="list-1" aria-expanded="true" id="state" aria-activedescendant="list-item-1">
+		<p>A paragraph in between just to represent some random content </p>
+		<label for="email">Email:</label>
+		<input id="email" type="email">
+		
+		<div role="listbox" id="list-1">
+			<div role="option" id="list-item-0">Maharashtra</div>
+			<div role="option" id="list-item-1" aria-selected="true">Maharashtra</div>
+		</div>
+	</body>
+</html>
