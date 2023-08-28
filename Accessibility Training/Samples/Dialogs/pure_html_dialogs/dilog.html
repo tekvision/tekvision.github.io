@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML5 Dialog element</title>
+        <style>
+            dialog::backdrop
+            {
+                background-color: black;
+                opacity: 0.8;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row" style="display:flex">
+                <div class="col" style="flex:1">
+                    <h2>Dialog with Open Attribute:</h2>
+                    <button class="show-open">Show Dialog</button>
+                    <dialog class="alertModalWithOpen" open>Tester</dialog>
+                </div>
+                <div class="col" style="flex:1">
+                    <h2>Dialog with showDialog() Attribute:</h2>
+                    <button class="showDialog" formmethod="dialog">Show Dialog</button>
+                    <dialog class="alertModalInShow" aria-label="Dialog with showModal">
+                        <p>This is info modal</p>
+                        <button aria-label="close info">X</button>
+                    </dialog>
+                    <dialog class="alertDialog">
+                        <p>Are you sure you want to close?</p>
+                        <button class="confirmClose" aria-label="Confirm Close">Confirm</button>
+                        <button class="cancelClose" aria-label="cancel Close">Cancel</button>
+                    </dialog>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            let showDialog = document.querySelector(".showDialog");
+            let alertModalInShow = document.querySelector(".alertModalInShow");
+            let alertDialog = document.querySelector(".alertDialog");
+            let closeInfo = document.querySelector("[aria-label='close info']");
+            let confirmClose = document.querySelector(".confirmClose");
+
+            showDialog.addEventListener("click", (e) =>
+            {
+                alertModalInShow.showModal();
+            });
+            closeInfo.addEventListener("click", () =>{
+                alertDialog.showModal();
+            })
+            confirmClose.addEventListener("click", () =>{
+                alertDialog.close();
+                alertModalInShow.close();
+            })
+        </script>
+    </body>
+</html>
