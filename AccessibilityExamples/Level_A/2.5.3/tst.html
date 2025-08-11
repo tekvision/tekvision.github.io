@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title> Test </title>
+		
+		<!-- Stylings for the close (Pseudo element) control -->
+		<style>
+			.close-button {
+				position: relative;
+				width: 24px;
+				height: 24px;
+				cursor: pointer;
+			}
+			
+			.close-button::before,
+			.close-button::after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 20px;
+				height: 2px;
+				background-color: #333;
+				transform-origin: center;
+			}
+			
+			.close-button::before {
+				transform: translate(-50%, -50%) rotate(45deg);
+			}
+			
+			.close-button::after {
+				transform: translate(-50%, -50%) rotate(-45deg);
+			}
+		</style>
+	</head>
+	<body>
+		<h2>Custom Buttons</h2>
+		<p>
+			Example of two custom created inaccessible buttons are given below
+		</p>
+		<div id="btn1">
+			Button 1 with addEventListener
+		</div>
+		<br>
+		<div onclick="alert('Button 1 with onclick')">
+			Button 1 with onClick
+		</div>
+		<h2>Native Buttons</h2>
+		<p>
+			Example of two native buttons are given below
+		</p>
+		<button id="btn2">
+			Button 2 with addEventListener
+		</button>
+		<br>
+		<button onclick="alert('Button 2 with onclick')">
+			Button 2 with onclick
+		</button>
+		<h2>Pseudo Elements</h2>
+		<div class="close-button" id="btn3"></div>
+		<div class="close-button" onclick="alert('Close with onclick')"></div>
+		<br>
+		<span> -- END -- </span>
+		<script>
+			document.querySelector("#btn1").addEventListener("click", function () {
+				alert("Button 1");
+			});
+			document.querySelector("#btn2").addEventListener("click", function () {
+				alert("Button 2");
+			});
+			document.querySelector("#btn3").addEventListener("click", function () {
+				alert("Close!");
+			});
+		</script>
+	</body>
+</html>
